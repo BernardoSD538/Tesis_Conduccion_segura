@@ -1,0 +1,22 @@
+% called by main.tex
+%
+\chapter{Discusión}
+\label{sec::capitulo5}
+
+\section{Detección de ditracción}
+\subsection{Resultados de entrenamiento de modelos de aprendizaje profundo}
+En la Figura \ref{tab:ResCNNs} se logra aprecierar que todos los resultados de \textit{F1 score} son de valores altos, con un mínimo de 0.848, lo cuál es indicativo de que los modelos de aprendizaje profundo son capaces de predecir el estado de distracción de un conductor utilizando un conjunto de datos, incluso con arquitecturas pequeñas y simples, que ofrecen una opción no tan precisa pero ciertamente ligera en consumo computacional. Y también existe la posibilidad de obtener modelos con valores de predicción que se acercan al 100\% de precisión utilizando arquitecturas más complejas y mas costosas en recursos computacionales. Observando de manera mas detallada, los valores de precisión y sensibilidad en todos los modelos mantienen la tendencia de que el valor de precisión siempre es más alto que el de sensibilidad, indicando que existe una mejor habilidad de predecir la categoría \textit{looking\_road}, esto debido probablemente al desbalance que se encuentra en las clases, a pesar de las medidas tomadas para la compensación entre clases. El uso de un conjunto de datos con un equilibro mayor entre clases podría ofrecer resultados más semejantes entre precisión y sensibilidad. 
+
+\subsection{Rendimiento de algoritmo en tiempo real}
+
+\section{Detección de somnolencia}
+\subsection{Detección de parpadeao y PERCLOS}
+\subsection{Detección de bostezo}
+\subsection{Cálculo de orientación de cabeza}
+
+\section{Resultados de codigo modular en tiempo real}
+
+\section{Trabajo a futuro}
+El uso del sistema en tiempo real en la RaspberryPi 5B dentro de un automóvil no fue conseguido debido a los requerimientos de consumo de energía de la RaspberryPi. El modelo que se utilizó requiere 5V con 5A, y los carros no ofrecen entradas que alimenten en esta configuración especifica. Se intento utilizan un adaptador de toma de corriente auxiliar de 12V con salida PD para cable USB-C para alimentar la Raspberry, pero las configuraciones disponibles no ofrecen la corriente necesaria para la Raspberry, por lo que aunque al conectar esta logra encender, no funciona de manera óptima que causa un funcionamiento fallido del algoritmo de detección de somnolencia y distracción. Con el uso de un adaptador de toma de corriente auxiliar de 12V que contenga como salida cables positivo y negativo de 16 AWG en conjunto con un convertidor buck de 12V a 5V con un máximo de 5A se puede obtener una fuente de alimentación ideal para el funcionamiento del algoritmo de detección en la RaspberryPi 5B dentro de un vehículo, por lo que la aplicación de este sistema en formato \textit{Plug-and-play} es completamente factible.
+
+\section{Conclusiones}

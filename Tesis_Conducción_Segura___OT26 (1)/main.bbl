@@ -1,0 +1,4363 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nyt/apasortcite//global/global/global}
+    \entry{NHTSA}{report}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=dd749f7b870deb919e78c4f2838084ef}{%
+           family={Administration},
+           familyi={A\bibinitperiod},
+           given={National\bibnamedelimb Highway\bibnamedelimb Traffic\bibnamedelima Safety},
+           giveni={N\bibinitperiod\bibinitdelim H\bibinitperiod\bibinitdelim T\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {U.S. Department of Transportation}%
+      }
+      \strng{namehash}{dd749f7b870deb919e78c4f2838084ef}
+      \strng{fullhash}{dd749f7b870deb919e78c4f2838084ef}
+      \strng{fullhashraw}{dd749f7b870deb919e78c4f2838084ef}
+      \strng{bibnamehash}{dd749f7b870deb919e78c4f2838084ef}
+      \strng{authorbibnamehash}{dd749f7b870deb919e78c4f2838084ef}
+      \strng{authornamehash}{dd749f7b870deb919e78c4f2838084ef}
+      \strng{authorfullhash}{dd749f7b870deb919e78c4f2838084ef}
+      \strng{authorfullhashraw}{dd749f7b870deb919e78c4f2838084ef}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Visual-Manual NHTSA Driver Distraction Guidelines}
+      \field{type}{techreport}
+      \field{year}{2012}
+    \endentry
+    \entry{Bostezo}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=f9f22e26624c475c6384fc6454e398c7}{%
+           family={Albadawi},
+           familyi={A\bibinitperiod},
+           given={Yaman},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f4ce3f380ddf152315c8ad56c05cd9af}{%
+           family={AlRedhaei},
+           familyi={A\bibinitperiod},
+           given={Aneesa},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=430c954132ce7cb4e0535944e7bcefac}{%
+           family={Takruri},
+           familyi={T\bibinitperiod},
+           given={Maen},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{fc7500bc79e33378b67000bbd62d6e50}
+      \strng{fullhash}{8499450941c627bcefc7871ed0d1f86a}
+      \strng{fullhashraw}{8499450941c627bcefc7871ed0d1f86a}
+      \strng{bibnamehash}{8499450941c627bcefc7871ed0d1f86a}
+      \strng{authorbibnamehash}{8499450941c627bcefc7871ed0d1f86a}
+      \strng{authornamehash}{fc7500bc79e33378b67000bbd62d6e50}
+      \strng{authorfullhash}{8499450941c627bcefc7871ed0d1f86a}
+      \strng{authorfullhashraw}{8499450941c627bcefc7871ed0d1f86a}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{28}
+      \field{journaltitle}{Journal of Imaging}
+      \field{langid}{english}
+      \field{month}{5}
+      \field{number}{5}
+      \field{title}{Real-Time Machine Learning-Based Driver Drowsiness Detection Using Visual Features}
+      \field{urlday}{19}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{volume}{9}
+      \field{year}{2023}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{91}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3390/jimaging9050091
+      \endverb
+      \verb{urlraw}
+      \verb https://www.mdpi.com/2313-433X/9/5/91#article-metrics-citations
+      \endverb
+      \verb{url}
+      \verb https://www.mdpi.com/2313-433X/9/5/91#article-metrics-citations
+      \endverb
+    \endentry
+    \entry{DHM-RNN}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=1,uniquepart=given,hash=bf141b034f28003048981ada1b682265}{%
+           family={Alotaibi},
+           familyi={A\bibinitperiod},
+           given={Munif},
+           giveni={M\bibinitperiod},
+           givenun=1}}%
+        {{un=1,uniquepart=given,hash=c2ab76d4dcef9ec9fd596db852ab3390}{%
+           family={Alotaibi},
+           familyi={A\bibinitperiod},
+           given={Bandar},
+           giveni={B\bibinitperiod},
+           givenun=1}}%
+      }
+      \strng{namehash}{db4965d230038fd3e7df03d07bb2a604}
+      \strng{fullhash}{db4965d230038fd3e7df03d07bb2a604}
+      \strng{fullhashraw}{db4965d230038fd3e7df03d07bb2a604}
+      \strng{bibnamehash}{db4965d230038fd3e7df03d07bb2a604}
+      \strng{authorbibnamehash}{db4965d230038fd3e7df03d07bb2a604}
+      \strng{authornamehash}{db4965d230038fd3e7df03d07bb2a604}
+      \strng{authorfullhash}{db4965d230038fd3e7df03d07bb2a604}
+      \strng{authorfullhashraw}{db4965d230038fd3e7df03d07bb2a604}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{6}
+      \field{journaltitle}{Signal, Image and Video Processing}
+      \field{langid}{english}
+      \field{month}{11}
+      \field{title}{Distracted Driver Classification Using Deep Learning}
+      \field{urlday}{24}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{volume}{14}
+      \field{year}{2019}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{617\bibrangedash 624}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1007/s11760-019-01589-z
+      \endverb
+      \verb{urlraw}
+      \verb https://link.springer.com/article/10.1007/s11760-019-01589-z?utm_source=researchgate.net&utm_medium=article
+      \endverb
+      \verb{url}
+      \verb https://link.springer.com/article/10.1007/s11760-019-01589-z?utm_source=researchgate.net&utm_medium=article
+      \endverb
+    \endentry
+    \entry{Threading}{article}{}{}
+      \name{author}{6}{}{%
+        {{un=0,uniquepart=base,hash=9644915472f4fc8141ae22de7fd37089}{%
+           family={Al-sudani},
+           familyi={A\bibinithyphendelim s\bibinitperiod},
+           given={Alham\bibnamedelima Hanoon},
+           giveni={A\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4374c58bfd4c4849966e2a0a9b160935}{%
+           family={Mahmmod},
+           familyi={M\bibinitperiod},
+           given={Basheera\bibnamedelima M},
+           giveni={B\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=795deb094a09813dfd1d8df8c62916ea}{%
+           family={Sabir},
+           familyi={S\bibinitperiod},
+           given={Firas\bibnamedelima A},
+           giveni={F\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1a481df56cf4be2489675d11bd1a0f5d}{%
+           family={Abdulhussain},
+           familyi={A\bibinitperiod},
+           given={Sadiq\bibnamedelima H},
+           giveni={S\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1d1b145fe5d31679bf99406a636b3e9c}{%
+           family={Alsabah},
+           familyi={A\bibinitperiod},
+           given={Muntadher},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f550b3171df46c07f2cbbb3aad7b8e41}{%
+           family={Flayyih},
+           familyi={F\bibinitperiod},
+           given={Wameedh\bibnamedelima Nazar},
+           giveni={W\bibinitperiod\bibinitdelim N\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{090f138cf7a76d30583e5d17acc307df}
+      \strng{fullhash}{59fb36e70917b62be7c2fbe45ceaf6fa}
+      \strng{fullhashraw}{59fb36e70917b62be7c2fbe45ceaf6fa}
+      \strng{bibnamehash}{59fb36e70917b62be7c2fbe45ceaf6fa}
+      \strng{authorbibnamehash}{59fb36e70917b62be7c2fbe45ceaf6fa}
+      \strng{authornamehash}{090f138cf7a76d30583e5d17acc307df}
+      \strng{authorfullhash}{59fb36e70917b62be7c2fbe45ceaf6fa}
+      \strng{authorfullhashraw}{59fb36e70917b62be7c2fbe45ceaf6fa}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{27}
+      \field{journaltitle}{Algorithms}
+      \field{langid}{english}
+      \field{month}{8}
+      \field{number}{9}
+      \field{title}{Multithreading-Based Algorithm dor High-Performance Tchebichef Polynomials with Higher Orders}
+      \field{urlday}{16}
+      \field{urlmonth}{11}
+      \field{urlyear}{2026}
+      \field{volume}{17}
+      \field{year}{2024}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{381}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3390/a17090381
+      \endverb
+      \verb{urlraw}
+      \verb https://www.mdpi.com/1999-4893/17/9/381
+      \endverb
+      \verb{url}
+      \verb https://www.mdpi.com/1999-4893/17/9/381
+      \endverb
+    \endentry
+    \entry{C++}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=410f54d91cef09a38aea62f07820ac80}{%
+           family={Bogucki},
+           familyi={B\bibinitperiod},
+           given={Szymon},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=aff85c3634e721d07186ad98bf91272e}{%
+           family={Burda},
+           familyi={B\bibinitperiod},
+           given={Kacper},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{d2cd63655092d0801197a7954cce84cd}
+      \strng{fullhash}{d2cd63655092d0801197a7954cce84cd}
+      \strng{fullhashraw}{d2cd63655092d0801197a7954cce84cd}
+      \strng{bibnamehash}{d2cd63655092d0801197a7954cce84cd}
+      \strng{authorbibnamehash}{d2cd63655092d0801197a7954cce84cd}
+      \strng{authornamehash}{d2cd63655092d0801197a7954cce84cd}
+      \strng{authorfullhash}{d2cd63655092d0801197a7954cce84cd}
+      \strng{authorfullhashraw}{d2cd63655092d0801197a7954cce84cd}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Computer Sciences Institute}
+      \field{langid}{english}
+      \field{month}{9}
+      \field{title}{Comparison of C++ and Python performance based on selected algorithms}
+      \field{urlday}{16}
+      \field{urlmonth}{11}
+      \field{urlyear}{2026}
+      \field{volume}{40}
+      \field{year}{2026}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{201\bibrangedash 205}
+      \range{pages}{5}
+      \verb{doi}
+      \verb 10.35784/jcsi.9584
+      \endverb
+      \verb{urlraw}
+      \verb https://ph.pollub.pl/index.php/jcsi/article/view/9584
+      \endverb
+      \verb{url}
+      \verb https://ph.pollub.pl/index.php/jcsi/article/view/9584
+      \endverb
+    \endentry
+    \entry{EEG_SVM}{article}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=67e6f304787a88cc43bd01351b27f1b6}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Lan-lan},
+           giveni={L\bibinithyphendelim l\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=26500c0e7c5f37a79d71416c4c641ba2}{%
+           family={Zhao},
+           familyi={Z\bibinitperiod},
+           given={Yu},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=112faefb37293f52cd92c3bb36fcc08b}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Jian},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=594706691e56c5b5d81571d57f623bf3}{%
+           family={Zou},
+           familyi={Z\bibinitperiod},
+           given={Jun-zhong},
+           giveni={J\bibinithyphendelim z\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{340e56ef69c049ade55324d6e723667e}
+      \strng{fullhash}{489acef028d5014397e2b6a16f0039ee}
+      \strng{fullhashraw}{489acef028d5014397e2b6a16f0039ee}
+      \strng{bibnamehash}{489acef028d5014397e2b6a16f0039ee}
+      \strng{authorbibnamehash}{489acef028d5014397e2b6a16f0039ee}
+      \strng{authornamehash}{340e56ef69c049ade55324d6e723667e}
+      \strng{authorfullhash}{489acef028d5014397e2b6a16f0039ee}
+      \strng{authorfullhashraw}{489acef028d5014397e2b6a16f0039ee}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0957-4174}
+      \field{journaltitle}{Expert Systems with Apllications}
+      \field{langid}{english}
+      \field{number}{21}
+      \field{title}{Automatic detection of alertness/drowsiness from physiological signals using wavelet-based nonlinear features and machine learning}
+      \field{urlday}{23}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{volume}{42}
+      \field{year}{2015}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{7344\bibrangedash 7355}
+      \range{pages}{12}
+      \verb{doi}
+      \verb 10.1016/j.eswa.2015.05.028
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0957417415003565
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0957417415003565
+      \endverb
+    \endentry
+    \entry{Cabeceo}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=8a1d873f6d7d961a8b98f50b2c9c3450}{%
+           family={Choi},
+           familyi={C\bibinitperiod},
+           given={In-Ho},
+           giveni={I\bibinithyphendelim H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=45c873c43bfa22b90fd6c3600a944fe2}{%
+           family={Kim},
+           familyi={K\bibinitperiod},
+           given={Yong-Guk},
+           giveni={Y\bibinithyphendelim G\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{f107f456c153d8b0e3f840873eaf1954}
+      \strng{fullhash}{f107f456c153d8b0e3f840873eaf1954}
+      \strng{fullhashraw}{f107f456c153d8b0e3f840873eaf1954}
+      \strng{bibnamehash}{f107f456c153d8b0e3f840873eaf1954}
+      \strng{authorbibnamehash}{f107f456c153d8b0e3f840873eaf1954}
+      \strng{authornamehash}{f107f456c153d8b0e3f840873eaf1954}
+      \strng{authorfullhash}{f107f456c153d8b0e3f840873eaf1954}
+      \strng{authorfullhashraw}{f107f456c153d8b0e3f840873eaf1954}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Conference On Big Data And Smart Computing}
+      \field{langid}{english}
+      \field{month}{1}
+      \field{title}{Head pose and gaze direction tracking for detecting a drowsy driver}
+      \field{urlday}{19}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{year}{2014}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{241\bibrangedash 244}
+      \range{pages}{4}
+      \verb{doi}
+      \verb 10.1109/BIGCOMP.2014.6741444
+      \endverb
+      \verb{urlraw}
+      \verb https://ieeexplore.ieee.org/document/6741444
+      \endverb
+      \verb{url}
+      \verb https://ieeexplore.ieee.org/document/6741444
+      \endverb
+    \endentry
+    \entry{Sub_DT}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=28ba60fd3bf22ca9a15fd8117cac760b}{%
+           family={Dehzangi},
+           familyi={D\bibinitperiod},
+           given={Omid},
+           giveni={O\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=fc2aa9c635e5073860aa2ccd43908ca9}{%
+           family={Masilamani},
+           familyi={M\bibinitperiod},
+           given={Selvamani},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{0b6e10947ac6001e494efb1beeb22c78}
+      \strng{fullhash}{0b6e10947ac6001e494efb1beeb22c78}
+      \strng{fullhashraw}{0b6e10947ac6001e494efb1beeb22c78}
+      \strng{bibnamehash}{0b6e10947ac6001e494efb1beeb22c78}
+      \strng{authorbibnamehash}{0b6e10947ac6001e494efb1beeb22c78}
+      \strng{authornamehash}{0b6e10947ac6001e494efb1beeb22c78}
+      \strng{authorfullhash}{0b6e10947ac6001e494efb1beeb22c78}
+      \strng{authorfullhashraw}{0b6e10947ac6001e494efb1beeb22c78}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{20}
+      \field{issn}{1051-4651}
+      \field{journaltitle}{2018 24th International Conference on Pattern Recognition}
+      \field{langid}{english}
+      \field{month}{8}
+      \field{title}{Unobtrusive Driver Drowsiness Prediction Using Driving Behavior from Vehicular Sensor}
+      \field{urlday}{24}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{year}{2018}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1109/ICPR.2018.8545427
+      \endverb
+      \verb{urlraw}
+      \verb https://ieeexplore.ieee.org/document/8545427
+      \endverb
+      \verb{url}
+      \verb https://ieeexplore.ieee.org/document/8545427
+      \endverb
+    \endentry
+    \entry{BostezoGraf}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=020e5e4834ac36e7a10d6146e3412c40}{%
+           family={Deng},
+           familyi={D\bibinitperiod},
+           given={Wanghua},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6b6cb63716b433135a1c58e45ffe98c5}{%
+           family={Wu},
+           familyi={W\bibinitperiod},
+           given={Ruoxue},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{6ad3dac302d9f4411777d3f2b4ef86b8}
+      \strng{fullhash}{6ad3dac302d9f4411777d3f2b4ef86b8}
+      \strng{fullhashraw}{6ad3dac302d9f4411777d3f2b4ef86b8}
+      \strng{bibnamehash}{6ad3dac302d9f4411777d3f2b4ef86b8}
+      \strng{authorbibnamehash}{6ad3dac302d9f4411777d3f2b4ef86b8}
+      \strng{authornamehash}{6ad3dac302d9f4411777d3f2b4ef86b8}
+      \strng{authorfullhash}{6ad3dac302d9f4411777d3f2b4ef86b8}
+      \strng{authorfullhashraw}{6ad3dac302d9f4411777d3f2b4ef86b8}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{21}
+      \field{issn}{2169-3536}
+      \field{journaltitle}{IEEE Access}
+      \field{langid}{english}
+      \field{month}{8}
+      \field{title}{Real-Time Driver-Drowsiness Detection System Using Facial Features}
+      \field{urlday}{19}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{volume}{7}
+      \field{year}{2019}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{118727\bibrangedash 118738}
+      \range{pages}{12}
+      \verb{doi}
+      \verb 10.1109/ACCESS.2019.2936663
+      \endverb
+      \verb{urlraw}
+      \verb https://ieeexplore.ieee.org/document/8808931
+      \endverb
+      \verb{url}
+      \verb https://ieeexplore.ieee.org/document/8808931
+      \endverb
+    \endentry
+    \entry{Sub_KNN}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=92c361f0c77549673a60c40de4965087}{%
+           family={Dreissig},
+           familyi={D\bibinitperiod},
+           given={Mariella},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=93181bd4f21af8211aeda93b4b2a90d0}{%
+           family={Baccour},
+           familyi={B\bibinitperiod},
+           given={Mohamed\bibnamedelima Hedi},
+           giveni={M\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c72fad49713fef4e273c39cc783e7c68}{%
+           family={Kasneci},
+           familyi={K\bibinitperiod},
+           given={Enkelejda},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{b02bc03c34f7ac0fea084073035e2c2e}
+      \strng{fullhash}{9dddc0c1e801219c77e26afc9345a634}
+      \strng{fullhashraw}{9dddc0c1e801219c77e26afc9345a634}
+      \strng{bibnamehash}{9dddc0c1e801219c77e26afc9345a634}
+      \strng{authorbibnamehash}{9dddc0c1e801219c77e26afc9345a634}
+      \strng{authornamehash}{b02bc03c34f7ac0fea084073035e2c2e}
+      \strng{authorfullhash}{9dddc0c1e801219c77e26afc9345a634}
+      \strng{authorfullhashraw}{9dddc0c1e801219c77e26afc9345a634}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{2020 IEEE Symposium Series on Computational Intelligence}
+      \field{langid}{english}
+      \field{title}{Driver Drowsiness Classification Based on Eye Blink and Head Movement Features Using the k-NN Algorithm}
+      \field{urlday}{24}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{year}{2020}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1109/SSCI47803.2020.9308133
+      \endverb
+      \verb{urlraw}
+      \verb https://ieeexplore.ieee.org/document/9308133
+      \endverb
+      \verb{url}
+      \verb https://ieeexplore.ieee.org/document/9308133
+      \endverb
+    \endentry
+    \entry{DTF}{article}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=4a6da3aa35c0afec484951272265a62b}{%
+           family={Eraqi},
+           familyi={E\bibinitperiod},
+           given={Hesham\bibnamedelima M},
+           giveni={H\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e8e5df36bb9cedb1c138ffb9a882ac13}{%
+           family={Abouelnaga},
+           familyi={A\bibinitperiod},
+           given={Yehya},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b1f8bf3a5bed5ed893db3d9ae9c8baf1}{%
+           family={Saad},
+           familyi={S\bibinitperiod},
+           given={Mohamed\bibnamedelima H},
+           giveni={M\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=dc98e046c53c2805a49d3954e9aed71d}{%
+           family={Moustafa},
+           familyi={M\bibinitperiod},
+           given={Mohamed\bibnamedelima N},
+           giveni={M\bibinitperiod\bibinitdelim N\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{afc0f140282e4d8a114b3d68e1099ba9}
+      \strng{fullhash}{e40e69926dc71f3e2075590937860718}
+      \strng{fullhashraw}{e40e69926dc71f3e2075590937860718}
+      \strng{bibnamehash}{e40e69926dc71f3e2075590937860718}
+      \strng{authorbibnamehash}{e40e69926dc71f3e2075590937860718}
+      \strng{authornamehash}{afc0f140282e4d8a114b3d68e1099ba9}
+      \strng{authorfullhash}{e40e69926dc71f3e2075590937860718}
+      \strng{authorfullhashraw}{e40e69926dc71f3e2075590937860718}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{22}
+      \field{journaltitle}{Journal of Advanced Transportation}
+      \field{langid}{english}
+      \field{month}{1}
+      \field{title}{Driver Distraction Identification with an Ensemble of Convolutional Neural Networks}
+      \field{urlday}{24}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{year}{2019}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.48550/arXiv.1901.09097
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/1901.09097
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/1901.09097
+      \endverb
+    \endentry
+    \entry{bayesianNetwork}{article}{}{}
+      \name{author}{6}{}{%
+        {{un=0,uniquepart=base,hash=ec862daef8e77e31ce95a07a8b74aab5}{%
+           family={Guo},
+           familyi={G\bibinitperiod},
+           given={Wenqiang},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2d5d69a70a653d2c2339d5ca583a3eb8}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Baorong},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=eb4514eec5f318fe93d28ad09c7b2f0b}{%
+           family={Xia},
+           familyi={X\bibinitperiod},
+           given={Lingjun},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f95d5ad53efbfa060ad114d1d8eee700}{%
+           family={Shi},
+           familyi={S\bibinitperiod},
+           given={Shuai},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=227e34554b27c77e2d042504ef1edb97}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Xiao},
+           giveni={X\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=457e0e22c18860b458f0b17228cc6d3a}{%
+           family={She},
+           familyi={S\bibinitperiod},
+           given={Jinlong},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{267b8340c96fcb18c192d54aebcc5300}
+      \strng{fullhash}{95a00b2429cb3768d97e84645cb17e2a}
+      \strng{fullhashraw}{95a00b2429cb3768d97e84645cb17e2a}
+      \strng{bibnamehash}{95a00b2429cb3768d97e84645cb17e2a}
+      \strng{authorbibnamehash}{95a00b2429cb3768d97e84645cb17e2a}
+      \strng{authornamehash}{267b8340c96fcb18c192d54aebcc5300}
+      \strng{authorfullhash}{95a00b2429cb3768d97e84645cb17e2a}
+      \strng{authorfullhashraw}{95a00b2429cb3768d97e84645cb17e2a}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{8}
+      \field{issn}{1948-9447}
+      \field{journaltitle}{2016 Chinese Control and Decision Conference}
+      \field{langid}{english}
+      \field{month}{8}
+      \field{title}{Driver Drowsiness Detection Model Identification with Bayesian Network Structure Learning Method}
+      \field{urlday}{23}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{year}{2016}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1109/CCDC.2016.7530968
+      \endverb
+      \verb{urlraw}
+      \verb https://ieeexplore.ieee.org/document/7530968
+      \endverb
+      \verb{url}
+      \verb https://ieeexplore.ieee.org/document/7530968
+      \endverb
+    \endentry
+    \entry{osamaSubyObj}{article}{}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=e422d08ce576ed4b43079be146ac0469}{%
+           family={Hassan},
+           familyi={H\bibinitperiod},
+           given={Osama\bibnamedelima F},
+           giveni={O\bibinitperiod\bibinitdelim F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ececf44b5bdd47b41787a382de04173b}{%
+           family={Ibrahim},
+           familyi={I\bibinitperiod},
+           given={Ahmed\bibnamedelima F},
+           giveni={A\bibinitperiod\bibinitdelim F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=af60ae3afaa60df94d374f35b26948cd}{%
+           family={Makhlouf},
+           familyi={M\bibinitperiod},
+           given={M\bibnamedelima A},
+           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=207503327e54bdc5f026e39f9e67a00f}{%
+           family={Hafiz},
+           familyi={H\bibinitperiod},
+           given={B},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e3bcebf78bf3f20c49a56b181a8edea6}{%
+           family={Gomma},
+           familyi={G\bibinitperiod},
+           given={Ahmed},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{752c66a7456b6a6db9b6a8a7cfe81b44}
+      \strng{fullhash}{cb23b97996ca18266c5682baae6adfb0}
+      \strng{fullhashraw}{cb23b97996ca18266c5682baae6adfb0}
+      \strng{bibnamehash}{cb23b97996ca18266c5682baae6adfb0}
+      \strng{authorbibnamehash}{cb23b97996ca18266c5682baae6adfb0}
+      \strng{authornamehash}{752c66a7456b6a6db9b6a8a7cfe81b44}
+      \strng{authorfullhash}{cb23b97996ca18266c5682baae6adfb0}
+      \strng{authorfullhashraw}{cb23b97996ca18266c5682baae6adfb0}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Artificial Intelligence Review}
+      \field{langid}{english}
+      \field{month}{5}
+      \field{number}{6}
+      \field{shortjournal}{AI Rev}
+      \field{title}{Intelligent driver monitoring systems: a survey of drowsiness detection technologies for road safety}
+      \field{urlday}{19}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{volume}{59}
+      \field{year}{2026}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{137}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1007/s10462-026-11505-w
+      \endverb
+      \verb{urlraw}
+      \verb https://link.springer.com/article/10.1007/s10462-026-11505-w
+      \endverb
+      \verb{url}
+      \verb https://link.springer.com/article/10.1007/s10462-026-11505-w
+      \endverb
+    \endentry
+    \entry{ModelosDist}{article}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=a8aa5dc2d013627b56b8535c8a172770}{%
+           family={Kashevnik},
+           familyi={K\bibinitperiod},
+           given={Alexey},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0c19c179cdfef9f4446ecd9b53ebf60d}{%
+           family={Shchedrin},
+           familyi={S\bibinitperiod},
+           given={Roman},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5e0aee0f922e9b01d81a82afd98259e4}{%
+           family={Kaiser},
+           familyi={K\bibinitperiod},
+           given={Christian},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a832b4fdf0b86281c8aab237e2ec82a8}{%
+           family={Stocker},
+           familyi={S\bibinitperiod},
+           given={Alexander},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{c244cd1982dac114766e70d221848141}
+      \strng{fullhash}{516f1c5ac6593f633a5c75b541b501a5}
+      \strng{fullhashraw}{516f1c5ac6593f633a5c75b541b501a5}
+      \strng{bibnamehash}{516f1c5ac6593f633a5c75b541b501a5}
+      \strng{authorbibnamehash}{516f1c5ac6593f633a5c75b541b501a5}
+      \strng{authornamehash}{c244cd1982dac114766e70d221848141}
+      \strng{authorfullhash}{516f1c5ac6593f633a5c75b541b501a5}
+      \strng{authorfullhashraw}{516f1c5ac6593f633a5c75b541b501a5}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{15}
+      \field{journaltitle}{IEEE Access}
+      \field{langid}{english}
+      \field{month}{5}
+      \field{title}{Driver Distraction Methods: A Literature Review and Framework}
+      \field{urlday}{20}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{volume}{9}
+      \field{year}{2021}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{60063\bibrangedash 60076}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1109/ACCESS.2021.3073599
+      \endverb
+      \verb{urlraw}
+      \verb https://ieeexplore.ieee.org/document/9405644
+      \endverb
+      \verb{url}
+      \verb https://ieeexplore.ieee.org/document/9405644
+      \endverb
+    \endentry
+    \entry{LRCN}{article}{}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=5144aed1d780f11823b422417b7da09f}{%
+           family={Kidu},
+           familyi={K\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=79689d0d1df9a487c02dd3700dbc0493}{%
+           family={Song},
+           familyi={S\bibinitperiod},
+           given={Yongjun},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b84edb1226c428ba891b1e2f82e9fdee}{%
+           family={Seo},
+           familyi={S\bibinitperiod},
+           given={Kwang-Won},
+           giveni={K\bibinithyphendelim W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=170df3b055a9fcd962d6474336180f4e}{%
+           family={Lee},
+           familyi={L\bibinitperiod},
+           given={Sunyong},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=dac8d10fb1d3bea1390ecbe1a613880f}{%
+           family={Park},
+           familyi={P\bibinitperiod},
+           given={Taejoon},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{18964471c2e6d5bee985d365373b3486}
+      \strng{fullhash}{36fda2521360cbd5afd2024431cf582f}
+      \strng{fullhashraw}{36fda2521360cbd5afd2024431cf582f}
+      \strng{bibnamehash}{36fda2521360cbd5afd2024431cf582f}
+      \strng{authorbibnamehash}{36fda2521360cbd5afd2024431cf582f}
+      \strng{authornamehash}{18964471c2e6d5bee985d365373b3486}
+      \strng{authorfullhash}{36fda2521360cbd5afd2024431cf582f}
+      \strng{authorfullhashraw}{36fda2521360cbd5afd2024431cf582f}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{6}
+      \field{journaltitle}{Applied Sciences}
+      \field{langid}{english}
+      \field{month}{9}
+      \field{number}{17}
+      \field{title}{An Intelligent Real-Time Driver Activity Recognition System Using Spatio-Temporal Features}
+      \field{urlday}{24}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{volume}{14}
+      \field{year}{2024}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{7985}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3390/app14177985
+      \endverb
+      \verb{urlraw}
+      \verb https://www.mdpi.com/2076-3417/14/17/7985
+      \endverb
+      \verb{url}
+      \verb https://www.mdpi.com/2076-3417/14/17/7985
+      \endverb
+    \endentry
+    \entry{DyS-VC}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=866d03a3fb88aec2f7d942f0a3798773}{%
+           family={Kurian},
+           familyi={K\bibinitperiod},
+           given={Anna\bibnamedelima Titu},
+           giveni={A\bibinitperiod\bibinitdelim T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e23e268b42cc7d946b6333e539ec3d36}{%
+           family={Soori},
+           familyi={S\bibinitperiod},
+           given={Phrashant\bibnamedelima Kuma},
+           giveni={P\bibinitperiod\bibinitdelim K\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{9608cf066ac7d6d2b986e0a5be99b93f}
+      \strng{fullhash}{9608cf066ac7d6d2b986e0a5be99b93f}
+      \strng{fullhashraw}{9608cf066ac7d6d2b986e0a5be99b93f}
+      \strng{bibnamehash}{9608cf066ac7d6d2b986e0a5be99b93f}
+      \strng{authorbibnamehash}{9608cf066ac7d6d2b986e0a5be99b93f}
+      \strng{authornamehash}{9608cf066ac7d6d2b986e0a5be99b93f}
+      \strng{authorfullhash}{9608cf066ac7d6d2b986e0a5be99b93f}
+      \strng{authorfullhashraw}{9608cf066ac7d6d2b986e0a5be99b93f}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{9}
+      \field{issn}{979-8-3503-3826-3}
+      \field{journaltitle}{2023 International Conference on Computational Intelligence and Knowledge Economy}
+      \field{langid}{english}
+      \field{month}{3}
+      \field{title}{AI-Based Driver Drowsiness and Distraction Detection in Real-Time}
+      \field{urlday}{24}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{year}{2023}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1109/ICCIKE58312.2023.10131730
+      \endverb
+      \verb{urlraw}
+      \verb https://ieeexplore.ieee.org/document/10131730
+      \endverb
+      \verb{url}
+      \verb https://ieeexplore.ieee.org/document/10131730
+      \endverb
+    \endentry
+    \entry{D3D}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=3d6dba1d4827ec5c525b3b74e18b3edf}{%
+           family={Lemley},
+           familyi={L\bibinitperiod},
+           given={Joseph},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ff804d28f4ad5edb499fb969375eb8e2}{%
+           family={Bazrafkan},
+           familyi={B\bibinitperiod},
+           given={Shabab},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8419731df79b58d5a4c1d06c61d39a34}{%
+           family={Corcoran},
+           familyi={C\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{0bf77c00926f65a0629a1fbc1f59f582}
+      \strng{fullhash}{ba767e41c30e235ae88cc81b91d6a616}
+      \strng{fullhashraw}{ba767e41c30e235ae88cc81b91d6a616}
+      \strng{bibnamehash}{ba767e41c30e235ae88cc81b91d6a616}
+      \strng{authorbibnamehash}{ba767e41c30e235ae88cc81b91d6a616}
+      \strng{authornamehash}{0bf77c00926f65a0629a1fbc1f59f582}
+      \strng{authorfullhash}{ba767e41c30e235ae88cc81b91d6a616}
+      \strng{authorfullhashraw}{ba767e41c30e235ae88cc81b91d6a616}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{MAICS}
+      \field{langid}{english}
+      \field{month}{1}
+      \field{title}{Transfer Learning of Temporal Information for Driver Action Classification}
+      \field{urlday}{24}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{year}{2017}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{123\bibrangedash 128}
+      \range{pages}{6}
+      \verb{urlraw}
+      \verb http://ceur-ws.org/Vol-1964/NN1.pdf
+      \endverb
+      \verb{url}
+      \verb http://ceur-ws.org/Vol-1964/NN1.pdf
+      \endverb
+    \endentry
+    \entry{DrowsyDG}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=b35c406d999f18b0efc902fe6a75f8c4}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Wendo},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1831c1cfce9068289736002a0260b396}{%
+           family={Zhao},
+           familyi={Z\bibinitperiod},
+           given={Tao},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b6e8cb3a4bf918cb95447db412013a03}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Jiyao},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{0334c847e4fd6fb195ba9181ef22e234}
+      \strng{fullhash}{2db37105741052eae9184558f9b8939c}
+      \strng{fullhashraw}{2db37105741052eae9184558f9b8939c}
+      \strng{bibnamehash}{2db37105741052eae9184558f9b8939c}
+      \strng{authorbibnamehash}{2db37105741052eae9184558f9b8939c}
+      \strng{authornamehash}{0334c847e4fd6fb195ba9181ef22e234}
+      \strng{authorfullhash}{2db37105741052eae9184558f9b8939c}
+      \strng{authorfullhashraw}{2db37105741052eae9184558f9b8939c}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{14}
+      \field{issn}{0957-4174}
+      \field{journaltitle}{Expert Systems With Applications}
+      \field{langid}{english}
+      \field{month}{5}
+      \field{title}{Towards generalizable driver drowsiness detection: A unified framework with geometric transformations and self-correcting adversarial learning}
+      \field{urlday}{20}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{volume}{323}
+      \field{year}{2026}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{132423}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/j.eswa.2026.132423
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0957417426013369
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0957417426013369
+      \endverb
+    \endentry
+    \entry{DCNN}{article}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=78fc8d8eefc850056553b5e3ca8125cd}{%
+           family={Majdi},
+           familyi={M\bibinitperiod},
+           given={Mohammed\bibnamedelima S},
+           giveni={M\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=353eacfd8b2c8d9ec7d9d4f28049a8da}{%
+           family={Sundaresh},
+           familyi={S\bibinitperiod},
+           given={Ram},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=491ecad222c1237d32accc7a8b7ddd34}{%
+           family={Gill},
+           familyi={G\bibinitperiod},
+           given={Jonathan\bibnamedelima T},
+           giveni={J\bibinitperiod\bibinitdelim T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=91d1df751b86d9e6ee000482a06badf2}{%
+           family={Rodriguez},
+           familyi={R\bibinitperiod},
+           given={Jeffrey\bibnamedelima J},
+           giveni={J\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{e71f9053d9aaf53d31302e305890a79c}
+      \strng{fullhash}{1e5472cf8162da5bc473dbab30fd3d27}
+      \strng{fullhashraw}{1e5472cf8162da5bc473dbab30fd3d27}
+      \strng{bibnamehash}{1e5472cf8162da5bc473dbab30fd3d27}
+      \strng{authorbibnamehash}{1e5472cf8162da5bc473dbab30fd3d27}
+      \strng{authornamehash}{e71f9053d9aaf53d31302e305890a79c}
+      \strng{authorfullhash}{1e5472cf8162da5bc473dbab30fd3d27}
+      \strng{authorfullhashraw}{1e5472cf8162da5bc473dbab30fd3d27}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{8}
+      \field{issn}{2473-3598}
+      \field{journaltitle}{2018 IEEE Southwest Symposium on Image Analysis and Interpetation}
+      \field{langid}{english}
+      \field{month}{5}
+      \field{title}{Drive-Net: Convolutional Network for Driver Distraction Detection}
+      \field{urlday}{24}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{year}{2018}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1109/SSIAI.2018.8470309
+      \endverb
+      \verb{urlraw}
+      \verb https://ieeexplore.ieee.org/document/8470309
+      \endverb
+      \verb{url}
+      \verb https://ieeexplore.ieee.org/document/8470309
+      \endverb
+    \endentry
+    \entry{sysrev}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=1bb033435e7b00d76aff11043575e87c}{%
+           family={Md.\bibnamedelimi Shaik},
+           familyi={M\bibinitperiod\bibinitdelim S\bibinitperiod},
+           given={Ebrahim},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{1bb033435e7b00d76aff11043575e87c}
+      \strng{fullhash}{1bb033435e7b00d76aff11043575e87c}
+      \strng{fullhashraw}{1bb033435e7b00d76aff11043575e87c}
+      \strng{bibnamehash}{1bb033435e7b00d76aff11043575e87c}
+      \strng{authorbibnamehash}{1bb033435e7b00d76aff11043575e87c}
+      \strng{authornamehash}{1bb033435e7b00d76aff11043575e87c}
+      \strng{authorfullhash}{1bb033435e7b00d76aff11043575e87c}
+      \strng{authorfullhashraw}{1bb033435e7b00d76aff11043575e87c}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{3}
+      \field{issn}{2590-1982}
+      \field{journaltitle}{Transportation Research Interdisciplinary Perspectives}
+      \field{langid}{english}
+      \field{month}{1}
+      \field{title}{A systematic review on detection and prediction of driver drowsiness}
+      \field{urlday}{19}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{volume}{21}
+      \field{year}{2023}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{100846}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/j.trip.2023.100864
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S2590198223001112?via%3Dihub
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S2590198223001112?via%3Dihub
+      \endverb
+    \endentry
+    \entry{MinhasPERCLOS}{article}{}{}
+      \name{author}{7}{}{%
+        {{un=0,uniquepart=base,hash=414da654485cd3c7e324b5742ddaeb8a}{%
+           family={Minhas},
+           familyi={M\bibinitperiod},
+           given={Riaz},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c2ee0ad7e882855ba901868b982158aa}{%
+           family={Peker},
+           familyi={P\bibinitperiod},
+           given={Nur\bibnamedelima Yasin},
+           giveni={N\bibinitperiod\bibinitdelim Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=70c1b32dfe8dfc6d0608415cbfa56892}{%
+           family={Hakkoz},
+           familyi={H\bibinitperiod},
+           given={Mustafa\bibnamedelima Abdullah},
+           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e4dfd26c7752fe4016aad28fd6018083}{%
+           family={Arbatli},
+           familyi={A\bibinitperiod},
+           given={Semih},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=158d0f29a644f129dfbf6745b8d09186}{%
+           family={Celik},
+           familyi={C\bibinitperiod},
+           given={Yeliz},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=519c44a7cdb43e9e2a77b8106923ca39}{%
+           family={Erdem},
+           familyi={E\bibinitperiod},
+           given={Cigdem\bibnamedelima Eroglu},
+           giveni={C\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=48e2757d8b2ef17b3187bbc2e2dcee2a}{%
+           family={Yuksel},
+           familyi={Y\bibinitperiod},
+           given={Peker},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{9f51bb26108bb24eeba524c9c9d85820}
+      \strng{fullhash}{4bc30a5315b97d4e8c1c7e92b2a03a1d}
+      \strng{fullhashraw}{4bc30a5315b97d4e8c1c7e92b2a03a1d}
+      \strng{bibnamehash}{4bc30a5315b97d4e8c1c7e92b2a03a1d}
+      \strng{authorbibnamehash}{4bc30a5315b97d4e8c1c7e92b2a03a1d}
+      \strng{authornamehash}{9f51bb26108bb24eeba524c9c9d85820}
+      \strng{authorfullhash}{4bc30a5315b97d4e8c1c7e92b2a03a1d}
+      \strng{authorfullhashraw}{4bc30a5315b97d4e8c1c7e92b2a03a1d}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{18}
+      \field{journaltitle}{Sensors}
+      \field{month}{5}
+      \field{number}{8}
+      \field{shortjournal}{Sensors}
+      \field{title}{Association of Visual-Bsed Signals with Electroencephalography Patterns in Enhancing the Drowsiness Detection in Drivers with Obstructive Sleep Apnea}
+      \field{urlday}{19}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{volume}{24}
+      \field{year}{2024}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{2625}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3390/s24082625
+      \endverb
+      \verb{urlraw}
+      \verb https://www.mdpi.com/1424-8220/24/8/2625
+      \endverb
+      \verb{url}
+      \verb https://www.mdpi.com/1424-8220/24/8/2625
+      \endverb
+    \endentry
+    \entry{ResNet-NG}{article}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=b2874fd1e36b42e3c31ab53539fbec9e}{%
+           family={Mohsin},
+           familyi={M\bibinitperiod},
+           given={Ahmed\bibnamedelima Raza},
+           giveni={A\bibinitperiod\bibinitdelim R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3351ccd0826600947091f36f64ad06e8}{%
+           family={Khalid},
+           familyi={K\bibinitperiod},
+           given={Maira},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0a8a4829d05f5de577c45229c97332bf}{%
+           family={Ali},
+           familyi={A\bibinitperiod},
+           given={Jehad},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=37fdd8e94579262530a59453d7638dae}{%
+           family={Roh},
+           familyi={R\bibinitperiod},
+           given={Byeong-hee},
+           giveni={B\bibinithyphendelim h\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{ea7e20b33f3f99da6188af9adc7a3f9a}
+      \strng{fullhash}{8cd319829dbce6f6a286db73ffa5127f}
+      \strng{fullhashraw}{8cd319829dbce6f6a286db73ffa5127f}
+      \strng{bibnamehash}{8cd319829dbce6f6a286db73ffa5127f}
+      \strng{authorbibnamehash}{8cd319829dbce6f6a286db73ffa5127f}
+      \strng{authornamehash}{ea7e20b33f3f99da6188af9adc7a3f9a}
+      \strng{authorfullhash}{8cd319829dbce6f6a286db73ffa5127f}
+      \strng{authorfullhashraw}{8cd319829dbce6f6a286db73ffa5127f}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{22}
+      \field{issn}{1158-1748}
+      \field{journaltitle}{IEEE Sensors Journal}
+      \field{langid}{english}
+      \field{month}{12}
+      \field{number}{3}
+      \field{title}{Enhancing Driver Safety With ResNet-RG-A Deep Learning-Based Distraction Detection Approach}
+      \field{urlday}{21}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{volume}{23}
+      \field{year}{2025}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \true{nocite}
+      \field{pages}{132423}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1109/JSEN.2025.3640661
+      \endverb
+      \verb{urlraw}
+      \verb https://ieeexplore.ieee.org/document/11311422
+      \endverb
+      \verb{url}
+      \verb https://ieeexplore.ieee.org/document/11311422
+      \endverb
+    \endentry
+    \entry{OMS}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=83639a23fa0c1c92739534cf305ba9f7}{%
+           family={OMS},
+           familyi={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{83639a23fa0c1c92739534cf305ba9f7}
+      \strng{fullhash}{83639a23fa0c1c92739534cf305ba9f7}
+      \strng{fullhashraw}{83639a23fa0c1c92739534cf305ba9f7}
+      \strng{bibnamehash}{83639a23fa0c1c92739534cf305ba9f7}
+      \strng{authorbibnamehash}{83639a23fa0c1c92739534cf305ba9f7}
+      \strng{authornamehash}{83639a23fa0c1c92739534cf305ba9f7}
+      \strng{authorfullhash}{83639a23fa0c1c92739534cf305ba9f7}
+      \strng{authorfullhashraw}{83639a23fa0c1c92739534cf305ba9f7}
+      \field{sortinit}{O}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{labeldatesource}{nodate}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{langid}{english}
+      \field{title}{Road traffic injures}
+      \field{urlday}{20}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.who.int/news-room/fact-sheets/detail/road-traffic-injuries
+      \endverb
+      \verb{url}
+      \verb https://www.who.int/news-room/fact-sheets/detail/road-traffic-injuries
+      \endverb
+    \endentry
+    \entry{3D-CNN}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=479a007555ebea67e4c6c85f3e27d719}{%
+           family={Phung},
+           familyi={P\bibinitperiod},
+           given={Huynhm},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f6dea3892bd8e227e3b682b6e217794b}{%
+           family={Park},
+           familyi={P\bibinitperiod},
+           given={Sang-Min},
+           giveni={S\bibinithyphendelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=45c873c43bfa22b90fd6c3600a944fe2}{%
+           family={Kim},
+           familyi={K\bibinitperiod},
+           given={Yong-Guk},
+           giveni={Y\bibinithyphendelim G\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{e4b73e12d3259f73d3b97af56db28dc4}
+      \strng{fullhash}{7e939797620b5e682bd150cc33a0ec2f}
+      \strng{fullhashraw}{7e939797620b5e682bd150cc33a0ec2f}
+      \strng{bibnamehash}{7e939797620b5e682bd150cc33a0ec2f}
+      \strng{authorbibnamehash}{7e939797620b5e682bd150cc33a0ec2f}
+      \strng{authornamehash}{e4b73e12d3259f73d3b97af56db28dc4}
+      \strng{authorfullhash}{7e939797620b5e682bd150cc33a0ec2f}
+      \strng{authorfullhashraw}{7e939797620b5e682bd150cc33a0ec2f}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEICE Transactions on Information and Systems}
+      \field{langid}{english}
+      \field{month}{12}
+      \field{number}{12}
+      \field{title}{Detection of Driver Drowsiness Using 3D Deep Neural Network and Semi*¿-Supervised Gradient Boosting Machine}
+      \field{urlday}{23}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{volume}{102}
+      \field{year}{2019}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{2637\bibrangedash 2641}
+      \range{pages}{5}
+      \verb{doi}
+      \verb 10.1007/978-3-319-54526-4_10
+      \endverb
+      \verb{urlraw}
+      \verb https://link.springer.com/chapter/10.1007/978-3-319-54526-4_10
+      \endverb
+      \verb{url}
+      \verb https://link.springer.com/chapter/10.1007/978-3-319-54526-4_10
+      \endverb
+    \endentry
+    \entry{LSTM}{article}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=21be9c55f49a5b4a4a852fbf8b8e6d89}{%
+           family={Quddus},
+           familyi={Q\bibinitperiod},
+           given={Azhar},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c2fa0111627364d00d15f20be1d845aa}{%
+           family={Zandi},
+           familyi={Z\bibinitperiod},
+           given={Ali\bibnamedelima Shahidi},
+           giveni={A\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a4a5b9bb892bce30bba5f1634b1ec251}{%
+           family={Prest},
+           familyi={P\bibinitperiod},
+           given={Laura},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b22be8060647d707c186f9fd756c93bc}{%
+           family={Comeau},
+           familyi={C\bibinitperiod},
+           given={Feliz\bibnamedelimb J\bibnamedelima E},
+           giveni={F\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{7b90efb2e88cc598e3e4684b347400b6}
+      \strng{fullhash}{591dbeef04cecd0c2da5b49a3222364b}
+      \strng{fullhashraw}{591dbeef04cecd0c2da5b49a3222364b}
+      \strng{bibnamehash}{591dbeef04cecd0c2da5b49a3222364b}
+      \strng{authorbibnamehash}{591dbeef04cecd0c2da5b49a3222364b}
+      \strng{authornamehash}{7b90efb2e88cc598e3e4684b347400b6}
+      \strng{authorfullhash}{591dbeef04cecd0c2da5b49a3222364b}
+      \strng{authorfullhashraw}{591dbeef04cecd0c2da5b49a3222364b}
+      \field{sortinit}{Q}
+      \field{sortinithash}{ce69a400a872ddd02ee7fdb3b38c6abd}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0001-4575}
+      \field{journaltitle}{Accident Analysis \& Prevention}
+      \field{langid}{english}
+      \field{month}{6}
+      \field{title}{Using long short term memory and convolutional neural networks for driver drowsiness detection}
+      \field{urlday}{23}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{volume}{156}
+      \field{year}{2021}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{106107}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/j.aap.2021.106107
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S000145752100138X
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S000145752100138X
+      \endverb
+    \endentry
+    \entry{MobileNet}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=33ddeda7a930037be042e7cddc7550f2}{%
+           family={Salem},
+           familyi={S\bibinitperiod},
+           given={M},
+           giveni={M\bibinitperiod},
+           givenun=0,
+           suffix={D\bibnamedelima anf\bibnamedelima Waleed},
+           suffixi={D\bibinitperiod\bibinitdelim a\bibinitperiod\bibinitdelim W\bibinitperiod},
+           suffixun=0}}%
+      }
+      \strng{namehash}{33ddeda7a930037be042e7cddc7550f2}
+      \strng{fullhash}{33ddeda7a930037be042e7cddc7550f2}
+      \strng{fullhashraw}{33ddeda7a930037be042e7cddc7550f2}
+      \strng{bibnamehash}{33ddeda7a930037be042e7cddc7550f2}
+      \strng{authorbibnamehash}{33ddeda7a930037be042e7cddc7550f2}
+      \strng{authornamehash}{33ddeda7a930037be042e7cddc7550f2}
+      \strng{authorfullhash}{33ddeda7a930037be042e7cddc7550f2}
+      \strng{authorfullhashraw}{33ddeda7a930037be042e7cddc7550f2}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Enigneering and Applied Science}
+      \field{langid}{english}
+      \field{title}{Drowsiness detection in real-time via convolutional neutal networks and transfer learning}
+      \field{urlday}{24}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{volume}{71}
+      \field{year}{2024}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{122}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1186/s44147-024-00457-z
+      \endverb
+      \verb{urlraw}
+      \verb https://link.springer.com/article/10.1186/s44147-024-00457-z
+      \endverb
+      \verb{url}
+      \verb https://link.springer.com/article/10.1186/s44147-024-00457-z
+      \endverb
+    \endentry
+    \entry{BlinkDuration}{article}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=1107247b52ce7159a3b471bd52518ded}{%
+           family={Schleicher},
+           familyi={S\bibinitperiod},
+           given={R},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1dc5d044a1e035a848b112347405a880}{%
+           family={Galley},
+           familyi={G\bibinitperiod},
+           given={N},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8d3427777e346bc9bae27c6bb4b67228}{%
+           family={Briest},
+           familyi={B\bibinitperiod},
+           given={S},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3e7c2ff8e0dca4711b8ff36a65f45863}{%
+           family={Galley},
+           familyi={G\bibinitperiod},
+           given={L},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{41f543fc5d723b6c7acbcdf656148f28}
+      \strng{fullhash}{f3322aeedfa7f4d9059e4cc471c0249d}
+      \strng{fullhashraw}{f3322aeedfa7f4d9059e4cc471c0249d}
+      \strng{bibnamehash}{f3322aeedfa7f4d9059e4cc471c0249d}
+      \strng{authorbibnamehash}{f3322aeedfa7f4d9059e4cc471c0249d}
+      \strng{authornamehash}{41f543fc5d723b6c7acbcdf656148f28}
+      \strng{authorfullhash}{f3322aeedfa7f4d9059e4cc471c0249d}
+      \strng{authorfullhashraw}{f3322aeedfa7f4d9059e4cc471c0249d}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{19}
+      \field{journaltitle}{Ergonomics}
+      \field{langid}{english}
+      \field{month}{6}
+      \field{number}{7}
+      \field{title}{Blinks and saccades as indicators of fatigue in sleepiness warnings: looking tired?}
+      \field{urlday}{19}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{volume}{51}
+      \field{year}{2008}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{982\bibrangedash 1010}
+      \range{pages}{29}
+      \verb{doi}
+      \verb 10.1080/00140130701817062
+      \endverb
+      \verb{urlraw}
+      \verb https://www.tandfonline.com/doi/full/10.1080/00140130701817062
+      \endverb
+      \verb{url}
+      \verb https://www.tandfonline.com/doi/full/10.1080/00140130701817062
+      \endverb
+    \endentry
+    \entry{CNN-Trans}{article}{}{}
+      \name{author}{6}{}{%
+        {{un=0,uniquepart=base,hash=8177e57ffb5ebdee72f3fe442224f30e}{%
+           family={Tang},
+           familyi={T\bibinitperiod},
+           given={Xuexi},
+           giveni={X\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b6f25c2ea695f4385f6acab832194dfc}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Yan},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1befbfeebc31ca6e10784c2795c937c5}{%
+           family={Ma},
+           familyi={M\bibinitperiod},
+           given={Yifan},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c95a99f7b4a317749fc9de489851f829}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={Wenxuan},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a7861fd6b834bc6a83d4013975953217}{%
+           family={Zhou},
+           familyi={Z\bibinitperiod},
+           given={Houpan},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=470d84783a6cb106b6cd125103db4b58}{%
+           family={Huang},
+           familyi={H\bibinitperiod},
+           given={Jingzhou},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{bb61b81f385101f0a1cb687f689d7ee6}
+      \strng{fullhash}{98f65dd133b975e10c19df493df2d569}
+      \strng{fullhashraw}{98f65dd133b975e10c19df493df2d569}
+      \strng{bibnamehash}{98f65dd133b975e10c19df493df2d569}
+      \strng{authorbibnamehash}{98f65dd133b975e10c19df493df2d569}
+      \strng{authornamehash}{bb61b81f385101f0a1cb687f689d7ee6}
+      \strng{authorfullhash}{98f65dd133b975e10c19df493df2d569}
+      \strng{authorfullhashraw}{98f65dd133b975e10c19df493df2d569}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0952-1976}
+      \field{journaltitle}{Engineering Applications of Artificial Intelligence}
+      \field{langid}{english}
+      \field{month}{1}
+      \field{title}{A lightweight model combining convolutional neural network and Transformer for driver distraction recognition}
+      \field{urlday}{24}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{volume}{132}
+      \field{year}{2024}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{107910}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/j.engappai.2024.107910
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S095219762400068X
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S095219762400068X
+      \endverb
+    \endentry
+    \entry{Yolo}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=633ef8437d3d3da5cb40b0a61bcacb90}{%
+           family={Tuna},
+           familyi={T\bibinitperiod},
+           given={Baris},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7fb68bc0e43cfa2d2c081a114dcfe4d4}{%
+           family={Kaplan},
+           familyi={K\bibinitperiod},
+           given={Murat},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{527a2797785f99a240bf9cd82591d451}
+      \strng{fullhash}{527a2797785f99a240bf9cd82591d451}
+      \strng{fullhashraw}{527a2797785f99a240bf9cd82591d451}
+      \strng{bibnamehash}{527a2797785f99a240bf9cd82591d451}
+      \strng{authorbibnamehash}{527a2797785f99a240bf9cd82591d451}
+      \strng{authornamehash}{527a2797785f99a240bf9cd82591d451}
+      \strng{authorfullhash}{527a2797785f99a240bf9cd82591d451}
+      \strng{authorfullhashraw}{527a2797785f99a240bf9cd82591d451}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{27}
+      \field{issn}{979-8-3315-4694-6}
+      \field{journaltitle}{2025 16th International Conference on Electrical and Electronics Enineering}
+      \field{langid}{english}
+      \field{month}{11}
+      \field{title}{Inteligent Monitoring System: Facial Features Based Driver Drowsiness Distraction Detection}
+      \field{urlday}{24}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{year}{2025}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1109/ELECO69582.2025.11329338
+      \endverb
+      \verb{urlraw}
+      \verb https://ieeexplore.ieee.org/document/11329338
+      \endverb
+      \verb{url}
+      \verb https://ieeexplore.ieee.org/document/11329338
+      \endverb
+    \endentry
+    \entry{DMD}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=7218bfab4f53591167e6577404cef847}{%
+           family={Vicomtech},
+           familyi={V\bibinitperiod}}}%
+      }
+      \strng{namehash}{7218bfab4f53591167e6577404cef847}
+      \strng{fullhash}{7218bfab4f53591167e6577404cef847}
+      \strng{fullhashraw}{7218bfab4f53591167e6577404cef847}
+      \strng{bibnamehash}{7218bfab4f53591167e6577404cef847}
+      \strng{authorbibnamehash}{7218bfab4f53591167e6577404cef847}
+      \strng{authornamehash}{7218bfab4f53591167e6577404cef847}
+      \strng{authorfullhash}{7218bfab4f53591167e6577404cef847}
+      \strng{authorfullhashraw}{7218bfab4f53591167e6577404cef847}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{langid}{english}
+      \field{title}{Driver Monitoring Dataser: A multimodal dataset for different driver monitoring scenarios}
+      \field{urlday}{24}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{year}{2020}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://dmd.vicomtech.org/
+      \endverb
+      \verb{url}
+      \verb https://dmd.vicomtech.org/
+      \endverb
+    \endentry
+    \entry{DNN}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=bd6fd060eec89b2c8769433b9846abf1}{%
+           family={Vu},
+           familyi={V\bibinitperiod},
+           given={Toan},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5f8e198b395104d8762df6420fa8f67b}{%
+           family={Dang},
+           familyi={D\bibinitperiod},
+           given={An},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=25488ea3b52ff4b26bca7a09a12a40a6}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Jia-Ching},
+           giveni={J\bibinithyphendelim C\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{92d66c0603c7fc6d75bf21a6c2b942d0}
+      \strng{fullhash}{a735da056c614483ee7c82d95e86fcf3}
+      \strng{fullhashraw}{a735da056c614483ee7c82d95e86fcf3}
+      \strng{bibnamehash}{a735da056c614483ee7c82d95e86fcf3}
+      \strng{authorbibnamehash}{a735da056c614483ee7c82d95e86fcf3}
+      \strng{authornamehash}{92d66c0603c7fc6d75bf21a6c2b942d0}
+      \strng{authorfullhash}{a735da056c614483ee7c82d95e86fcf3}
+      \strng{authorfullhashraw}{a735da056c614483ee7c82d95e86fcf3}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEICE Transactions on Information and Systems}
+      \field{langid}{english}
+      \field{month}{12}
+      \field{number}{12}
+      \field{title}{A Deep Neural Network for Real-Time Driver Drowsiness Detection}
+      \field{urlday}{23}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{volume}{102}
+      \field{year}{2019}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{2637\bibrangedash 2641}
+      \range{pages}{5}
+      \verb{doi}
+      \verb 10.1587/transinf.2019EDL8079
+      \endverb
+      \verb{urlraw}
+      \verb https://www.jstage.jst.go.jp/article/transinf/E102.D/12/E102.D_2019EDL8079/_article
+      \endverb
+      \verb{url}
+      \verb https://www.jstage.jst.go.jp/article/transinf/E102.D/12/E102.D_2019EDL8079/_article
+      \endverb
+    \endentry
+    \entry{LibroPERCLOS}{book}{}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=a6545f6d52422654d518161b770f5ad3}{%
+           family={Wierwille},
+           familyi={W\bibinitperiod},
+           given={W\bibnamedelima W},
+           giveni={W\bibinitperiod\bibinitdelim W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=40e519def277bda6c713d8c8e5538b27}{%
+           family={Ellsworth},
+           familyi={E\bibinitperiod},
+           given={L\bibnamedelima A},
+           giveni={L\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=204d238faf29c53609e10d78e016e033}{%
+           family={Wreggit},
+           familyi={W\bibinitperiod},
+           given={S\bibnamedelima S},
+           giveni={S\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6dc357756b48fa6f53d5cacc11b84215}{%
+           family={Fairbanks},
+           familyi={F\bibinitperiod},
+           given={K\bibnamedelima J},
+           giveni={K\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=fb24c00e1e66485c1825d94b649badd2}{%
+           family={Kirn},
+           familyi={K\bibinitperiod},
+           given={C\bibnamedelima L},
+           giveni={C\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {Springfield}%
+      }
+      \strng{namehash}{6b406cc7bab6b38ecd859a3b1bc763be}
+      \strng{fullhash}{69c8a0113747b680af91fc8297ecc08c}
+      \strng{fullhashraw}{69c8a0113747b680af91fc8297ecc08c}
+      \strng{bibnamehash}{69c8a0113747b680af91fc8297ecc08c}
+      \strng{authorbibnamehash}{69c8a0113747b680af91fc8297ecc08c}
+      \strng{authornamehash}{6b406cc7bab6b38ecd859a3b1bc763be}
+      \strng{authorfullhash}{69c8a0113747b680af91fc8297ecc08c}
+      \strng{authorfullhashraw}{69c8a0113747b680af91fc8297ecc08c}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{langid}{english}
+      \field{pagetotal}{247}
+      \field{shorttitle}{Reseach on Vehicule-Based Driver Monitoring}
+      \field{title}{Research on Vehicle-Based Driver Status/Performance Monitoring: Development, Validation, and Refinement of Algorithms For Detection of Driver Drowsiness}
+      \field{year}{1994}
+      \field{dateera}{ce}
+    \endentry
+    \entry{RCAN}{article}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=3802576b6db0f4dc79897133bc8b755b}{%
+           family={Ye},
+           familyi={Y\bibinitperiod},
+           given={Mu},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ac27c4113dfb3b302740f841d0f03b89}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Weiwei},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=076c6db04897e94b334144894138b35c}{%
+           family={Cao},
+           familyi={C\bibinitperiod},
+           given={Pengcheng},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=61c7b591d4863db225c71db57251c804}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Kangan},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{760dae98015fda727026821e00cac34f}
+      \strng{fullhash}{5067f1d10754c0bda2d0e9e20df99824}
+      \strng{fullhashraw}{5067f1d10754c0bda2d0e9e20df99824}
+      \strng{bibnamehash}{5067f1d10754c0bda2d0e9e20df99824}
+      \strng{authorbibnamehash}{5067f1d10754c0bda2d0e9e20df99824}
+      \strng{authornamehash}{760dae98015fda727026821e00cac34f}
+      \strng{authorfullhash}{5067f1d10754c0bda2d0e9e20df99824}
+      \strng{authorfullhashraw}{5067f1d10754c0bda2d0e9e20df99824}
+      \field{sortinit}{Y}
+      \field{sortinithash}{fd67ad5a9ef0f7456bdd9aab10fe1495}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{2}
+      \field{journaltitle}{Applied Sciences}
+      \field{langid}{english}
+      \field{month}{10}
+      \field{number}{19}
+      \field{title}{Driver Fatigue Detection Based on Residual Channel Attetion Network and Head Pose Estimation}
+      \field{urlday}{23}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{volume}{11}
+      \field{year}{2021}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{9195}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3390/app11199195
+      \endverb
+      \verb{urlraw}
+      \verb https://www.mdpi.com/2076-3417/11/19/9195
+      \endverb
+      \verb{url}
+      \verb https://www.mdpi.com/2076-3417/11/19/9195
+      \endverb
+    \endentry
+    \entry{Drowsiness_CV}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=1,uniquepart=given,hash=25bbf4047d900f3760c65b01ee899dba}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Wei},
+           giveni={W\bibinitperiod},
+           givenun=1}}%
+        {{un=0,uniquepart=base,hash=cd8e6950019f65fca76231048cef46a1}{%
+           family={Cheng},
+           familyi={C\bibinitperiod},
+           given={Bo},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4c27dee742f15f38272349804e49d6be}{%
+           family={Lin},
+           familyi={L\bibinitperiod},
+           given={Yingzi},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{a88dfc5c55489606792d411cce65410b}
+      \strng{fullhash}{3649986e74ee3f72dd8109e618b4fe63}
+      \strng{fullhashraw}{3649986e74ee3f72dd8109e618b4fe63}
+      \strng{bibnamehash}{3649986e74ee3f72dd8109e618b4fe63}
+      \strng{authorbibnamehash}{3649986e74ee3f72dd8109e618b4fe63}
+      \strng{authornamehash}{a88dfc5c55489606792d411cce65410b}
+      \strng{authorfullhash}{3649986e74ee3f72dd8109e618b4fe63}
+      \strng{authorfullhashraw}{3649986e74ee3f72dd8109e618b4fe63}
+      \field{sortinit}{Z}
+      \field{sortinithash}{96892c0b0a36bb8557c40c49813d48b3}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{15}
+      \field{issn}{1007-0214}
+      \field{journaltitle}{Tsinghua Science and Technology}
+      \field{langid}{english}
+      \field{month}{6}
+      \field{number}{3}
+      \field{title}{Driver Drowsiness Recognition Based on Computer Vision Technology}
+      \field{urlday}{23}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{volume}{17}
+      \field{year}{2012}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{354\bibrangedash 362}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1109/TST.2012.6216768
+      \endverb
+      \verb{urlraw}
+      \verb https://ieeexplore.ieee.org/document/6216768
+      \endverb
+      \verb{url}
+      \verb https://ieeexplore.ieee.org/document/6216768
+      \endverb
+    \endentry
+    \entry{Sub_MOL}{article}{}{}
+      \name{author}{6}{}{%
+        {{un=1,uniquepart=given,hash=09c1b63c7a0f58b3b139f555f6850c2f}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Xuxin},
+           giveni={X\bibinitperiod},
+           givenun=1}}%
+        {{un=0,uniquepart=base,hash=7bcc46183c4630c9daf67327af80a956}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Xuesong},
+           giveni={X\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1853024d95dcc818bde46ca4a9aaf4a5}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={Xiaohan},
+           giveni={X\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3dd80fcd2470e3532159f23ddd5f746f}{%
+           family={Xu},
+           familyi={X\bibinitperiod},
+           given={Chuan},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=dfeb7f506eb4d6027597f471782cdb6b}{%
+           family={Zhu},
+           familyi={Z\bibinitperiod},
+           given={Xiaohui},
+           giveni={X\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f0da43b1f6317c32f68e6743b96375bc}{%
+           family={Wei},
+           familyi={W\bibinitperiod},
+           given={Jiaohua},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{ef60e7a252e0e956fd6a723bf4887ed3}
+      \strng{fullhash}{bd8421847ab9fd0deb52a91d21372bfa}
+      \strng{fullhashraw}{bd8421847ab9fd0deb52a91d21372bfa}
+      \strng{bibnamehash}{bd8421847ab9fd0deb52a91d21372bfa}
+      \strng{authorbibnamehash}{bd8421847ab9fd0deb52a91d21372bfa}
+      \strng{authornamehash}{ef60e7a252e0e956fd6a723bf4887ed3}
+      \strng{authorfullhash}{bd8421847ab9fd0deb52a91d21372bfa}
+      \strng{authorfullhashraw}{bd8421847ab9fd0deb52a91d21372bfa}
+      \field{sortinit}{Z}
+      \field{sortinithash}{96892c0b0a36bb8557c40c49813d48b3}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1051-4651}
+      \field{journaltitle}{Analytic Methods in Accident Research}
+      \field{langid}{english}
+      \field{month}{6}
+      \field{title}{Driver drowsiness detection using mixed-effect ordered logit model considering time cumulative effect}
+      \field{urlday}{24}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{volume}{26}
+      \field{year}{2020}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{100114}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/j.amar.2020.100114
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S221366572030004X
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S221366572030004X
+      \endverb
+    \endentry
+    \entry{Swin}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=1,uniquepart=given,hash=b22ebf8d8b8b381978284f61883ed8f2}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Ziyang},
+           giveni={Z\bibinitperiod},
+           givenun=1}}%
+        {{un=0,uniquepart=base,hash=f505ba63f7c5b483e947b2aff0a6ab56}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={Lie},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d85d422eb497679f83d9593f1d591ae2}{%
+           family={Lv},
+           familyi={L\bibinitperiod},
+           given={Chen},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{3b7ab26a244fc7b830ac35522098d7c1}
+      \strng{fullhash}{c0f11f966bd53ebb0a293b540189b5fb}
+      \strng{fullhashraw}{c0f11f966bd53ebb0a293b540189b5fb}
+      \strng{bibnamehash}{c0f11f966bd53ebb0a293b540189b5fb}
+      \strng{authorbibnamehash}{c0f11f966bd53ebb0a293b540189b5fb}
+      \strng{authornamehash}{3b7ab26a244fc7b830ac35522098d7c1}
+      \strng{authorfullhash}{c0f11f966bd53ebb0a293b540189b5fb}
+      \strng{authorfullhashraw}{c0f11f966bd53ebb0a293b540189b5fb}
+      \field{sortinit}{Z}
+      \field{sortinithash}{96892c0b0a36bb8557c40c49813d48b3}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{10}
+      \field{journaltitle}{Vehicles}
+      \field{langid}{english}
+      \field{month}{1}
+      \field{number}{1}
+      \field{title}{Highly Discriminative Driver Ditraction Detection Method Based on Swin Transformer}
+      \field{urlday}{24}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{volume}{6}
+      \field{year}{2024}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{140\bibrangedash 156}
+      \range{pages}{17}
+      \verb{doi}
+      \verb 10.3390/vehicles6010006
+      \endverb
+      \verb{urlraw}
+      \verb https://www.mdpi.com/2624-8921/6/1/6
+      \endverb
+      \verb{url}
+      \verb https://www.mdpi.com/2624-8921/6/1/6
+      \endverb
+    \endentry
+  \enddatalist
+  \datalist[entry]{nyt/global//global/global/global}
+    \entry{NHTSA}{report}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=dd749f7b870deb919e78c4f2838084ef}{%
+           family={Administration},
+           familyi={A\bibinitperiod},
+           given={National\bibnamedelimb Highway\bibnamedelimb Traffic\bibnamedelima Safety},
+           giveni={N\bibinitperiod\bibinitdelim H\bibinitperiod\bibinitdelim T\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {U.S. Department of Transportation}%
+      }
+      \strng{namehash}{dd749f7b870deb919e78c4f2838084ef}
+      \strng{fullhash}{dd749f7b870deb919e78c4f2838084ef}
+      \strng{fullhashraw}{dd749f7b870deb919e78c4f2838084ef}
+      \strng{bibnamehash}{dd749f7b870deb919e78c4f2838084ef}
+      \strng{authorbibnamehash}{dd749f7b870deb919e78c4f2838084ef}
+      \strng{authornamehash}{dd749f7b870deb919e78c4f2838084ef}
+      \strng{authorfullhash}{dd749f7b870deb919e78c4f2838084ef}
+      \strng{authorfullhashraw}{dd749f7b870deb919e78c4f2838084ef}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Visual-Manual NHTSA Driver Distraction Guidelines}
+      \field{type}{techreport}
+      \field{year}{2012}
+    \endentry
+    \entry{Bostezo}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=f9f22e26624c475c6384fc6454e398c7}{%
+           family={Albadawi},
+           familyi={A\bibinitperiod},
+           given={Yaman},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f4ce3f380ddf152315c8ad56c05cd9af}{%
+           family={AlRedhaei},
+           familyi={A\bibinitperiod},
+           given={Aneesa},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=430c954132ce7cb4e0535944e7bcefac}{%
+           family={Takruri},
+           familyi={T\bibinitperiod},
+           given={Maen},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{fc7500bc79e33378b67000bbd62d6e50}
+      \strng{fullhash}{8499450941c627bcefc7871ed0d1f86a}
+      \strng{fullhashraw}{8499450941c627bcefc7871ed0d1f86a}
+      \strng{bibnamehash}{8499450941c627bcefc7871ed0d1f86a}
+      \strng{authorbibnamehash}{8499450941c627bcefc7871ed0d1f86a}
+      \strng{authornamehash}{fc7500bc79e33378b67000bbd62d6e50}
+      \strng{authorfullhash}{8499450941c627bcefc7871ed0d1f86a}
+      \strng{authorfullhashraw}{8499450941c627bcefc7871ed0d1f86a}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{28}
+      \field{journaltitle}{Journal of Imaging}
+      \field{langid}{english}
+      \field{month}{5}
+      \field{number}{5}
+      \field{title}{Real-Time Machine Learning-Based Driver Drowsiness Detection Using Visual Features}
+      \field{urlday}{19}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{volume}{9}
+      \field{year}{2023}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{91}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3390/jimaging9050091
+      \endverb
+      \verb{urlraw}
+      \verb https://www.mdpi.com/2313-433X/9/5/91#article-metrics-citations
+      \endverb
+      \verb{url}
+      \verb https://www.mdpi.com/2313-433X/9/5/91#article-metrics-citations
+      \endverb
+    \endentry
+    \entry{DHM-RNN}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=1,uniquepart=given,hash=bf141b034f28003048981ada1b682265}{%
+           family={Alotaibi},
+           familyi={A\bibinitperiod},
+           given={Munif},
+           giveni={M\bibinitperiod},
+           givenun=1}}%
+        {{un=1,uniquepart=given,hash=c2ab76d4dcef9ec9fd596db852ab3390}{%
+           family={Alotaibi},
+           familyi={A\bibinitperiod},
+           given={Bandar},
+           giveni={B\bibinitperiod},
+           givenun=1}}%
+      }
+      \strng{namehash}{db4965d230038fd3e7df03d07bb2a604}
+      \strng{fullhash}{db4965d230038fd3e7df03d07bb2a604}
+      \strng{fullhashraw}{db4965d230038fd3e7df03d07bb2a604}
+      \strng{bibnamehash}{db4965d230038fd3e7df03d07bb2a604}
+      \strng{authorbibnamehash}{db4965d230038fd3e7df03d07bb2a604}
+      \strng{authornamehash}{db4965d230038fd3e7df03d07bb2a604}
+      \strng{authorfullhash}{db4965d230038fd3e7df03d07bb2a604}
+      \strng{authorfullhashraw}{db4965d230038fd3e7df03d07bb2a604}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{6}
+      \field{journaltitle}{Signal, Image and Video Processing}
+      \field{langid}{english}
+      \field{month}{11}
+      \field{title}{Distracted Driver Classification Using Deep Learning}
+      \field{urlday}{24}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{volume}{14}
+      \field{year}{2019}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{617\bibrangedash 624}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1007/s11760-019-01589-z
+      \endverb
+      \verb{urlraw}
+      \verb https://link.springer.com/article/10.1007/s11760-019-01589-z?utm_source=researchgate.net&utm_medium=article
+      \endverb
+      \verb{url}
+      \verb https://link.springer.com/article/10.1007/s11760-019-01589-z?utm_source=researchgate.net&utm_medium=article
+      \endverb
+    \endentry
+    \entry{Threading}{article}{}{}
+      \name{author}{6}{}{%
+        {{un=0,uniquepart=base,hash=9644915472f4fc8141ae22de7fd37089}{%
+           family={Al-sudani},
+           familyi={A\bibinithyphendelim s\bibinitperiod},
+           given={Alham\bibnamedelima Hanoon},
+           giveni={A\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4374c58bfd4c4849966e2a0a9b160935}{%
+           family={Mahmmod},
+           familyi={M\bibinitperiod},
+           given={Basheera\bibnamedelima M},
+           giveni={B\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=795deb094a09813dfd1d8df8c62916ea}{%
+           family={Sabir},
+           familyi={S\bibinitperiod},
+           given={Firas\bibnamedelima A},
+           giveni={F\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1a481df56cf4be2489675d11bd1a0f5d}{%
+           family={Abdulhussain},
+           familyi={A\bibinitperiod},
+           given={Sadiq\bibnamedelima H},
+           giveni={S\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1d1b145fe5d31679bf99406a636b3e9c}{%
+           family={Alsabah},
+           familyi={A\bibinitperiod},
+           given={Muntadher},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f550b3171df46c07f2cbbb3aad7b8e41}{%
+           family={Flayyih},
+           familyi={F\bibinitperiod},
+           given={Wameedh\bibnamedelima Nazar},
+           giveni={W\bibinitperiod\bibinitdelim N\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{090f138cf7a76d30583e5d17acc307df}
+      \strng{fullhash}{59fb36e70917b62be7c2fbe45ceaf6fa}
+      \strng{fullhashraw}{59fb36e70917b62be7c2fbe45ceaf6fa}
+      \strng{bibnamehash}{59fb36e70917b62be7c2fbe45ceaf6fa}
+      \strng{authorbibnamehash}{59fb36e70917b62be7c2fbe45ceaf6fa}
+      \strng{authornamehash}{090f138cf7a76d30583e5d17acc307df}
+      \strng{authorfullhash}{59fb36e70917b62be7c2fbe45ceaf6fa}
+      \strng{authorfullhashraw}{59fb36e70917b62be7c2fbe45ceaf6fa}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{27}
+      \field{journaltitle}{Algorithms}
+      \field{langid}{english}
+      \field{month}{8}
+      \field{number}{9}
+      \field{title}{Multithreading-Based Algorithm dor High-Performance Tchebichef Polynomials with Higher Orders}
+      \field{urlday}{16}
+      \field{urlmonth}{11}
+      \field{urlyear}{2026}
+      \field{volume}{17}
+      \field{year}{2024}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{381}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3390/a17090381
+      \endverb
+      \verb{urlraw}
+      \verb https://www.mdpi.com/1999-4893/17/9/381
+      \endverb
+      \verb{url}
+      \verb https://www.mdpi.com/1999-4893/17/9/381
+      \endverb
+    \endentry
+    \entry{C++}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=410f54d91cef09a38aea62f07820ac80}{%
+           family={Bogucki},
+           familyi={B\bibinitperiod},
+           given={Szymon},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=aff85c3634e721d07186ad98bf91272e}{%
+           family={Burda},
+           familyi={B\bibinitperiod},
+           given={Kacper},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{d2cd63655092d0801197a7954cce84cd}
+      \strng{fullhash}{d2cd63655092d0801197a7954cce84cd}
+      \strng{fullhashraw}{d2cd63655092d0801197a7954cce84cd}
+      \strng{bibnamehash}{d2cd63655092d0801197a7954cce84cd}
+      \strng{authorbibnamehash}{d2cd63655092d0801197a7954cce84cd}
+      \strng{authornamehash}{d2cd63655092d0801197a7954cce84cd}
+      \strng{authorfullhash}{d2cd63655092d0801197a7954cce84cd}
+      \strng{authorfullhashraw}{d2cd63655092d0801197a7954cce84cd}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Computer Sciences Institute}
+      \field{langid}{english}
+      \field{month}{9}
+      \field{title}{Comparison of C++ and Python performance based on selected algorithms}
+      \field{urlday}{16}
+      \field{urlmonth}{11}
+      \field{urlyear}{2026}
+      \field{volume}{40}
+      \field{year}{2026}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{201\bibrangedash 205}
+      \range{pages}{5}
+      \verb{doi}
+      \verb 10.35784/jcsi.9584
+      \endverb
+      \verb{urlraw}
+      \verb https://ph.pollub.pl/index.php/jcsi/article/view/9584
+      \endverb
+      \verb{url}
+      \verb https://ph.pollub.pl/index.php/jcsi/article/view/9584
+      \endverb
+    \endentry
+    \entry{EEG_SVM}{article}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=67e6f304787a88cc43bd01351b27f1b6}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Lan-lan},
+           giveni={L\bibinithyphendelim l\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=26500c0e7c5f37a79d71416c4c641ba2}{%
+           family={Zhao},
+           familyi={Z\bibinitperiod},
+           given={Yu},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=112faefb37293f52cd92c3bb36fcc08b}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Jian},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=594706691e56c5b5d81571d57f623bf3}{%
+           family={Zou},
+           familyi={Z\bibinitperiod},
+           given={Jun-zhong},
+           giveni={J\bibinithyphendelim z\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{340e56ef69c049ade55324d6e723667e}
+      \strng{fullhash}{489acef028d5014397e2b6a16f0039ee}
+      \strng{fullhashraw}{489acef028d5014397e2b6a16f0039ee}
+      \strng{bibnamehash}{489acef028d5014397e2b6a16f0039ee}
+      \strng{authorbibnamehash}{489acef028d5014397e2b6a16f0039ee}
+      \strng{authornamehash}{340e56ef69c049ade55324d6e723667e}
+      \strng{authorfullhash}{489acef028d5014397e2b6a16f0039ee}
+      \strng{authorfullhashraw}{489acef028d5014397e2b6a16f0039ee}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0957-4174}
+      \field{journaltitle}{Expert Systems with Apllications}
+      \field{langid}{english}
+      \field{number}{21}
+      \field{title}{Automatic detection of alertness/drowsiness from physiological signals using wavelet-based nonlinear features and machine learning}
+      \field{urlday}{23}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{volume}{42}
+      \field{year}{2015}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{7344\bibrangedash 7355}
+      \range{pages}{12}
+      \verb{doi}
+      \verb 10.1016/j.eswa.2015.05.028
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0957417415003565
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0957417415003565
+      \endverb
+    \endentry
+    \entry{Cabeceo}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=8a1d873f6d7d961a8b98f50b2c9c3450}{%
+           family={Choi},
+           familyi={C\bibinitperiod},
+           given={In-Ho},
+           giveni={I\bibinithyphendelim H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=45c873c43bfa22b90fd6c3600a944fe2}{%
+           family={Kim},
+           familyi={K\bibinitperiod},
+           given={Yong-Guk},
+           giveni={Y\bibinithyphendelim G\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{f107f456c153d8b0e3f840873eaf1954}
+      \strng{fullhash}{f107f456c153d8b0e3f840873eaf1954}
+      \strng{fullhashraw}{f107f456c153d8b0e3f840873eaf1954}
+      \strng{bibnamehash}{f107f456c153d8b0e3f840873eaf1954}
+      \strng{authorbibnamehash}{f107f456c153d8b0e3f840873eaf1954}
+      \strng{authornamehash}{f107f456c153d8b0e3f840873eaf1954}
+      \strng{authorfullhash}{f107f456c153d8b0e3f840873eaf1954}
+      \strng{authorfullhashraw}{f107f456c153d8b0e3f840873eaf1954}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Conference On Big Data And Smart Computing}
+      \field{langid}{english}
+      \field{month}{1}
+      \field{title}{Head pose and gaze direction tracking for detecting a drowsy driver}
+      \field{urlday}{19}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{year}{2014}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{241\bibrangedash 244}
+      \range{pages}{4}
+      \verb{doi}
+      \verb 10.1109/BIGCOMP.2014.6741444
+      \endverb
+      \verb{urlraw}
+      \verb https://ieeexplore.ieee.org/document/6741444
+      \endverb
+      \verb{url}
+      \verb https://ieeexplore.ieee.org/document/6741444
+      \endverb
+    \endentry
+    \entry{Sub_DT}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=28ba60fd3bf22ca9a15fd8117cac760b}{%
+           family={Dehzangi},
+           familyi={D\bibinitperiod},
+           given={Omid},
+           giveni={O\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=fc2aa9c635e5073860aa2ccd43908ca9}{%
+           family={Masilamani},
+           familyi={M\bibinitperiod},
+           given={Selvamani},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{0b6e10947ac6001e494efb1beeb22c78}
+      \strng{fullhash}{0b6e10947ac6001e494efb1beeb22c78}
+      \strng{fullhashraw}{0b6e10947ac6001e494efb1beeb22c78}
+      \strng{bibnamehash}{0b6e10947ac6001e494efb1beeb22c78}
+      \strng{authorbibnamehash}{0b6e10947ac6001e494efb1beeb22c78}
+      \strng{authornamehash}{0b6e10947ac6001e494efb1beeb22c78}
+      \strng{authorfullhash}{0b6e10947ac6001e494efb1beeb22c78}
+      \strng{authorfullhashraw}{0b6e10947ac6001e494efb1beeb22c78}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{20}
+      \field{issn}{1051-4651}
+      \field{journaltitle}{2018 24th International Conference on Pattern Recognition}
+      \field{langid}{english}
+      \field{month}{8}
+      \field{title}{Unobtrusive Driver Drowsiness Prediction Using Driving Behavior from Vehicular Sensor}
+      \field{urlday}{24}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{year}{2018}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1109/ICPR.2018.8545427
+      \endverb
+      \verb{urlraw}
+      \verb https://ieeexplore.ieee.org/document/8545427
+      \endverb
+      \verb{url}
+      \verb https://ieeexplore.ieee.org/document/8545427
+      \endverb
+    \endentry
+    \entry{BostezoGraf}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=020e5e4834ac36e7a10d6146e3412c40}{%
+           family={Deng},
+           familyi={D\bibinitperiod},
+           given={Wanghua},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6b6cb63716b433135a1c58e45ffe98c5}{%
+           family={Wu},
+           familyi={W\bibinitperiod},
+           given={Ruoxue},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{6ad3dac302d9f4411777d3f2b4ef86b8}
+      \strng{fullhash}{6ad3dac302d9f4411777d3f2b4ef86b8}
+      \strng{fullhashraw}{6ad3dac302d9f4411777d3f2b4ef86b8}
+      \strng{bibnamehash}{6ad3dac302d9f4411777d3f2b4ef86b8}
+      \strng{authorbibnamehash}{6ad3dac302d9f4411777d3f2b4ef86b8}
+      \strng{authornamehash}{6ad3dac302d9f4411777d3f2b4ef86b8}
+      \strng{authorfullhash}{6ad3dac302d9f4411777d3f2b4ef86b8}
+      \strng{authorfullhashraw}{6ad3dac302d9f4411777d3f2b4ef86b8}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{21}
+      \field{issn}{2169-3536}
+      \field{journaltitle}{IEEE Access}
+      \field{langid}{english}
+      \field{month}{8}
+      \field{title}{Real-Time Driver-Drowsiness Detection System Using Facial Features}
+      \field{urlday}{19}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{volume}{7}
+      \field{year}{2019}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{118727\bibrangedash 118738}
+      \range{pages}{12}
+      \verb{doi}
+      \verb 10.1109/ACCESS.2019.2936663
+      \endverb
+      \verb{urlraw}
+      \verb https://ieeexplore.ieee.org/document/8808931
+      \endverb
+      \verb{url}
+      \verb https://ieeexplore.ieee.org/document/8808931
+      \endverb
+    \endentry
+    \entry{Sub_KNN}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=92c361f0c77549673a60c40de4965087}{%
+           family={Dreissig},
+           familyi={D\bibinitperiod},
+           given={Mariella},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=93181bd4f21af8211aeda93b4b2a90d0}{%
+           family={Baccour},
+           familyi={B\bibinitperiod},
+           given={Mohamed\bibnamedelima Hedi},
+           giveni={M\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c72fad49713fef4e273c39cc783e7c68}{%
+           family={Kasneci},
+           familyi={K\bibinitperiod},
+           given={Enkelejda},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{b02bc03c34f7ac0fea084073035e2c2e}
+      \strng{fullhash}{9dddc0c1e801219c77e26afc9345a634}
+      \strng{fullhashraw}{9dddc0c1e801219c77e26afc9345a634}
+      \strng{bibnamehash}{9dddc0c1e801219c77e26afc9345a634}
+      \strng{authorbibnamehash}{9dddc0c1e801219c77e26afc9345a634}
+      \strng{authornamehash}{b02bc03c34f7ac0fea084073035e2c2e}
+      \strng{authorfullhash}{9dddc0c1e801219c77e26afc9345a634}
+      \strng{authorfullhashraw}{9dddc0c1e801219c77e26afc9345a634}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{2020 IEEE Symposium Series on Computational Intelligence}
+      \field{langid}{english}
+      \field{title}{Driver Drowsiness Classification Based on Eye Blink and Head Movement Features Using the k-NN Algorithm}
+      \field{urlday}{24}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{year}{2020}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1109/SSCI47803.2020.9308133
+      \endverb
+      \verb{urlraw}
+      \verb https://ieeexplore.ieee.org/document/9308133
+      \endverb
+      \verb{url}
+      \verb https://ieeexplore.ieee.org/document/9308133
+      \endverb
+    \endentry
+    \entry{DTF}{article}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=4a6da3aa35c0afec484951272265a62b}{%
+           family={Eraqi},
+           familyi={E\bibinitperiod},
+           given={Hesham\bibnamedelima M},
+           giveni={H\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e8e5df36bb9cedb1c138ffb9a882ac13}{%
+           family={Abouelnaga},
+           familyi={A\bibinitperiod},
+           given={Yehya},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b1f8bf3a5bed5ed893db3d9ae9c8baf1}{%
+           family={Saad},
+           familyi={S\bibinitperiod},
+           given={Mohamed\bibnamedelima H},
+           giveni={M\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=dc98e046c53c2805a49d3954e9aed71d}{%
+           family={Moustafa},
+           familyi={M\bibinitperiod},
+           given={Mohamed\bibnamedelima N},
+           giveni={M\bibinitperiod\bibinitdelim N\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{afc0f140282e4d8a114b3d68e1099ba9}
+      \strng{fullhash}{e40e69926dc71f3e2075590937860718}
+      \strng{fullhashraw}{e40e69926dc71f3e2075590937860718}
+      \strng{bibnamehash}{e40e69926dc71f3e2075590937860718}
+      \strng{authorbibnamehash}{e40e69926dc71f3e2075590937860718}
+      \strng{authornamehash}{afc0f140282e4d8a114b3d68e1099ba9}
+      \strng{authorfullhash}{e40e69926dc71f3e2075590937860718}
+      \strng{authorfullhashraw}{e40e69926dc71f3e2075590937860718}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{22}
+      \field{journaltitle}{Journal of Advanced Transportation}
+      \field{langid}{english}
+      \field{month}{1}
+      \field{title}{Driver Distraction Identification with an Ensemble of Convolutional Neural Networks}
+      \field{urlday}{24}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{year}{2019}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.48550/arXiv.1901.09097
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/1901.09097
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/1901.09097
+      \endverb
+    \endentry
+    \entry{bayesianNetwork}{article}{}{}
+      \name{author}{6}{}{%
+        {{un=0,uniquepart=base,hash=ec862daef8e77e31ce95a07a8b74aab5}{%
+           family={Guo},
+           familyi={G\bibinitperiod},
+           given={Wenqiang},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2d5d69a70a653d2c2339d5ca583a3eb8}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Baorong},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=eb4514eec5f318fe93d28ad09c7b2f0b}{%
+           family={Xia},
+           familyi={X\bibinitperiod},
+           given={Lingjun},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f95d5ad53efbfa060ad114d1d8eee700}{%
+           family={Shi},
+           familyi={S\bibinitperiod},
+           given={Shuai},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=227e34554b27c77e2d042504ef1edb97}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Xiao},
+           giveni={X\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=457e0e22c18860b458f0b17228cc6d3a}{%
+           family={She},
+           familyi={S\bibinitperiod},
+           given={Jinlong},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{267b8340c96fcb18c192d54aebcc5300}
+      \strng{fullhash}{95a00b2429cb3768d97e84645cb17e2a}
+      \strng{fullhashraw}{95a00b2429cb3768d97e84645cb17e2a}
+      \strng{bibnamehash}{95a00b2429cb3768d97e84645cb17e2a}
+      \strng{authorbibnamehash}{95a00b2429cb3768d97e84645cb17e2a}
+      \strng{authornamehash}{267b8340c96fcb18c192d54aebcc5300}
+      \strng{authorfullhash}{95a00b2429cb3768d97e84645cb17e2a}
+      \strng{authorfullhashraw}{95a00b2429cb3768d97e84645cb17e2a}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{8}
+      \field{issn}{1948-9447}
+      \field{journaltitle}{2016 Chinese Control and Decision Conference}
+      \field{langid}{english}
+      \field{month}{8}
+      \field{title}{Driver Drowsiness Detection Model Identification with Bayesian Network Structure Learning Method}
+      \field{urlday}{23}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{year}{2016}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1109/CCDC.2016.7530968
+      \endverb
+      \verb{urlraw}
+      \verb https://ieeexplore.ieee.org/document/7530968
+      \endverb
+      \verb{url}
+      \verb https://ieeexplore.ieee.org/document/7530968
+      \endverb
+    \endentry
+    \entry{osamaSubyObj}{article}{}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=e422d08ce576ed4b43079be146ac0469}{%
+           family={Hassan},
+           familyi={H\bibinitperiod},
+           given={Osama\bibnamedelima F},
+           giveni={O\bibinitperiod\bibinitdelim F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ececf44b5bdd47b41787a382de04173b}{%
+           family={Ibrahim},
+           familyi={I\bibinitperiod},
+           given={Ahmed\bibnamedelima F},
+           giveni={A\bibinitperiod\bibinitdelim F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=af60ae3afaa60df94d374f35b26948cd}{%
+           family={Makhlouf},
+           familyi={M\bibinitperiod},
+           given={M\bibnamedelima A},
+           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=207503327e54bdc5f026e39f9e67a00f}{%
+           family={Hafiz},
+           familyi={H\bibinitperiod},
+           given={B},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e3bcebf78bf3f20c49a56b181a8edea6}{%
+           family={Gomma},
+           familyi={G\bibinitperiod},
+           given={Ahmed},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{752c66a7456b6a6db9b6a8a7cfe81b44}
+      \strng{fullhash}{cb23b97996ca18266c5682baae6adfb0}
+      \strng{fullhashraw}{cb23b97996ca18266c5682baae6adfb0}
+      \strng{bibnamehash}{cb23b97996ca18266c5682baae6adfb0}
+      \strng{authorbibnamehash}{cb23b97996ca18266c5682baae6adfb0}
+      \strng{authornamehash}{752c66a7456b6a6db9b6a8a7cfe81b44}
+      \strng{authorfullhash}{cb23b97996ca18266c5682baae6adfb0}
+      \strng{authorfullhashraw}{cb23b97996ca18266c5682baae6adfb0}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Artificial Intelligence Review}
+      \field{langid}{english}
+      \field{month}{5}
+      \field{number}{6}
+      \field{shortjournal}{AI Rev}
+      \field{title}{Intelligent driver monitoring systems: a survey of drowsiness detection technologies for road safety}
+      \field{urlday}{19}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{volume}{59}
+      \field{year}{2026}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{137}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1007/s10462-026-11505-w
+      \endverb
+      \verb{urlraw}
+      \verb https://link.springer.com/article/10.1007/s10462-026-11505-w
+      \endverb
+      \verb{url}
+      \verb https://link.springer.com/article/10.1007/s10462-026-11505-w
+      \endverb
+    \endentry
+    \entry{ModelosDist}{article}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=a8aa5dc2d013627b56b8535c8a172770}{%
+           family={Kashevnik},
+           familyi={K\bibinitperiod},
+           given={Alexey},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0c19c179cdfef9f4446ecd9b53ebf60d}{%
+           family={Shchedrin},
+           familyi={S\bibinitperiod},
+           given={Roman},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5e0aee0f922e9b01d81a82afd98259e4}{%
+           family={Kaiser},
+           familyi={K\bibinitperiod},
+           given={Christian},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a832b4fdf0b86281c8aab237e2ec82a8}{%
+           family={Stocker},
+           familyi={S\bibinitperiod},
+           given={Alexander},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{c244cd1982dac114766e70d221848141}
+      \strng{fullhash}{516f1c5ac6593f633a5c75b541b501a5}
+      \strng{fullhashraw}{516f1c5ac6593f633a5c75b541b501a5}
+      \strng{bibnamehash}{516f1c5ac6593f633a5c75b541b501a5}
+      \strng{authorbibnamehash}{516f1c5ac6593f633a5c75b541b501a5}
+      \strng{authornamehash}{c244cd1982dac114766e70d221848141}
+      \strng{authorfullhash}{516f1c5ac6593f633a5c75b541b501a5}
+      \strng{authorfullhashraw}{516f1c5ac6593f633a5c75b541b501a5}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{15}
+      \field{journaltitle}{IEEE Access}
+      \field{langid}{english}
+      \field{month}{5}
+      \field{title}{Driver Distraction Methods: A Literature Review and Framework}
+      \field{urlday}{20}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{volume}{9}
+      \field{year}{2021}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{60063\bibrangedash 60076}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1109/ACCESS.2021.3073599
+      \endverb
+      \verb{urlraw}
+      \verb https://ieeexplore.ieee.org/document/9405644
+      \endverb
+      \verb{url}
+      \verb https://ieeexplore.ieee.org/document/9405644
+      \endverb
+    \endentry
+    \entry{LRCN}{article}{}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=5144aed1d780f11823b422417b7da09f}{%
+           family={Kidu},
+           familyi={K\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=79689d0d1df9a487c02dd3700dbc0493}{%
+           family={Song},
+           familyi={S\bibinitperiod},
+           given={Yongjun},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b84edb1226c428ba891b1e2f82e9fdee}{%
+           family={Seo},
+           familyi={S\bibinitperiod},
+           given={Kwang-Won},
+           giveni={K\bibinithyphendelim W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=170df3b055a9fcd962d6474336180f4e}{%
+           family={Lee},
+           familyi={L\bibinitperiod},
+           given={Sunyong},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=dac8d10fb1d3bea1390ecbe1a613880f}{%
+           family={Park},
+           familyi={P\bibinitperiod},
+           given={Taejoon},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{18964471c2e6d5bee985d365373b3486}
+      \strng{fullhash}{36fda2521360cbd5afd2024431cf582f}
+      \strng{fullhashraw}{36fda2521360cbd5afd2024431cf582f}
+      \strng{bibnamehash}{36fda2521360cbd5afd2024431cf582f}
+      \strng{authorbibnamehash}{36fda2521360cbd5afd2024431cf582f}
+      \strng{authornamehash}{18964471c2e6d5bee985d365373b3486}
+      \strng{authorfullhash}{36fda2521360cbd5afd2024431cf582f}
+      \strng{authorfullhashraw}{36fda2521360cbd5afd2024431cf582f}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{6}
+      \field{journaltitle}{Applied Sciences}
+      \field{langid}{english}
+      \field{month}{9}
+      \field{number}{17}
+      \field{title}{An Intelligent Real-Time Driver Activity Recognition System Using Spatio-Temporal Features}
+      \field{urlday}{24}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{volume}{14}
+      \field{year}{2024}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{7985}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3390/app14177985
+      \endverb
+      \verb{urlraw}
+      \verb https://www.mdpi.com/2076-3417/14/17/7985
+      \endverb
+      \verb{url}
+      \verb https://www.mdpi.com/2076-3417/14/17/7985
+      \endverb
+    \endentry
+    \entry{DyS-VC}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=866d03a3fb88aec2f7d942f0a3798773}{%
+           family={Kurian},
+           familyi={K\bibinitperiod},
+           given={Anna\bibnamedelima Titu},
+           giveni={A\bibinitperiod\bibinitdelim T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e23e268b42cc7d946b6333e539ec3d36}{%
+           family={Soori},
+           familyi={S\bibinitperiod},
+           given={Phrashant\bibnamedelima Kuma},
+           giveni={P\bibinitperiod\bibinitdelim K\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{9608cf066ac7d6d2b986e0a5be99b93f}
+      \strng{fullhash}{9608cf066ac7d6d2b986e0a5be99b93f}
+      \strng{fullhashraw}{9608cf066ac7d6d2b986e0a5be99b93f}
+      \strng{bibnamehash}{9608cf066ac7d6d2b986e0a5be99b93f}
+      \strng{authorbibnamehash}{9608cf066ac7d6d2b986e0a5be99b93f}
+      \strng{authornamehash}{9608cf066ac7d6d2b986e0a5be99b93f}
+      \strng{authorfullhash}{9608cf066ac7d6d2b986e0a5be99b93f}
+      \strng{authorfullhashraw}{9608cf066ac7d6d2b986e0a5be99b93f}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{9}
+      \field{issn}{979-8-3503-3826-3}
+      \field{journaltitle}{2023 International Conference on Computational Intelligence and Knowledge Economy}
+      \field{langid}{english}
+      \field{month}{3}
+      \field{title}{AI-Based Driver Drowsiness and Distraction Detection in Real-Time}
+      \field{urlday}{24}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{year}{2023}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1109/ICCIKE58312.2023.10131730
+      \endverb
+      \verb{urlraw}
+      \verb https://ieeexplore.ieee.org/document/10131730
+      \endverb
+      \verb{url}
+      \verb https://ieeexplore.ieee.org/document/10131730
+      \endverb
+    \endentry
+    \entry{D3D}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=3d6dba1d4827ec5c525b3b74e18b3edf}{%
+           family={Lemley},
+           familyi={L\bibinitperiod},
+           given={Joseph},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ff804d28f4ad5edb499fb969375eb8e2}{%
+           family={Bazrafkan},
+           familyi={B\bibinitperiod},
+           given={Shabab},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8419731df79b58d5a4c1d06c61d39a34}{%
+           family={Corcoran},
+           familyi={C\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{0bf77c00926f65a0629a1fbc1f59f582}
+      \strng{fullhash}{ba767e41c30e235ae88cc81b91d6a616}
+      \strng{fullhashraw}{ba767e41c30e235ae88cc81b91d6a616}
+      \strng{bibnamehash}{ba767e41c30e235ae88cc81b91d6a616}
+      \strng{authorbibnamehash}{ba767e41c30e235ae88cc81b91d6a616}
+      \strng{authornamehash}{0bf77c00926f65a0629a1fbc1f59f582}
+      \strng{authorfullhash}{ba767e41c30e235ae88cc81b91d6a616}
+      \strng{authorfullhashraw}{ba767e41c30e235ae88cc81b91d6a616}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{MAICS}
+      \field{langid}{english}
+      \field{month}{1}
+      \field{title}{Transfer Learning of Temporal Information for Driver Action Classification}
+      \field{urlday}{24}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{year}{2017}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{123\bibrangedash 128}
+      \range{pages}{6}
+      \verb{urlraw}
+      \verb http://ceur-ws.org/Vol-1964/NN1.pdf
+      \endverb
+      \verb{url}
+      \verb http://ceur-ws.org/Vol-1964/NN1.pdf
+      \endverb
+    \endentry
+    \entry{DrowsyDG}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=b35c406d999f18b0efc902fe6a75f8c4}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Wendo},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1831c1cfce9068289736002a0260b396}{%
+           family={Zhao},
+           familyi={Z\bibinitperiod},
+           given={Tao},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b6e8cb3a4bf918cb95447db412013a03}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Jiyao},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{0334c847e4fd6fb195ba9181ef22e234}
+      \strng{fullhash}{2db37105741052eae9184558f9b8939c}
+      \strng{fullhashraw}{2db37105741052eae9184558f9b8939c}
+      \strng{bibnamehash}{2db37105741052eae9184558f9b8939c}
+      \strng{authorbibnamehash}{2db37105741052eae9184558f9b8939c}
+      \strng{authornamehash}{0334c847e4fd6fb195ba9181ef22e234}
+      \strng{authorfullhash}{2db37105741052eae9184558f9b8939c}
+      \strng{authorfullhashraw}{2db37105741052eae9184558f9b8939c}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{14}
+      \field{issn}{0957-4174}
+      \field{journaltitle}{Expert Systems With Applications}
+      \field{langid}{english}
+      \field{month}{5}
+      \field{title}{Towards generalizable driver drowsiness detection: A unified framework with geometric transformations and self-correcting adversarial learning}
+      \field{urlday}{20}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{volume}{323}
+      \field{year}{2026}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{132423}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/j.eswa.2026.132423
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0957417426013369
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0957417426013369
+      \endverb
+    \endentry
+    \entry{DCNN}{article}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=78fc8d8eefc850056553b5e3ca8125cd}{%
+           family={Majdi},
+           familyi={M\bibinitperiod},
+           given={Mohammed\bibnamedelima S},
+           giveni={M\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=353eacfd8b2c8d9ec7d9d4f28049a8da}{%
+           family={Sundaresh},
+           familyi={S\bibinitperiod},
+           given={Ram},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=491ecad222c1237d32accc7a8b7ddd34}{%
+           family={Gill},
+           familyi={G\bibinitperiod},
+           given={Jonathan\bibnamedelima T},
+           giveni={J\bibinitperiod\bibinitdelim T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=91d1df751b86d9e6ee000482a06badf2}{%
+           family={Rodriguez},
+           familyi={R\bibinitperiod},
+           given={Jeffrey\bibnamedelima J},
+           giveni={J\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{e71f9053d9aaf53d31302e305890a79c}
+      \strng{fullhash}{1e5472cf8162da5bc473dbab30fd3d27}
+      \strng{fullhashraw}{1e5472cf8162da5bc473dbab30fd3d27}
+      \strng{bibnamehash}{1e5472cf8162da5bc473dbab30fd3d27}
+      \strng{authorbibnamehash}{1e5472cf8162da5bc473dbab30fd3d27}
+      \strng{authornamehash}{e71f9053d9aaf53d31302e305890a79c}
+      \strng{authorfullhash}{1e5472cf8162da5bc473dbab30fd3d27}
+      \strng{authorfullhashraw}{1e5472cf8162da5bc473dbab30fd3d27}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{8}
+      \field{issn}{2473-3598}
+      \field{journaltitle}{2018 IEEE Southwest Symposium on Image Analysis and Interpetation}
+      \field{langid}{english}
+      \field{month}{5}
+      \field{title}{Drive-Net: Convolutional Network for Driver Distraction Detection}
+      \field{urlday}{24}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{year}{2018}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1109/SSIAI.2018.8470309
+      \endverb
+      \verb{urlraw}
+      \verb https://ieeexplore.ieee.org/document/8470309
+      \endverb
+      \verb{url}
+      \verb https://ieeexplore.ieee.org/document/8470309
+      \endverb
+    \endentry
+    \entry{sysrev}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=1bb033435e7b00d76aff11043575e87c}{%
+           family={Md.\bibnamedelimi Shaik},
+           familyi={M\bibinitperiod\bibinitdelim S\bibinitperiod},
+           given={Ebrahim},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{1bb033435e7b00d76aff11043575e87c}
+      \strng{fullhash}{1bb033435e7b00d76aff11043575e87c}
+      \strng{fullhashraw}{1bb033435e7b00d76aff11043575e87c}
+      \strng{bibnamehash}{1bb033435e7b00d76aff11043575e87c}
+      \strng{authorbibnamehash}{1bb033435e7b00d76aff11043575e87c}
+      \strng{authornamehash}{1bb033435e7b00d76aff11043575e87c}
+      \strng{authorfullhash}{1bb033435e7b00d76aff11043575e87c}
+      \strng{authorfullhashraw}{1bb033435e7b00d76aff11043575e87c}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{3}
+      \field{issn}{2590-1982}
+      \field{journaltitle}{Transportation Research Interdisciplinary Perspectives}
+      \field{langid}{english}
+      \field{month}{1}
+      \field{title}{A systematic review on detection and prediction of driver drowsiness}
+      \field{urlday}{19}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{volume}{21}
+      \field{year}{2023}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{100846}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/j.trip.2023.100864
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S2590198223001112?via%3Dihub
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S2590198223001112?via%3Dihub
+      \endverb
+    \endentry
+    \entry{MinhasPERCLOS}{article}{}{}
+      \name{author}{7}{}{%
+        {{un=0,uniquepart=base,hash=414da654485cd3c7e324b5742ddaeb8a}{%
+           family={Minhas},
+           familyi={M\bibinitperiod},
+           given={Riaz},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c2ee0ad7e882855ba901868b982158aa}{%
+           family={Peker},
+           familyi={P\bibinitperiod},
+           given={Nur\bibnamedelima Yasin},
+           giveni={N\bibinitperiod\bibinitdelim Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=70c1b32dfe8dfc6d0608415cbfa56892}{%
+           family={Hakkoz},
+           familyi={H\bibinitperiod},
+           given={Mustafa\bibnamedelima Abdullah},
+           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e4dfd26c7752fe4016aad28fd6018083}{%
+           family={Arbatli},
+           familyi={A\bibinitperiod},
+           given={Semih},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=158d0f29a644f129dfbf6745b8d09186}{%
+           family={Celik},
+           familyi={C\bibinitperiod},
+           given={Yeliz},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=519c44a7cdb43e9e2a77b8106923ca39}{%
+           family={Erdem},
+           familyi={E\bibinitperiod},
+           given={Cigdem\bibnamedelima Eroglu},
+           giveni={C\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=48e2757d8b2ef17b3187bbc2e2dcee2a}{%
+           family={Yuksel},
+           familyi={Y\bibinitperiod},
+           given={Peker},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{9f51bb26108bb24eeba524c9c9d85820}
+      \strng{fullhash}{4bc30a5315b97d4e8c1c7e92b2a03a1d}
+      \strng{fullhashraw}{4bc30a5315b97d4e8c1c7e92b2a03a1d}
+      \strng{bibnamehash}{4bc30a5315b97d4e8c1c7e92b2a03a1d}
+      \strng{authorbibnamehash}{4bc30a5315b97d4e8c1c7e92b2a03a1d}
+      \strng{authornamehash}{9f51bb26108bb24eeba524c9c9d85820}
+      \strng{authorfullhash}{4bc30a5315b97d4e8c1c7e92b2a03a1d}
+      \strng{authorfullhashraw}{4bc30a5315b97d4e8c1c7e92b2a03a1d}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{18}
+      \field{journaltitle}{Sensors}
+      \field{month}{5}
+      \field{number}{8}
+      \field{shortjournal}{Sensors}
+      \field{title}{Association of Visual-Bsed Signals with Electroencephalography Patterns in Enhancing the Drowsiness Detection in Drivers with Obstructive Sleep Apnea}
+      \field{urlday}{19}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{volume}{24}
+      \field{year}{2024}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{2625}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3390/s24082625
+      \endverb
+      \verb{urlraw}
+      \verb https://www.mdpi.com/1424-8220/24/8/2625
+      \endverb
+      \verb{url}
+      \verb https://www.mdpi.com/1424-8220/24/8/2625
+      \endverb
+    \endentry
+    \entry{ResNet-NG}{article}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=b2874fd1e36b42e3c31ab53539fbec9e}{%
+           family={Mohsin},
+           familyi={M\bibinitperiod},
+           given={Ahmed\bibnamedelima Raza},
+           giveni={A\bibinitperiod\bibinitdelim R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3351ccd0826600947091f36f64ad06e8}{%
+           family={Khalid},
+           familyi={K\bibinitperiod},
+           given={Maira},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0a8a4829d05f5de577c45229c97332bf}{%
+           family={Ali},
+           familyi={A\bibinitperiod},
+           given={Jehad},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=37fdd8e94579262530a59453d7638dae}{%
+           family={Roh},
+           familyi={R\bibinitperiod},
+           given={Byeong-hee},
+           giveni={B\bibinithyphendelim h\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{ea7e20b33f3f99da6188af9adc7a3f9a}
+      \strng{fullhash}{8cd319829dbce6f6a286db73ffa5127f}
+      \strng{fullhashraw}{8cd319829dbce6f6a286db73ffa5127f}
+      \strng{bibnamehash}{8cd319829dbce6f6a286db73ffa5127f}
+      \strng{authorbibnamehash}{8cd319829dbce6f6a286db73ffa5127f}
+      \strng{authornamehash}{ea7e20b33f3f99da6188af9adc7a3f9a}
+      \strng{authorfullhash}{8cd319829dbce6f6a286db73ffa5127f}
+      \strng{authorfullhashraw}{8cd319829dbce6f6a286db73ffa5127f}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{22}
+      \field{issn}{1158-1748}
+      \field{journaltitle}{IEEE Sensors Journal}
+      \field{langid}{english}
+      \field{month}{12}
+      \field{number}{3}
+      \field{title}{Enhancing Driver Safety With ResNet-RG-A Deep Learning-Based Distraction Detection Approach}
+      \field{urlday}{21}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{volume}{23}
+      \field{year}{2025}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \true{nocite}
+      \field{pages}{132423}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1109/JSEN.2025.3640661
+      \endverb
+      \verb{urlraw}
+      \verb https://ieeexplore.ieee.org/document/11311422
+      \endverb
+      \verb{url}
+      \verb https://ieeexplore.ieee.org/document/11311422
+      \endverb
+    \endentry
+    \entry{OMS}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=83639a23fa0c1c92739534cf305ba9f7}{%
+           family={OMS},
+           familyi={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{83639a23fa0c1c92739534cf305ba9f7}
+      \strng{fullhash}{83639a23fa0c1c92739534cf305ba9f7}
+      \strng{fullhashraw}{83639a23fa0c1c92739534cf305ba9f7}
+      \strng{bibnamehash}{83639a23fa0c1c92739534cf305ba9f7}
+      \strng{authorbibnamehash}{83639a23fa0c1c92739534cf305ba9f7}
+      \strng{authornamehash}{83639a23fa0c1c92739534cf305ba9f7}
+      \strng{authorfullhash}{83639a23fa0c1c92739534cf305ba9f7}
+      \strng{authorfullhashraw}{83639a23fa0c1c92739534cf305ba9f7}
+      \field{sortinit}{O}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{labeldatesource}{nodate}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{langid}{english}
+      \field{title}{Road traffic injures}
+      \field{urlday}{20}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.who.int/news-room/fact-sheets/detail/road-traffic-injuries
+      \endverb
+      \verb{url}
+      \verb https://www.who.int/news-room/fact-sheets/detail/road-traffic-injuries
+      \endverb
+    \endentry
+    \entry{3D-CNN}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=479a007555ebea67e4c6c85f3e27d719}{%
+           family={Phung},
+           familyi={P\bibinitperiod},
+           given={Huynhm},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f6dea3892bd8e227e3b682b6e217794b}{%
+           family={Park},
+           familyi={P\bibinitperiod},
+           given={Sang-Min},
+           giveni={S\bibinithyphendelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=45c873c43bfa22b90fd6c3600a944fe2}{%
+           family={Kim},
+           familyi={K\bibinitperiod},
+           given={Yong-Guk},
+           giveni={Y\bibinithyphendelim G\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{e4b73e12d3259f73d3b97af56db28dc4}
+      \strng{fullhash}{7e939797620b5e682bd150cc33a0ec2f}
+      \strng{fullhashraw}{7e939797620b5e682bd150cc33a0ec2f}
+      \strng{bibnamehash}{7e939797620b5e682bd150cc33a0ec2f}
+      \strng{authorbibnamehash}{7e939797620b5e682bd150cc33a0ec2f}
+      \strng{authornamehash}{e4b73e12d3259f73d3b97af56db28dc4}
+      \strng{authorfullhash}{7e939797620b5e682bd150cc33a0ec2f}
+      \strng{authorfullhashraw}{7e939797620b5e682bd150cc33a0ec2f}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEICE Transactions on Information and Systems}
+      \field{langid}{english}
+      \field{month}{12}
+      \field{number}{12}
+      \field{title}{Detection of Driver Drowsiness Using 3D Deep Neural Network and Semi*¿-Supervised Gradient Boosting Machine}
+      \field{urlday}{23}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{volume}{102}
+      \field{year}{2019}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{2637\bibrangedash 2641}
+      \range{pages}{5}
+      \verb{doi}
+      \verb 10.1007/978-3-319-54526-4_10
+      \endverb
+      \verb{urlraw}
+      \verb https://link.springer.com/chapter/10.1007/978-3-319-54526-4_10
+      \endverb
+      \verb{url}
+      \verb https://link.springer.com/chapter/10.1007/978-3-319-54526-4_10
+      \endverb
+    \endentry
+    \entry{LSTM}{article}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=21be9c55f49a5b4a4a852fbf8b8e6d89}{%
+           family={Quddus},
+           familyi={Q\bibinitperiod},
+           given={Azhar},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c2fa0111627364d00d15f20be1d845aa}{%
+           family={Zandi},
+           familyi={Z\bibinitperiod},
+           given={Ali\bibnamedelima Shahidi},
+           giveni={A\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a4a5b9bb892bce30bba5f1634b1ec251}{%
+           family={Prest},
+           familyi={P\bibinitperiod},
+           given={Laura},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b22be8060647d707c186f9fd756c93bc}{%
+           family={Comeau},
+           familyi={C\bibinitperiod},
+           given={Feliz\bibnamedelimb J\bibnamedelima E},
+           giveni={F\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{7b90efb2e88cc598e3e4684b347400b6}
+      \strng{fullhash}{591dbeef04cecd0c2da5b49a3222364b}
+      \strng{fullhashraw}{591dbeef04cecd0c2da5b49a3222364b}
+      \strng{bibnamehash}{591dbeef04cecd0c2da5b49a3222364b}
+      \strng{authorbibnamehash}{591dbeef04cecd0c2da5b49a3222364b}
+      \strng{authornamehash}{7b90efb2e88cc598e3e4684b347400b6}
+      \strng{authorfullhash}{591dbeef04cecd0c2da5b49a3222364b}
+      \strng{authorfullhashraw}{591dbeef04cecd0c2da5b49a3222364b}
+      \field{sortinit}{Q}
+      \field{sortinithash}{ce69a400a872ddd02ee7fdb3b38c6abd}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0001-4575}
+      \field{journaltitle}{Accident Analysis \& Prevention}
+      \field{langid}{english}
+      \field{month}{6}
+      \field{title}{Using long short term memory and convolutional neural networks for driver drowsiness detection}
+      \field{urlday}{23}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{volume}{156}
+      \field{year}{2021}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{106107}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/j.aap.2021.106107
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S000145752100138X
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S000145752100138X
+      \endverb
+    \endentry
+    \entry{MobileNet}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=33ddeda7a930037be042e7cddc7550f2}{%
+           family={Salem},
+           familyi={S\bibinitperiod},
+           given={M},
+           giveni={M\bibinitperiod},
+           givenun=0,
+           suffix={D\bibnamedelima anf\bibnamedelima Waleed},
+           suffixi={D\bibinitperiod\bibinitdelim a\bibinitperiod\bibinitdelim W\bibinitperiod},
+           suffixun=0}}%
+      }
+      \strng{namehash}{33ddeda7a930037be042e7cddc7550f2}
+      \strng{fullhash}{33ddeda7a930037be042e7cddc7550f2}
+      \strng{fullhashraw}{33ddeda7a930037be042e7cddc7550f2}
+      \strng{bibnamehash}{33ddeda7a930037be042e7cddc7550f2}
+      \strng{authorbibnamehash}{33ddeda7a930037be042e7cddc7550f2}
+      \strng{authornamehash}{33ddeda7a930037be042e7cddc7550f2}
+      \strng{authorfullhash}{33ddeda7a930037be042e7cddc7550f2}
+      \strng{authorfullhashraw}{33ddeda7a930037be042e7cddc7550f2}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Enigneering and Applied Science}
+      \field{langid}{english}
+      \field{title}{Drowsiness detection in real-time via convolutional neutal networks and transfer learning}
+      \field{urlday}{24}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{volume}{71}
+      \field{year}{2024}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{122}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1186/s44147-024-00457-z
+      \endverb
+      \verb{urlraw}
+      \verb https://link.springer.com/article/10.1186/s44147-024-00457-z
+      \endverb
+      \verb{url}
+      \verb https://link.springer.com/article/10.1186/s44147-024-00457-z
+      \endverb
+    \endentry
+    \entry{BlinkDuration}{article}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=1107247b52ce7159a3b471bd52518ded}{%
+           family={Schleicher},
+           familyi={S\bibinitperiod},
+           given={R},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1dc5d044a1e035a848b112347405a880}{%
+           family={Galley},
+           familyi={G\bibinitperiod},
+           given={N},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8d3427777e346bc9bae27c6bb4b67228}{%
+           family={Briest},
+           familyi={B\bibinitperiod},
+           given={S},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3e7c2ff8e0dca4711b8ff36a65f45863}{%
+           family={Galley},
+           familyi={G\bibinitperiod},
+           given={L},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{41f543fc5d723b6c7acbcdf656148f28}
+      \strng{fullhash}{f3322aeedfa7f4d9059e4cc471c0249d}
+      \strng{fullhashraw}{f3322aeedfa7f4d9059e4cc471c0249d}
+      \strng{bibnamehash}{f3322aeedfa7f4d9059e4cc471c0249d}
+      \strng{authorbibnamehash}{f3322aeedfa7f4d9059e4cc471c0249d}
+      \strng{authornamehash}{41f543fc5d723b6c7acbcdf656148f28}
+      \strng{authorfullhash}{f3322aeedfa7f4d9059e4cc471c0249d}
+      \strng{authorfullhashraw}{f3322aeedfa7f4d9059e4cc471c0249d}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{19}
+      \field{journaltitle}{Ergonomics}
+      \field{langid}{english}
+      \field{month}{6}
+      \field{number}{7}
+      \field{title}{Blinks and saccades as indicators of fatigue in sleepiness warnings: looking tired?}
+      \field{urlday}{19}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{volume}{51}
+      \field{year}{2008}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{982\bibrangedash 1010}
+      \range{pages}{29}
+      \verb{doi}
+      \verb 10.1080/00140130701817062
+      \endverb
+      \verb{urlraw}
+      \verb https://www.tandfonline.com/doi/full/10.1080/00140130701817062
+      \endverb
+      \verb{url}
+      \verb https://www.tandfonline.com/doi/full/10.1080/00140130701817062
+      \endverb
+    \endentry
+    \entry{CNN-Trans}{article}{}{}
+      \name{author}{6}{}{%
+        {{un=0,uniquepart=base,hash=8177e57ffb5ebdee72f3fe442224f30e}{%
+           family={Tang},
+           familyi={T\bibinitperiod},
+           given={Xuexi},
+           giveni={X\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b6f25c2ea695f4385f6acab832194dfc}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Yan},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1befbfeebc31ca6e10784c2795c937c5}{%
+           family={Ma},
+           familyi={M\bibinitperiod},
+           given={Yifan},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c95a99f7b4a317749fc9de489851f829}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={Wenxuan},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a7861fd6b834bc6a83d4013975953217}{%
+           family={Zhou},
+           familyi={Z\bibinitperiod},
+           given={Houpan},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=470d84783a6cb106b6cd125103db4b58}{%
+           family={Huang},
+           familyi={H\bibinitperiod},
+           given={Jingzhou},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{bb61b81f385101f0a1cb687f689d7ee6}
+      \strng{fullhash}{98f65dd133b975e10c19df493df2d569}
+      \strng{fullhashraw}{98f65dd133b975e10c19df493df2d569}
+      \strng{bibnamehash}{98f65dd133b975e10c19df493df2d569}
+      \strng{authorbibnamehash}{98f65dd133b975e10c19df493df2d569}
+      \strng{authornamehash}{bb61b81f385101f0a1cb687f689d7ee6}
+      \strng{authorfullhash}{98f65dd133b975e10c19df493df2d569}
+      \strng{authorfullhashraw}{98f65dd133b975e10c19df493df2d569}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0952-1976}
+      \field{journaltitle}{Engineering Applications of Artificial Intelligence}
+      \field{langid}{english}
+      \field{month}{1}
+      \field{title}{A lightweight model combining convolutional neural network and Transformer for driver distraction recognition}
+      \field{urlday}{24}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{volume}{132}
+      \field{year}{2024}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{107910}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/j.engappai.2024.107910
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S095219762400068X
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S095219762400068X
+      \endverb
+    \endentry
+    \entry{Yolo}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=633ef8437d3d3da5cb40b0a61bcacb90}{%
+           family={Tuna},
+           familyi={T\bibinitperiod},
+           given={Baris},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7fb68bc0e43cfa2d2c081a114dcfe4d4}{%
+           family={Kaplan},
+           familyi={K\bibinitperiod},
+           given={Murat},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{527a2797785f99a240bf9cd82591d451}
+      \strng{fullhash}{527a2797785f99a240bf9cd82591d451}
+      \strng{fullhashraw}{527a2797785f99a240bf9cd82591d451}
+      \strng{bibnamehash}{527a2797785f99a240bf9cd82591d451}
+      \strng{authorbibnamehash}{527a2797785f99a240bf9cd82591d451}
+      \strng{authornamehash}{527a2797785f99a240bf9cd82591d451}
+      \strng{authorfullhash}{527a2797785f99a240bf9cd82591d451}
+      \strng{authorfullhashraw}{527a2797785f99a240bf9cd82591d451}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{27}
+      \field{issn}{979-8-3315-4694-6}
+      \field{journaltitle}{2025 16th International Conference on Electrical and Electronics Enineering}
+      \field{langid}{english}
+      \field{month}{11}
+      \field{title}{Inteligent Monitoring System: Facial Features Based Driver Drowsiness Distraction Detection}
+      \field{urlday}{24}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{year}{2025}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1109/ELECO69582.2025.11329338
+      \endverb
+      \verb{urlraw}
+      \verb https://ieeexplore.ieee.org/document/11329338
+      \endverb
+      \verb{url}
+      \verb https://ieeexplore.ieee.org/document/11329338
+      \endverb
+    \endentry
+    \entry{DMD}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=7218bfab4f53591167e6577404cef847}{%
+           family={Vicomtech},
+           familyi={V\bibinitperiod}}}%
+      }
+      \strng{namehash}{7218bfab4f53591167e6577404cef847}
+      \strng{fullhash}{7218bfab4f53591167e6577404cef847}
+      \strng{fullhashraw}{7218bfab4f53591167e6577404cef847}
+      \strng{bibnamehash}{7218bfab4f53591167e6577404cef847}
+      \strng{authorbibnamehash}{7218bfab4f53591167e6577404cef847}
+      \strng{authornamehash}{7218bfab4f53591167e6577404cef847}
+      \strng{authorfullhash}{7218bfab4f53591167e6577404cef847}
+      \strng{authorfullhashraw}{7218bfab4f53591167e6577404cef847}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{langid}{english}
+      \field{title}{Driver Monitoring Dataser: A multimodal dataset for different driver monitoring scenarios}
+      \field{urlday}{24}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{year}{2020}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://dmd.vicomtech.org/
+      \endverb
+      \verb{url}
+      \verb https://dmd.vicomtech.org/
+      \endverb
+    \endentry
+    \entry{DNN}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=bd6fd060eec89b2c8769433b9846abf1}{%
+           family={Vu},
+           familyi={V\bibinitperiod},
+           given={Toan},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5f8e198b395104d8762df6420fa8f67b}{%
+           family={Dang},
+           familyi={D\bibinitperiod},
+           given={An},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=25488ea3b52ff4b26bca7a09a12a40a6}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Jia-Ching},
+           giveni={J\bibinithyphendelim C\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{92d66c0603c7fc6d75bf21a6c2b942d0}
+      \strng{fullhash}{a735da056c614483ee7c82d95e86fcf3}
+      \strng{fullhashraw}{a735da056c614483ee7c82d95e86fcf3}
+      \strng{bibnamehash}{a735da056c614483ee7c82d95e86fcf3}
+      \strng{authorbibnamehash}{a735da056c614483ee7c82d95e86fcf3}
+      \strng{authornamehash}{92d66c0603c7fc6d75bf21a6c2b942d0}
+      \strng{authorfullhash}{a735da056c614483ee7c82d95e86fcf3}
+      \strng{authorfullhashraw}{a735da056c614483ee7c82d95e86fcf3}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEICE Transactions on Information and Systems}
+      \field{langid}{english}
+      \field{month}{12}
+      \field{number}{12}
+      \field{title}{A Deep Neural Network for Real-Time Driver Drowsiness Detection}
+      \field{urlday}{23}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{volume}{102}
+      \field{year}{2019}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{2637\bibrangedash 2641}
+      \range{pages}{5}
+      \verb{doi}
+      \verb 10.1587/transinf.2019EDL8079
+      \endverb
+      \verb{urlraw}
+      \verb https://www.jstage.jst.go.jp/article/transinf/E102.D/12/E102.D_2019EDL8079/_article
+      \endverb
+      \verb{url}
+      \verb https://www.jstage.jst.go.jp/article/transinf/E102.D/12/E102.D_2019EDL8079/_article
+      \endverb
+    \endentry
+    \entry{LibroPERCLOS}{book}{}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=a6545f6d52422654d518161b770f5ad3}{%
+           family={Wierwille},
+           familyi={W\bibinitperiod},
+           given={W\bibnamedelima W},
+           giveni={W\bibinitperiod\bibinitdelim W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=40e519def277bda6c713d8c8e5538b27}{%
+           family={Ellsworth},
+           familyi={E\bibinitperiod},
+           given={L\bibnamedelima A},
+           giveni={L\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=204d238faf29c53609e10d78e016e033}{%
+           family={Wreggit},
+           familyi={W\bibinitperiod},
+           given={S\bibnamedelima S},
+           giveni={S\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6dc357756b48fa6f53d5cacc11b84215}{%
+           family={Fairbanks},
+           familyi={F\bibinitperiod},
+           given={K\bibnamedelima J},
+           giveni={K\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=fb24c00e1e66485c1825d94b649badd2}{%
+           family={Kirn},
+           familyi={K\bibinitperiod},
+           given={C\bibnamedelima L},
+           giveni={C\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {Springfield}%
+      }
+      \strng{namehash}{6b406cc7bab6b38ecd859a3b1bc763be}
+      \strng{fullhash}{69c8a0113747b680af91fc8297ecc08c}
+      \strng{fullhashraw}{69c8a0113747b680af91fc8297ecc08c}
+      \strng{bibnamehash}{69c8a0113747b680af91fc8297ecc08c}
+      \strng{authorbibnamehash}{69c8a0113747b680af91fc8297ecc08c}
+      \strng{authornamehash}{6b406cc7bab6b38ecd859a3b1bc763be}
+      \strng{authorfullhash}{69c8a0113747b680af91fc8297ecc08c}
+      \strng{authorfullhashraw}{69c8a0113747b680af91fc8297ecc08c}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{langid}{english}
+      \field{pagetotal}{247}
+      \field{shorttitle}{Reseach on Vehicule-Based Driver Monitoring}
+      \field{title}{Research on Vehicle-Based Driver Status/Performance Monitoring: Development, Validation, and Refinement of Algorithms For Detection of Driver Drowsiness}
+      \field{year}{1994}
+      \field{dateera}{ce}
+    \endentry
+    \entry{RCAN}{article}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=3802576b6db0f4dc79897133bc8b755b}{%
+           family={Ye},
+           familyi={Y\bibinitperiod},
+           given={Mu},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ac27c4113dfb3b302740f841d0f03b89}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Weiwei},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=076c6db04897e94b334144894138b35c}{%
+           family={Cao},
+           familyi={C\bibinitperiod},
+           given={Pengcheng},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=61c7b591d4863db225c71db57251c804}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Kangan},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{760dae98015fda727026821e00cac34f}
+      \strng{fullhash}{5067f1d10754c0bda2d0e9e20df99824}
+      \strng{fullhashraw}{5067f1d10754c0bda2d0e9e20df99824}
+      \strng{bibnamehash}{5067f1d10754c0bda2d0e9e20df99824}
+      \strng{authorbibnamehash}{5067f1d10754c0bda2d0e9e20df99824}
+      \strng{authornamehash}{760dae98015fda727026821e00cac34f}
+      \strng{authorfullhash}{5067f1d10754c0bda2d0e9e20df99824}
+      \strng{authorfullhashraw}{5067f1d10754c0bda2d0e9e20df99824}
+      \field{sortinit}{Y}
+      \field{sortinithash}{fd67ad5a9ef0f7456bdd9aab10fe1495}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{2}
+      \field{journaltitle}{Applied Sciences}
+      \field{langid}{english}
+      \field{month}{10}
+      \field{number}{19}
+      \field{title}{Driver Fatigue Detection Based on Residual Channel Attetion Network and Head Pose Estimation}
+      \field{urlday}{23}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{volume}{11}
+      \field{year}{2021}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{9195}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3390/app11199195
+      \endverb
+      \verb{urlraw}
+      \verb https://www.mdpi.com/2076-3417/11/19/9195
+      \endverb
+      \verb{url}
+      \verb https://www.mdpi.com/2076-3417/11/19/9195
+      \endverb
+    \endentry
+    \entry{Drowsiness_CV}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=1,uniquepart=given,hash=25bbf4047d900f3760c65b01ee899dba}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Wei},
+           giveni={W\bibinitperiod},
+           givenun=1}}%
+        {{un=0,uniquepart=base,hash=cd8e6950019f65fca76231048cef46a1}{%
+           family={Cheng},
+           familyi={C\bibinitperiod},
+           given={Bo},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4c27dee742f15f38272349804e49d6be}{%
+           family={Lin},
+           familyi={L\bibinitperiod},
+           given={Yingzi},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{a88dfc5c55489606792d411cce65410b}
+      \strng{fullhash}{3649986e74ee3f72dd8109e618b4fe63}
+      \strng{fullhashraw}{3649986e74ee3f72dd8109e618b4fe63}
+      \strng{bibnamehash}{3649986e74ee3f72dd8109e618b4fe63}
+      \strng{authorbibnamehash}{3649986e74ee3f72dd8109e618b4fe63}
+      \strng{authornamehash}{a88dfc5c55489606792d411cce65410b}
+      \strng{authorfullhash}{3649986e74ee3f72dd8109e618b4fe63}
+      \strng{authorfullhashraw}{3649986e74ee3f72dd8109e618b4fe63}
+      \field{sortinit}{Z}
+      \field{sortinithash}{96892c0b0a36bb8557c40c49813d48b3}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{15}
+      \field{issn}{1007-0214}
+      \field{journaltitle}{Tsinghua Science and Technology}
+      \field{langid}{english}
+      \field{month}{6}
+      \field{number}{3}
+      \field{title}{Driver Drowsiness Recognition Based on Computer Vision Technology}
+      \field{urlday}{23}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{volume}{17}
+      \field{year}{2012}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{354\bibrangedash 362}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1109/TST.2012.6216768
+      \endverb
+      \verb{urlraw}
+      \verb https://ieeexplore.ieee.org/document/6216768
+      \endverb
+      \verb{url}
+      \verb https://ieeexplore.ieee.org/document/6216768
+      \endverb
+    \endentry
+    \entry{Sub_MOL}{article}{}{}
+      \name{author}{6}{}{%
+        {{un=1,uniquepart=given,hash=09c1b63c7a0f58b3b139f555f6850c2f}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Xuxin},
+           giveni={X\bibinitperiod},
+           givenun=1}}%
+        {{un=0,uniquepart=base,hash=7bcc46183c4630c9daf67327af80a956}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Xuesong},
+           giveni={X\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1853024d95dcc818bde46ca4a9aaf4a5}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={Xiaohan},
+           giveni={X\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3dd80fcd2470e3532159f23ddd5f746f}{%
+           family={Xu},
+           familyi={X\bibinitperiod},
+           given={Chuan},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=dfeb7f506eb4d6027597f471782cdb6b}{%
+           family={Zhu},
+           familyi={Z\bibinitperiod},
+           given={Xiaohui},
+           giveni={X\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f0da43b1f6317c32f68e6743b96375bc}{%
+           family={Wei},
+           familyi={W\bibinitperiod},
+           given={Jiaohua},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{ef60e7a252e0e956fd6a723bf4887ed3}
+      \strng{fullhash}{bd8421847ab9fd0deb52a91d21372bfa}
+      \strng{fullhashraw}{bd8421847ab9fd0deb52a91d21372bfa}
+      \strng{bibnamehash}{bd8421847ab9fd0deb52a91d21372bfa}
+      \strng{authorbibnamehash}{bd8421847ab9fd0deb52a91d21372bfa}
+      \strng{authornamehash}{ef60e7a252e0e956fd6a723bf4887ed3}
+      \strng{authorfullhash}{bd8421847ab9fd0deb52a91d21372bfa}
+      \strng{authorfullhashraw}{bd8421847ab9fd0deb52a91d21372bfa}
+      \field{sortinit}{Z}
+      \field{sortinithash}{96892c0b0a36bb8557c40c49813d48b3}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1051-4651}
+      \field{journaltitle}{Analytic Methods in Accident Research}
+      \field{langid}{english}
+      \field{month}{6}
+      \field{title}{Driver drowsiness detection using mixed-effect ordered logit model considering time cumulative effect}
+      \field{urlday}{24}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{volume}{26}
+      \field{year}{2020}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{100114}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/j.amar.2020.100114
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S221366572030004X
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S221366572030004X
+      \endverb
+    \endentry
+    \entry{Swin}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=1,uniquepart=given,hash=b22ebf8d8b8b381978284f61883ed8f2}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Ziyang},
+           giveni={Z\bibinitperiod},
+           givenun=1}}%
+        {{un=0,uniquepart=base,hash=f505ba63f7c5b483e947b2aff0a6ab56}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={Lie},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d85d422eb497679f83d9593f1d591ae2}{%
+           family={Lv},
+           familyi={L\bibinitperiod},
+           given={Chen},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{3b7ab26a244fc7b830ac35522098d7c1}
+      \strng{fullhash}{c0f11f966bd53ebb0a293b540189b5fb}
+      \strng{fullhashraw}{c0f11f966bd53ebb0a293b540189b5fb}
+      \strng{bibnamehash}{c0f11f966bd53ebb0a293b540189b5fb}
+      \strng{authorbibnamehash}{c0f11f966bd53ebb0a293b540189b5fb}
+      \strng{authornamehash}{3b7ab26a244fc7b830ac35522098d7c1}
+      \strng{authorfullhash}{c0f11f966bd53ebb0a293b540189b5fb}
+      \strng{authorfullhashraw}{c0f11f966bd53ebb0a293b540189b5fb}
+      \field{sortinit}{Z}
+      \field{sortinithash}{96892c0b0a36bb8557c40c49813d48b3}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{10}
+      \field{journaltitle}{Vehicles}
+      \field{langid}{english}
+      \field{month}{1}
+      \field{number}{1}
+      \field{title}{Highly Discriminative Driver Ditraction Detection Method Based on Swin Transformer}
+      \field{urlday}{24}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{volume}{6}
+      \field{year}{2024}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{140\bibrangedash 156}
+      \range{pages}{17}
+      \verb{doi}
+      \verb 10.3390/vehicles6010006
+      \endverb
+      \verb{urlraw}
+      \verb https://www.mdpi.com/2624-8921/6/1/6
+      \endverb
+      \verb{url}
+      \verb https://www.mdpi.com/2624-8921/6/1/6
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

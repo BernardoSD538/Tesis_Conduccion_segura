@@ -1,0 +1,34 @@
+% called by main.tex
+%
+\chapter{Resultados}
+\label{sec::capitulo4}
+\section{Detección de distracción}
+\subsection{Resultados de entrenamiento de modelos de aprendizaje profundo}
+La Figura \ref{fig:CNNs} muestra los resultados de entrenamiento de distintas arquitecturas de aprendizaje profundo para la predicción de las categorías \textit{looking\_road} y \textit{not\_looking\_road}. Se muestran las métricas que se consideran relevantes para los resultados, siendo la precisión, sensibilidad, \textit{F1 score}, y AUC, valores los cuáles nos indican de manera descriptiva que tan bueno es el modelo para predecir de manera mas detallada. Los valores de \textit{F1 score} tienen un rango de 0.856 a 0.996, mostrando la variabilidad de las arquitecturas utilizadas para la experimentación, obteniendo así resultados deseados para el entrenamiento de modelos con una gama de modelos con distintas capacidades de predicción y diferentes niveles de consumo computacional. 
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\linewidth]{figures/grafica.png}
+    \caption{Resultados de experimentación en entrenamiento de modelos de aprendizaje profundo}
+    \label{fig:CNNs}
+\end{figure}
+
+\subsection{Rendimiento de algoritmos en tiempo real}
+
+La Figura \ref{} muestra los tiempos de inferencia promedio de cada uno de los modelos, tanto en una laptop con GPU como en la RapberryPi 5B, nuestro dispositivo objetivo a implementar en tiempo real. 
+
+\section{Detección de somnolencia}
+\subsection{Detección de parpadeo y PERCLOS}
+\subsection{Detección de bostezo}
+\subsection{Cálculo de orientación de cabeza}
+Para determinar si los resultados del algoritmo de cálculo de orientación de cabeza son óptimos, se compararon las métricas obtenidas en el análisis con el conjunto de datos \textit{Head Tracking} de la Universidad de Boston con las presentadas en la investigación de Choi y Kim, que utilizan este mismo conjunto de datos para su análisis. La Figura \ref{fig:HeadPose} muestra esta comparativa, la barra azul mostrando los valores de MAE obtenidos por nuestro algoritmo, y la barra roja representando los valores obtenidos por Choi y Kim.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\linewidth]{figures/MAE_Overall.png}
+    \caption{Comparativa de métricas resultantes de algoritmos de orientación de cabeza}
+    \label{fig:HeadPose}
+\end{figure}
+
+\newpage %por ahora
+\section{Resultados de codigo modular en tiempo real}

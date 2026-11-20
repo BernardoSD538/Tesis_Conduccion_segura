@@ -1,0 +1,29 @@
+% called by main.tex
+%
+\chapter{Introducción}
+\label{ch::capitulo1}
+
+\section{Declaración del problema}
+De acuerdo con la OMS, los accidentes viales son el primer lugar en causa de muerte entre  edades de 5 y 29 años, y el doceavo lugar en causa de muerte a lo largo de todas las edades (\cite{OMS}). Entre las causas de accidentes viales, se encuentra el estado de distracción en el conductor, así como estado de somnolencia. Buscando generar mayor seguridad vial y así atender a los ODS 3 y 11 relacionadas con la salud y bienestar y ciudades y comunidades sostenibles, esta tesis busca proponer un sistema de visión computacional e inteligencia artificial que busca el monitoreo el estado del conductor en busca de señales de somnolencia y distracción, para poder informar tanto al conductor como a un tercero. A través de esto se busca no solo reducir muertes y traumas causados por accidentes de transito, relacionado a la ODS 3, si no también proporcionan transportes seguros, asequibles y accesibles, buscando mejorar la seguridad vial y atender a la ODS 11. 
+
+El estudio de comportamiento de conductores en busca de señales de somnolencia y distracción es un área que se lleva avanzando desde hace más de 20 años, empezando con el uso de visión computacional para el análisis del rostro, haciendo énfasis en la detección de los ojos y propiedades de los mismos, como la dirección de mirada, PECLOS y duración de parpadeo. Estas investigaciones incluyen en algunos casos el uso de métricas relacionadas al vehículo, como la varianza de posición del vehículo en el carril, la desviación del centro carril, entre otros (\cite{LibroPERCLOS}).
+
+El avance tecnológico a permitido que la creación de sistemas inteligentes y su aplicación sea accesible para el público general, permitiendo no solo el uso de visión computacional, si no también el uso de redes neuronales para detección de rostro, clasificación de distracción, y un análisis de comportamiento con lo cuál se busca detectar efectivamente la somnolencia y distracción en conductores. 
+
+Las investigaciones mas recientes han conseguido resultados avanzados con el uso de redes neuronales para detección tanto de somnolencia como distracción, llegando a porcentajes de precisión de hasta el 0.99 con arquitecturas complejas como Transfer Learning, LSTMs, Fuzzy-Logic, y Transformers (\cite{ModelosDist}) (\cite{sysrev}).
+
+Esta tesis busca ofrecer una opción confiable y ligera para la detección  de somnolencia y distracción, logrando que sea utilizable en sistemas computacionales de menor potencia, como lo es la RapberryPi 5. 
+\section{Objetivos}
+\subsection{Objetivo General}
+Implementar un sistema integrado con cámara que detecte si un conductor muestra comportamientos de distracción o somnolencia capaz de informar a un tercero cuando se realicen detecciones .
+
+\subsection{Objetivos específicos}
+\begin{enumerate}
+    \item Desarrollar un modelo clasificador capaz de detectar si un conductor está distraído o presenta somnolencia.
+
+    \item Integrar el modelo en una SBC que tenga las capacidades de entregar un rendimiento óptimo con uso de Webcam y sistema de alarma ante detecciones.
+
+    \item Implementar un método de notificación a un tercero en caso de detección de distracción o sueño.
+\end{enumerate}
+
+  

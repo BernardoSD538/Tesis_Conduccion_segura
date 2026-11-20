@@ -1,0 +1,95 @@
+% called by main.tex
+%
+\chapter{Metodología}
+\label{sec::capitulo3}
+
+\section{Detección de somnolencia}
+\subsection{Detección de rostro}
+El primer paso para poder realizar cualquier análisis en nuestras imágenes es detectar el rostro del conductor, para poder así calcular las métricas deseadas en base a la detección correcta de un rostro en la imagen. La detección consiste de dos partes diferentes, ambas necesarias para poder cálcular correctamente lo que se busca. El primer pasó es detectar solamente la presencia de un rostro. Existen algoritmos capaces de lograr esto los cuales estan bastamente documentados como opciones funcionales. Para este algortimo, se utiliza el HOG que forma parte de la librería Dlib, el cuál es un algoritmo dedicado a la detección de rostros a través del análisis de dirección y magnitud de cambios que presenta la imagen. Se generan histogramas que dividen la imagen en secciones más pequeñas, y finalmente se utiliza un SVM entrenado para clasificar si la imagen contienen un rostro o no. 
+\subsection{Cálculo de PERCLOS y duración de parpadeo}
+\subsection{Detección de bostezo}
+\subsection{Cálculo de pose de cabeza}
+
+\section{Detección de distracción}
+\subsection{Características de conjunto de datos}
+El conjunto de datos utilizado para el entrenamiento de modelos es la Driver Monitoring Dataset. Disponible de manera gratis para todo público, el DMD es un conjunto de datos recolectado por el grupo Vicomtech. El conjunto de datos es multimodal, pues cuenta con información respecto a estados de distracción del conductor , así como información relacionada a estados de somnolencia del conductor. Los participantes presentan una edad promedio de 30 años, todos siendo mayores de edad, siendo el 27\% mujeres y el 73\% hombres. 10 de los participantes utilizan anteojos. Entre las grabaciones se encuentran experimentos dentro de un carro en movimiento, con el automóvil detenido, y en simuladores. Cada sesión de grabación cuenta con 3 ángulos de cámara: cuerpo, rostro y manos.  La Figura \ref{fig:muestra DMD} muestra ejemplos de como se presentan estos tres ángulos disponibles, de los cuáles se utilizará únicamente el del rostro para el entrenamiento del modelo. Las imágenes son en formato RGB. El conjunto de datos cuenta con anotaciones para múltiples escenarios de peligro en un conductor: Distración con objetos, de fatiga, en relación al volante y  de mirada (\cite{DMD}). 
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\linewidth]{figures/imagen muestra.png}
+    \caption{Imagenes de cámaras disponibles en DMD(\cite{DMD})}
+    \label{fig:muestra DMD}
+\end{figure}
+
+Para la metodología de este sistema solo se utilizan las 2 anotaciones en relación a la mirada del conductor con los nombres \textit{looking\_road} y \textit{not\_looking\_road}, estableciendo de manera binaria que el conductor se encuentra distraído si no tiene la mirada fija en la carretera. Ejemplos de las categorías se muestran en las Figuras \ref{fig:lr} y \ref{fig:nlr}  en las cuales se puede observar que precisamente el enfoque de categorización es en la mirada.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.3\linewidth]{figures/muestra lkr.jpg}
+    \caption{Imagen de categoría \textit{looking\_road} (\cite{DMD})}
+    \label{fig:lr}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.3\linewidth]{figures/muestra nlkr.jpg}
+    \caption{Imagen de categoría not\_looking\_road (\cite{DMD})}
+    \label{fig:nlr}
+\end{figure}
+
+\newpage %por ahora
+El conjunto de datos cuenta con un total de 345,861 imagenes que pueden ser utilizadas para el entrenamiento de los modelos, de las cuales el 80\% (278,308) son de la categoría \textit{looking\_road} y un 20\% (67,553) de \textit{not\_looking\_road}. De manera inicial las clases presentan un desbalance de 4:1, por lo que es necesario implementar un balance de clases en el entrenamiento. 
+
+\subsection{Modelos de aprendizaje profundo entrenados}
+Se entrenaron múltiples arquitecturas de modelos de aprendizaje profundo con el objetivo de obtener un rango de resultados que ofreciera altos niveles de precisión con la mayor eficiencia computacional posible. Con este mismo propósito se empezaron con arquitecturas de redes neuronales convolucionales sencillas, siguiendo por arquitecturas de aprendizaje aprendizaje por transferencia, y finalmente un LSTM. LightGazeCNN es nuestra propia red neuronal convolucional de 4 capas ocultas. Cada capa cuenta con Batch Normalization, MaxPooling, y activación ReLU. Las capas ocultas tienen tamaño de 32, 64, 128 y 256. Para el aprendizaje por transferencia se entrenaron dos arquitecturas, MobileNetV3 y ResNet18. En la MobileNetV3 se descongelaron las últimas 2 capas. Para la ResNet18 se descongelaron las últimas 5 capas. Tras los primeros 3 entrenamientos, se reentrenaron con optimización de hiperparámetros la LightGazeCNN y ResNet18 que fueron las que mejores resultados entregaron inicialmente. Este procedimiento fue realizado con Optuna, y se optimizo el \textit{learning rate, batch size, weight decay, dropout}, optimizador, y en el caso de la ResNet18, cantidad de capas descongeladas. Finalizando con las CNN, se entreno una ultima vez la ResNet18 agregando preprocesamiento de imagen, aplicando escala de grises y CLAHE. Respecto al entrenamiento de la C-LSTM, se utilizó la ResNet18 como CNN y se agregó 1 capa de LSTM. Tras el primer entrenamiento, se realizó una optimización de hiperparámetros para la C-LSTM para los parámetros \textit{learning rate, batch size, weight decay, dropout}, optimizador y cantidad de capas y neuronas LSTM.
+
+La Tabla \ref{tab:tabla arq} muestra los 8 experimentos realizados, incluyendo la cantidad de parámetros calculados en cada arquitectura, que funcionan como indicadores que consumo computacional
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{c|c}
+          Arquitectura &  Num. de Parámetros \\
+         \hline
+         LightGazeCNN (CNN propia)  & 0.42M \\
+         \hline 
+         MobileNetV3  & 1.33M \\
+         \hline
+         ResNet18 & 8.39M \\
+         \hline
+         LightGazeCNN con optm. de hiperparametros & 0.42M \\
+         \hline
+         ResNet18 con optm. de hiperparametros & 10.49M \\
+         \hline
+         ResNet18 con optm. de hiperparametros + Grayscale \& CLAHE & 10.49M \\
+         \hline
+         C-LSTM & 10.88M \\
+         \hline
+         C-LSTM con optm. de hiperparametros & 10.88M \\
+         \hline
+    \end{tabular}
+    \caption{Experimentos de entrenamiento de arquitecturas}
+    \label{tab:tabla arq}
+\end{table}
+
+\subsection{Sistema de detección de distracción en tiempo real}
+Con las redes neuronales convolucionales entrenadas, se aplicaron a un algoritmo en tiempo real que detecta distracción a través de las imágenes capturadas por la cámara del equipo. Buscando detección más robsuta y menos persistente, en el alogritmo de tiempor real se agregaron condiciones de detección, no solo tomando en cuenta la predicción del modelo de aprendizaje profundo frame por frame. Se aplico una ventana de 10 frames con la cuál se usa la moda de la predicción para indicar al conductor si esta distraido o no. Como ultimo filtro de detección se utiliza la norma establecida por la NHTSA que indica que un conductor no debe de estar distraido por más de dos segundos (\cite{NHTSA}). De esta manera, la alarma de distracción se activa solamente si la moda de la predicción de los últimos 10 frames es \textit{not\_looking\_road} durante 2 segundos. 
+
+En la experimentación se realizaron pruebas de este codigo en una laptop para simular condiciones de poder computacional óptimas. La especificaciones de la computadora son: 
+
+\begin{itemize}
+    \item Procesador: 11th Gen Intel(R) Core(TM) i5-11400H @ 2.70GHz (2.69 GHz).
+    \item RAM: 16GB
+    \item Tarjeta gráfica: NVIDIA GeForce RTX 3050 Ti Laptop GPU (4 GB)
+Intel(R) UHD Graphics (128 MB).
+    \end{itemize}
+    
+También ese realizaron pruebas en una Rapberry Pi 5B, con el objetivo de generar comparativas entre la velocidad del algoritmo en distintas condiciones. Las especificaciones de la Raspberry Pi 5B son:
+
+\begin{itemize}
+    \item Procesador: Arm Cortex-A76 de cuatro núcleos y 64 bits a 2,4 GHz
+    \item RAM: 16GB
+    \item Tarjeta gráfica: VideoCore VII
+    \end{itemize}
+\section{Especificaciones de equipo y algoritmo en tiempo real}
+\subsection{Equipo \textit{Plug-and-play}}
+\subsection{Modularización de algoritmo y cambio de lenguaje Python a C++}
