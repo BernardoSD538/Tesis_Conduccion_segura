@@ -19,10 +19,10 @@ La Tabla \ref{tab:subjetivas} muestra la experimentación realizada en el estado
     \begin{tabularx}{\textwidth}{c X X c}
         Investigación & Método de clasificación & Métricas utilizadas & Resultados \\
         \hline
-        \cite{Yolo} & YOLOv8n y YOLOv8s & PERCLOS, bostezo y métricas vehiculares & Precisión = 93\% y 97\% \\
-        \cite{Sub_DT} & Árbol de decisión & Métricas de vehículo & Precisión = 99.1\% \\ 
-        \cite{Sub_MOL} & MOL-TCE & Métricas de vehículo y ojos & Precisión = 62.84\% \\ 
-        \cite{Sub_KNN} & KNN & Parpadeos y movimiento de cabeza & Precisión = 84.2\% \\
+        \cite{Yolo} & YOLOv8n y YOLOv8s & PERCLOS, bostezo y métricas vehiculares & Exactitud = 93\% y 97\% \\
+        \cite{Sub_DT} & Árbol de decisión & Métricas de vehículo & Exactitud = 99.1\% \\ 
+        \cite{Sub_MOL} & MOL-TCE & Métricas de vehículo y ojos & Exactitud = 62.84\% \\ 
+        \cite{Sub_KNN} & KNN & Parpadeos y movimiento de cabeza & Exactitud = 84.2\% \\
         \hline
     \end{tabularx}
     \caption{Metodología y resultados del estado del arte en somnolencia subjetiva}
@@ -42,15 +42,15 @@ La Tabla \ref{tab:Objetivas} muestra los resultados de precisión obtenidos por 
     \begin{tabularx}{\textwidth}{c X X c}
         Investigación & Método de clasificación & Métricas utilizadas & Resultados \\
         \hline
-        \cite{Drowsiness_CV} & Análisis discriminante lineal de Fisher & Frecuencia y duración de parpadeo, velocidad de apertura y cerradura de ojos & Precisión = 86\% \\
-        \cite{EEG_SVM} & ELM y SVM & Señales EEG y EOG & Precisión de 88.1-96.8\% \\
-        \cite{bayesianNetwork} & BN & PERCLOS, AECS, PERLVO, PERTITL, PNS y SDLP & precisión = 95.5\% \\
-        \cite{LSTM} & C-LSTM & EGG y movimiento de ojos & Precisión = 97.87\% \\
-        \cite{DNN} & DNN & Base de datos NTHU-DDD & Precisión = 84.84\% \\
-        \cite{3D-CNN} & 3D-CNN & Características del rostro temporales & Precisión = 57.46\% \\
-        \cite{RCAN} & RCAN & PERCLOS, POM, bostezo & Precisión = 98.96\% \\
-        \cite{MobileNet} & MobileNetV2 & Bases de datos YawnDD y NTHU-DDD & Precisión = 90-99.86\% \\
-        \cite{DyS-VC} & Umbrales cálculados con visión comptuacional & EAR y MAR & Precisión = 94.1\% \\
+        \cite{Drowsiness_CV} & Análisis discriminante lineal de Fisher & Frecuencia y duración de parpadeo, velocidad de apertura y cerradura de ojos & Exactitud = 86\% \\
+        \cite{EEG_SVM} & ELM y SVM & Señales EEG y EOG & Exactitud de 88.1-96.8\% \\
+        \cite{bayesianNetwork} & BN & PERCLOS, AECS, PERLVO, PERTITL, PNS y SDLP & exactitud = 95.5\% \\
+        \cite{LSTM} & C-LSTM & EGG y movimiento de ojos & Exactitud = 97.87\% \\
+        \cite{DNN} & DNN & Base de datos NTHU-DDD & Exactitud = 84.84\% \\
+        \cite{3D-CNN} & 3D-CNN & Características del rostro temporales & Exactitud = 57.46\% \\
+        \cite{RCAN} & RCAN & PERCLOS, POM, bostezo & Exactitud = 98.96\% \\
+        \cite{MobileNet} & MobileNetV2 & Bases de datos YawnDD y NTHU-DDD & Exactitud = 90-99.86\% \\
+        \cite{DyS-VC} & Umbrales cálculados con visión comptuacional & EAR y MAR & Exactitud = 94.1\% \\
         \hline
     \end{tabularx}
     \caption{Metodología y resultados del estado del arte en somnolencia objetiva}
@@ -109,14 +109,14 @@ La Tabla \ref{tab:distracción} muestra la experimentación realizada en el esta
     \begin{tabularx}{\textwidth}{c X X c}
         Investigación & Método de clasificación & Base de datos utilizada & Resultados \\
         \hline
-        \cite{DCNN} & Drive-Net (CNN y Bosque Aleatorio) & Base de datos de Kaggle & Precisión = 95\% \\
-        \cite{Swin} & \textit{Swin Transformer} & AUC-DD y State-Farm & Precisión = 95.63\% y 99.73\% \\
-        \cite{LRCN} &  LCRN & Base de datos propia & Precisión ) 93.9-99.2\% \\
-        \cite{D3D} & 3D-CNN & DMD & Precisión = 73.35\% \\ 
-        \cite{CNN-Trans} & CaTNet (ConvNeXt + CaT) & AUC y State-Farm & Precisión = 94.82\% y 99.91\% \\
-        \cite{DyS-VC} & Umbrales cálculados con visión computacional & Posición del iris de los ojos & Precisión = 89\% \\ 
-        \cite{DTF} & AlexNet e InceptionV3 & Base de datos propia & Precisión = 93.65\% y 95.17\% \\
-        \cite{DHM-RNN} & ResNet + HRNN & AUC y State-Farm & Precisión = 96.23\% y 92.36\% \\
+        \cite{DCNN} & Drive-Net (CNN y Bosque Aleatorio) & Base de datos de Kaggle & Exactitud = 95\% \\
+        \cite{Swin} & \textit{Swin Transformer} & AUC-DD y State-Farm & Exactitud = 95.63\% y 99.73\% \\
+        \cite{LRCN} &  LCRN & Base de datos propia & Exactitud ) 93.9-99.2\% \\
+        \cite{D3D} & 3D-CNN & DMD & Exactitud = 73.35\% \\ 
+        \cite{CNN-Trans} & CaTNet (ConvNeXt + CaT) & AUC y State-Farm & Exactitud = 94.82\% y 99.91\% \\
+        \cite{DyS-VC} & Umbrales cálculados con visión computacional & Posición del iris de los ojos & Exactitud = 89\% \\ 
+        \cite{DTF} & AlexNet e InceptionV3 & Base de datos propia & Exactitud = 93.65\% y 95.17\% \\
+        \cite{DHM-RNN} & ResNet + HRNN & AUC y State-Farm & Exactitud = 96.23\% y 92.36\% \\
         \hline
     \end{tabularx}
     \caption{Metodología y resultados del estado del arte en detección de distracción}
