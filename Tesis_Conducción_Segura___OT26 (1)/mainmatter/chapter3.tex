@@ -5,7 +5,7 @@
 
 \section{Detección de somnolencia}
 \subsection{Detección de rostro}
-El primer paso para poder realizar cualquier análisis en nuestras imágenes es detectar el rostro del conductor, para poder así calcular las métricas deseadas en base a la detección correcta de un rostro en la imagen. La detección consiste de dos partes diferentes, ambas necesarias para poder cálcular correctamente lo que se busca. El primer pasó es detectar solamente la presencia de un rostro. Existen algoritmos capaces de lograr esto los cuales estan bastamente documentados como opciones funcionales. Para este algortimo, se utiliza el HOG que forma parte de la librería Dlib, el cuál es un algoritmo dedicado a la detección de rostros a través del análisis de dirección y magnitud de cambios que presenta la imagen. Se generan histogramas que dividen la imagen en secciones más pequeñas, y finalmente se utiliza un SVM entrenado para clasificar si la imagen contienen un rostro o no. 
+El primer paso para poder realizar cualquier análisis en nuestras imágenes es detectar el rostro del conductor, para poder así calcular las métricas deseadas en base a la detección correcta de un rostro en la imagen. La detección consiste de dos partes diferentes, ambas necesarias para poder calcular correctamente lo que se busca. El primer paso es detectar solamente la presencia de un rostro. Existen algoritmos capaces de lograr esto los cuales estan bastamente documentados como opciones funcionales. Para este algortimo, se utiliza el HOG que forma parte de la librería Dlib, el cuál es un algoritmo dedicado a la detección de rostros a través del análisis de dirección y magnitud de cambios que presenta la imagen. Se generan histogramas que dividen la imagen en secciones más pequeñas, y finalmente se utiliza un SVM entrenado para clasificar si la imagen contienen un rostro o no. 
 \subsection{Cálculo de PERCLOS y duración de parpadeo}
 \subsection{Detección de bostezo}
 \subsection{Cálculo de pose de cabeza}
@@ -33,7 +33,7 @@ Para la metodología de este sistema solo se utilizan las 2 anotaciones en relac
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.3\linewidth]{figures/muestra nlkr.jpg}
-    \caption{Imagen de categoría not\_looking\_road (\cite{DMD})}
+    \caption{Imagen de categoría \textit{not\_looking\_road} (\cite{DMD})}
     \label{fig:nlr}
 \end{figure}
 
