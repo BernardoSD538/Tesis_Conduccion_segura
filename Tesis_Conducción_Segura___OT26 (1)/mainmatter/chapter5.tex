@@ -8,9 +8,16 @@
 En la Figura \ref{fig:CNNs} se logra aprecierar que todos los resultados de \textit{F1 score} son de valores altos, con un mínimo de 0.848, lo cuál es indicativo de que los modelos de aprendizaje profundo son capaces de predecir el estado de distracción de un conductor utilizando un conjunto de datos, incluso con arquitecturas pequeñas y simples, que ofrecen una opción no tan precisa pero ciertamente ligera en consumo computacional. Y también existe la posibilidad de obtener modelos con valores de predicción que se acercan al 100\% de precisión utilizando arquitecturas más complejas y mas costosas en recursos computacionales. Observando de manera mas detallada, los valores de precisión y sensibilidad en todos los modelos mantienen la tendencia de que el valor de precisión siempre es más alto que el de sensibilidad, indicando que existe una mejor habilidad de predecir la categoría \textit{looking\_road}, esto debido probablemente al desbalance que se encuentra en las clases, a pesar de las medidas tomadas para la compensación entre clases. El uso de un conjunto de datos con un equilibro mayor entre clases podría ofrecer resultados más semejantes entre precisión y sensibilidad. 
 
 \subsection{Rendimiento de algoritmo en tiempo real}
-
+El objetivo de medir el tiempo de inferencia de los modelos de aprendizaje profundo en tiempo real es determinar si estos pueden ser realmente utilizados en una RaspberryPi 5B o en lo absoluto.
+Los resultados observados en la Figura \ref{fig:lat} muestran que en un equipo con condiciones ideales como lo es una laptop, cualquier modelo, sin importar complejidad, puede ser utilizado en tiempo real, ya que incluso la C-LSTM, que es la arquitectura más compleja, tan solo llego a 11.1ms,
+y en un sistema que funciona a 30 FPS, esto es lo suficientemente rápido para que el algoritmo pueda monitorear al conductor a tiempo. Sin embargo, al analizar los resultados en la RaspberryPi 5B, 
+se puede notar un rápido crecimiento en el tiempo de inferencia a medida que la complejidad de la arquitectura aumenta. El tiempo de inferencia más pequeño en la RaspberryPi, que es de 11.8ms en la LightGazeCNN, sigue siendo mayor que el tiempo más grande en la laptop. 
+Este tiempo aún es posible de implementar dentro de la RaspberryPi, al igual que el tiempo obtenido por la MobileNetV3, que obtuvo 21.6ms, pero estas dos arquitecturas son las que presentaron menores resultados en la predicción, lo cuál es una limitante. 
+En cuanto a la ResNet18 y la C-LSTM, estas presentan tiempos de inferencia lo suficientemente tardados para crear un funcionamiento no ideal en tiempo real dentro de la RaspberryPi, en especial considerando que esto es sin tomar en cuenta los demás aspectos del algoritmo de somnolencia. 
+Gracias a las conclusiones obtenidas en este análisis, se puede determinar que la implementación de arquitecturas complejas en tiempo real en una RaspberryPi 5B en lenguaje Python no es muy factible, y es por esto que nuestra métodología evolucionó a una implementación en tiempo real con el lenguaje C++,
+buscando optimizar el tiempo de el algoritmo de detección de distracción y somnolencia.
 \section{Detección de somnolencia}
-\subsection{Detección de parpadeao y PERCLOS}
+\subsection{Detección de parpadeao y PERCLO}
 \subsection{Detección de bostezo}
 \subsection{Cálculo de orientación de cabeza}
 
