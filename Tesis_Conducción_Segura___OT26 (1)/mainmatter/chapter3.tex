@@ -3,14 +3,28 @@
 
 \section{Detección de somnolencia}
 \subsection{Detección de rostro}
-El primer paso para poder realizar cualquier análisis en nuestras imágenes es detectar el rostro del conductor, para poder así calcular las métricas deseadas en base a la detección correcta de un rostro en la imagen. La detección consiste de dos partes diferentes, ambas necesarias para poder calcular correctamente lo que se busca. El primer paso es detectar solamente la presencia de un rostro. Existen algoritmos capaces de lograr esto los cuales estan bastamente documentados como opciones funcionales. Para este objetivo, se utiliza el HOG que forma parte de la librería Dlib, el cuál es algoritmo ya entrenado específicamente para la detección de rostros (\cite{MinhasPERCLOS}).
+El primer paso para poder realizar cualquier análisis en nuestras imágenes es detectar el rostro del conductor, para poder así calcular las métricas deseadas en base a la detección correcta de un rostro en la imagen. La detección consiste de dos partes diferentes, ambas necesarias para poder calcular correctamente lo que se busca. El primer paso es detectar solamente la presencia de un rostro. Existen algoritmos capaces de lograr esto los cuales están documentados como opciones funcionales. Para este objetivo, se utiliza el HOG que forma parte de la librería Dlib, el cuál es algoritmo ya entrenado específicamente para la detección de rostros (\cite{MinhasPERCLOS}).
+
+Tras la detección de el rostro, es necesario utilizar un detector de puntos faciales, que también forma parte de la librería Dlib. Lo que este algoritmo logra es una vez con el rostro detectado, localiza 68 puntos a lo largo del rostro, ofreciendo un mapeo del rostro que permite calcular métricas relacionadas a distancias en distintas partes del rostro. La Figura \ref{fig:68} muestra como se mapean los 68 puntos a lo largo del rostro. Se puede apreciar que se genera un contorno del rostro, los ojos, la nariz, y la boca. 
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\linewidth]{figures/68points.png}
+    \caption{Imagenes de cámaras disponibles en DMD(\cite{DMD})}
+    \label{fig:68}
+\end{figure}
+
+Es a través de los puntos que forman los ojos y la boca que se pueden realizar los cálculos matemáticos para determinar si el conductor se encuentra en estado de somnolencia o no, por lo que una vez establecidos los 68 puntos, podemos continuar con el cálculo de las métricas PERCLOS, duración de parpadeo, detección de bostezo y orientación de la cabeza. 
+
 \subsection{Cálculo de PERCLOS y duración de parpadeo}
 \subsection{Detección de bostezo}
 \subsection{Cálculo de pose de cabeza}
 
 \section{Detección de distracción}
 \subsection{Características de conjunto de datos}
-El conjunto de datos utilizado para el entrenamiento de modelos es la Driver Monitoring Dataset. Disponible de manera gratis para todo público, el DMD es un conjunto de datos recolectado por el grupo Vicomtech. El conjunto de datos es multimodal, pues cuenta con información respecto a estados de distracción del conductor , así como información relacionada a estados de somnolencia del conductor. Los participantes presentan una edad promedio de 30 años, todos siendo mayores de edad, siendo el 27\% mujeres y el 73\% hombres. 10 de los participantes utilizan anteojos. Entre las grabaciones se encuentran experimentos dentro de un carro en movimiento, con el automóvil detenido, y en simuladores. Cada sesión de grabación cuenta con 3 ángulos de cámara: cuerpo, rostro y manos.  La Figura \ref{fig:muestra DMD} muestra ejemplos de como se presentan estos tres ángulos disponibles, de los cuáles se utilizará únicamente el del rostro para el entrenamiento del modelo. Las imágenes son en formato RGB. El conjunto de datos cuenta con anotaciones para múltiples escenarios de peligro en un conductor: Distración con objetos, de fatiga, en relación al volante y  de mirada (\cite{DMD}). 
+El conjunto de datos utilizado para el entrenamiento de modelos es la Driver Monitoring Dataset. Disponible de manera gratis para todo público, el DMD es un conjunto de datos recolectado por el grupo Vicomtech. El conjunto de datos es multimodal, pues cuenta con información respecto a estados de distracción del conductor , así como información relacionada a estados de somnolencia del conductor. Los participantes presentan una edad promedio de 30 años, todos siendo mayores de edad, siendo el 27\% mujeres y el 73\% hombres. 10 de los participantes utilizan anteojos. Entre las grabaciones se encuentran experimentos dentro de un carro en movimiento, con el automóvil detenido, y en simuladores. Cada sesión de grabación cuenta con 3 ángulos de cámara: cuerpo, rostro y manos. 
+
+La Figura \ref{fig:muestra DMD} muestra ejemplos de como se presentan estos tres ángulos disponibles, de los cuáles se utilizará únicamente el del rostro para el entrenamiento del modelo. Las imágenes son en formato RGB. El conjunto de datos cuenta con anotaciones para múltiples escenarios de peligro en un conductor: Distración con objetos, de fatiga, en relación al volante y  de mirada (\cite{DMD}). 
 
 \begin{figure}[h!]
     \centering
@@ -88,6 +102,6 @@ También ese realizaron pruebas en una Rapberry Pi 5B, con el objetivo de genera
     \item RAM: 16GB
     \item Tarjeta gráfica: VideoCore VII
     \end{itemize}
-\section{Especificaciones de equipo y algoritmo en tiempo real}
+\section{Implementación en tiempo real}
 \subsection{Equipo \textit{Plug-and-play}}
 \subsection{Modularización de algoritmo y cambio de lenguaje Python a C++}
