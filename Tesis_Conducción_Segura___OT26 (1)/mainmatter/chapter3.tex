@@ -29,9 +29,9 @@ Para el cálculo de la duración de un parpadeo, se utiliza también el EAR obte
 
 Todo lo del filtro adaptativo y eso...
 
-Buscando determinar si nuestro algoritmo detecta parpadeos de manera correcta, se evaluó en el conjunto de datos EyeBlink8, que cuenta con imágenes de 8 sujetos grabados en interiores. Cuenta con anotaciones por frame de cuando el sujeto parpadea. La base de datos cuenta con (tantos) eventos de parpadeo.
+Buscando determinar si nuestro algoritmo detecta parpadeos de manera correcta, se evaluó en el conjunto de datos EyeBlink8, que cuenta con imágenes de 8 sujetos grabados en interiores. Cuenta con anotaciones por frame de cuando el sujeto parpadea. La base de datos cuenta con (tantos) eventos de parpadeo. También se realizo una evaluación con el conjunto de datos DMD utilizando las anotaciones de \textit{open}, \textit{opening}, \textit{closed} y \textit{closing}. 
 
-También se realizo una evaluación con el conjunto de datos DMD utilizando las anotaciones de \textit{open}, \textit{opening}, \textit{closed} y \textit{closing}. 
+Finalmente, se entreno una red neuronal convolucional para detección de parpadeo para ambos conjuntos de datos, buscando tener algo con lo cual comparar el algortimo propuesto y determinar si este es realmente competitivo con otros métodos de detección para estas dos bases de datos especificamente. Las CNN cuentan con...
 \subsection{Detección de bostezo}
 La detección de bostezo tiene un procedimiento similar al del cálculo del PERCLOS, con la única diferencia se utiliza el MAR en vez de EAR. En la formula utilizada se cuenta con los 8 puntos que generan el contorno de la boca. E igualmente que con los ojos, usando estos 8 puntos como esquinas se puede determinar que tan abierta o cerrada se encuentra la boca, y una vez establecido si esta abierta o no la boca, determinar si el conductor se encuentra bostezando o no. 
 \[
