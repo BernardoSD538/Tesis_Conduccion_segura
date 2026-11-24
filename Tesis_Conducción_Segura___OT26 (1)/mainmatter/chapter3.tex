@@ -10,14 +10,38 @@ Tras la detección de el rostro, es necesario utilizar un detector de puntos fac
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.5\linewidth]{figures/68points.png}
-    \caption{Imagenes de cámaras disponibles en DMD(\cite{DMD})}
+    \caption{Mapeo del rostro con 68 puntos(\cite{MinhasPERCLOS})}
     \label{fig:68}
 \end{figure}
 
 Es a través de los puntos que forman los ojos y la boca que se pueden realizar los cálculos matemáticos para determinar si el conductor se encuentra en estado de somnolencia o no, por lo que una vez establecidos los 68 puntos, podemos continuar con el cálculo de las métricas PERCLOS, duración de parpadeo, detección de bostezo y orientación de la cabeza. 
 
 \subsection{Cálculo de PERCLOS y duración de parpadeo}
+Para ser capaces de calcular el PERCLOS, es necesario calcular primero el EAR. EL EAR se obtiene a través de una fórmula que utiliza los 6 puntos del ojo obtenidos con el detector de Dlib. Realizando restas, sumas, y divisiones entre estos 6 puntos, el algoritmo es capaz de determinar que tan abierto o que tan cerrado se encuentra el ojo, siempre y cuando se tengan estos 6 puntos, que funcionan como esquinas del ojo que se acercan o alejan entre si dependiendo de la apertura del ojo. 
+\[
+\mathrm{EAR} = \frac{|\mathrm{P}_2 - \mathrm{P}_6| + |\mathrm{P}_3 - \mathrm{P}_5|}{2|\mathrm{P}_1 - \mathrm{P}_4|}
+\]
+
+El PERCLOS esta establecido como la medición de cuanto tiempo el ojo estuvo por lo menos 80\% cerrado durante un periodo de tiempo determinado. Esto significa que podemos establecer que cuando nuestro EAR tenga un valor de 0.2 o menor, el ojo se encuentra cerrado (\cite{MinhasPERCLOS}). 
+Finalmente, la ventana de tiempo que se eligió para el calculo del PERCLOS es de 30 segundos, esto buscando tener una ventana de tiempo que sea pequeña para un monitoreo constante pero que mantenga un comportamiento de resultados parecido a ventanas de tiempo usualmente utilizadas, como 1 minuto. 
+
+Para el cálculo de la duración de un parpadeo, se utiliza también el EAR obtenido con la ayuda de Dlib, pero se sigue un procedimiento diferente para establecer el valor. 
+
+Todo lo del filtro adaptativo y eso...
+
+Buscando determinar si nuestro algoritmo detecta parpadeos de manera correcta, se evaluó en el conjunto de datos EyeBlink8, que cuenta con imágenes de 8 sujetos grabados en interiores. Cuenta con anotaciones por frame de cuando el sujeto parpadea. La base de datos cuenta con (tantos) eventos de parpadeo.
+
+También se realizo una evaluación con el conjunto de datos DMD utilizando las anotaciones de \textit{open}, \textit{opening}, \textit{closed} y \textit{closing}. 
 \subsection{Detección de bostezo}
+La detección de bostezo tiene un procedimiento similar al del cálculo del PERCLOS, con la única diferencia se utiliza el MAR en vez de EAR. En la formula utilizada se cuenta con los 8 puntos que generan el contorno de la boca. E igualmente que con los ojos, usando estos 8 puntos como esquinas se puede determinar que tan abierta o cerrada se encuentra la boca, y una vez establecido si esta abierta o no la boca, determinar si el conductor se encuentra bostezando o no. 
+\[
+\mathrm{MAR} = \frac{|\mathrm(P)_2 - \mathrm{P}_9| + |\mathrm{P}_3 - \mathrm{P}_7| + |\mathrm{P}_4 - \mathrm{P}_6}{3|\mathrm{P}_1 - \mathrm{P}_5}
+\]
+
+Basándonos en el estado del arte, se establece en el algoritmo que el valor de MAR para encontrar un bostezo es de 0.5 (\cite{Bostezo}). Para la implementación en tiempo real, se establece una detección de bostezo cuando este valor de MAR se encuentra de manera consecutiva durante 4 segundos, de acuerdo a lo encontrado en el estado del arte (\cite{Bostezo}).  
+
+Para el análisis de la detección de bostezo en nuestro algoritmo, se recurre a la base de datos YawnDD, una base de datos que cuenta con.. 
+
 \subsection{Cálculo de pose de cabeza}
 
 \section{Detección de distracción}
