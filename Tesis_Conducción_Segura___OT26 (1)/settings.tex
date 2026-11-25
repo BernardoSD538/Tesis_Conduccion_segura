@@ -34,6 +34,34 @@
 \usepackage{subcaption}   
 \usepackage{csquotes}
 
+
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+% --- Traducción de palabras clave al español ---
+% Bloque condicional (if / else)
+\algrenewcommand\algorithmicif{\textbf{si}}
+\algrenewcommand\algorithmicthen{\textbf{entonces}}
+\algrenewcommand\algorithmicelse{\textbf{si no}}
+% Bucles (for / while / repeat / loop)
+\algrenewcommand\algorithmicfor{\textbf{para}}
+\algrenewcommand\algorithmicforall{\textbf{para todo}}
+\newcommand{\To}{\textbf{hasta\ }}
+\algrenewcommand\algorithmicwhile{\textbf{mientras}}
+\algrenewcommand\algorithmicdo{\textbf{hacer}}
+\algrenewcommand\algorithmicrepeat{\textbf{repetir}}
+\algrenewcommand\algorithmicuntil{\textbf{hasta que}}
+\algrenewcommand\algorithmicloop{\textbf{bucle}}
+% Procedimientos y funciones
+\algrenewcommand\algorithmicprocedure{\textbf{procedimiento}}
+\algrenewcommand\algorithmicfunction{\textbf{función}}
+% Cierres y retornos
+\algrenewcommand\algorithmicend{\textbf{fin}}
+\algrenewcommand\algorithmicreturn{\textbf{devolver}}
+% Entradas y salidas
+\algrenewcommand\algorithmicrequire{\textbf{Entrada:}}
+\algrenewcommand\algorithmicensure{\textbf{Salida:}}
+\floatname{algorithm}{Algoritmo}
+
 %%% BIBLIOGRAPHY
 % The style used is APA. A list of available styles is available  at https://www.overleaf.com/learn/latex/Biblatex_bibliography_styles
 
