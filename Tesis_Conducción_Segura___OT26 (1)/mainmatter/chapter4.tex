@@ -31,6 +31,79 @@ Igualmente, en ambos casos la arquitectura con mayor tiempo de inferencia es la 
 
 \section{Detección de somnolencia}
 \subsection{Detección de parpadeo y PERCLOS}
+Para determinar si los resultados obtenidos por el detector de 68 puntos de Dlib son adecuados para nuestra detección de duración de parpadeos y PERCLOS, se decidió que se tomaría como enfoque la duración de parpadeo, pues si la detección de parpadeos es la apropiada, el porcentaje de PERCLOS debe ser calculado de forma correcta en consecuencia.
+
+La primera prueba realizada con el detector de Dlib fue en el conjunto de datos de \textit{EyeBlink8}, esta prueba tuvo de enfoque la detección de parpadeos en general, y otorgó los resultados que se encuentran en la tabla \ref{tab:blinkEB8}
+
+\begin{table}[h!]
+    \centering
+    \footnotesize
+    \renewcommand{\arraystretch}{1.8}
+    \begin{tabularx}{\textwidth}{X c c c c c c c}
+        \toprule
+        & \textbf{GT} & \textbf{VP} & \textbf{FP} & \textbf{FN} & \textbf{F1} & \textbf{Precisión} & \textbf{Exhaustividad} \\
+        \midrule
+        Detección de Eventos de Parpadeo & 387 & 291 & 57 & 96 & 0.7714 & 0.8174 & 0.7354 \\
+        \bottomrule
+    \end{tabularx}
+    \caption{Detección de parpadeos en videos de conjunto de datos de \textit{EyeBlink8} usando Dlib}
+    \label{tab:blinkEB8}
+\end{table}
+
+Esta prueba también fue realizada con el conjunto de datos del \textit{DMD}, buscando averiguar que tan bueno es el algoritmo al momento de detectar estos parpadeos, los resultados de esta segunda prueba se encuentran en la tabla \ref{tab:blinkDMD}
+
+\begin{table}[h!]
+    \centering
+    \footnotesize
+    \renewcommand{\arraystretch}{1.8}
+    \begin{tabularx}{\textwidth}{X c c c c c c c}
+        \toprule
+        & \textbf{GT} & \textbf{VP} & \textbf{FP} & \textbf{FN} & \textbf{F1} & \textbf{Precisión} & \textbf{Exhaustividad} \\
+        \midrule
+        Detección de Eventos de Parpadeo & 285 & 257 & 179 & 28 & 0.7129 & 0.5894 & 0.9018 \\
+        \bottomrule
+    \end{tabularx}
+    \caption{Detección de parpadeos en videos de conjunto de datos de \textit{DMD} usando Dlib (\cite{DMD})}
+    \label{tab:blinkDMD}
+\end{table}
+
+
+Tras realizar las pruebas anteriores, se determinó que se debería tener un enfoque en parpadeos relevantes para nosotros, por lo cual se cambió la prueba para que en vez de evaluar todos los parpadeos, se le tuviera un enfoque a parpadeos que consideremos relevantes, los cuales son los parpadeos con duración igual o mayor a 500 milisegundos. Para este propósito realizamos la prueba únicamente en el conjunto de datos del \textit{DMD}, esto debido a que el conjunto de datos de \textit{EyeBlink8} únicamente contiene 8 eventos de parpadeos relevantes a comparación de los 200 contenidos en el del \textit{DMD}. La tabla \ref{tab:blinkDMD_relevant} muestra un resumen de los resultados de esta experimentación.
+
+\begin{table}[h!]
+    \centering
+    \footnotesize
+    \renewcommand{\arraystretch}{1.8}
+    \begin{tabularx}{\textwidth}{X c c c c c c c}
+        \toprule
+        & \textbf{GT} & \textbf{VP} & \textbf{FP} & \textbf{FN} & \textbf{F1} & \textbf{Precisión} & \textbf{Exhaustividad} \\
+        \midrule
+        Detección de Riesgo & 200 & 180 & 119 & 20 & 0.7214 & 0.6020 & 0.9000 \\
+        \bottomrule
+    \end{tabularx}
+    \caption{Detección de parpadeos relevantes en videos de conjunto de datos de \textit{DMD} usando Dlib (\cite{DMD})}
+    \label{tab:blinkDMD_relevant}
+\end{table}
+
+Como también se deseaba evaluar el rendimiento de una red neuronal ligera, tras haber entrenado tal red neuronal, se decidió aplicarle una evaluación de la misma forma en la que se le aplicó al detector de 68 puntos de Dlib. Para esto se tomaron los datos del conjunto de datos completo del \textit{DMD}, y se evaluaron igualmente para la detección de parpadeos relevantes, representativos de situaciones de riesgo. Esta prueba fue realizada con tres distintos umbrales de decisión para la CNN, para poder así observar cuál opción nos daba los resultados más cercanos a los que esperamos. Se pueden observar los resultados de la evaluación en la tabla \ref{tab:blinkCNN}.
+
+\begin{table}[h!]
+    \centering
+    \footnotesize
+    \renewcommand{\arraystretch}{1.8}
+    \begin{tabularx}{\textwidth}{X c c c c c c c}
+        \toprule
+        \textbf{Configuración ($\tau$)} & \textbf{GT} & \textbf{VP} & \textbf{FP} & \textbf{FN} & \textbf{F1} & \textbf{Precisión} & \textbf{Exhaustividad} \\
+        \midrule
+        Opción A ($\tau = 0.20$) & 200 & 166 & 494 & 34 & 0.3860 & 0.2515 & 0.8300 \\
+        Opción B ($\tau = 0.50$) & 200 & 159 & 361 & 41 & 0.4417 & 0.3058 & 0.7950 \\
+        Opción C ($\tau = 0.70$) & 200 & 149 & 228 & 51 & 0.5165 & 0.3952 & 0.7450 \\
+        \bottomrule
+    \end{tabularx}
+    \caption{Detección de parpadeos relevantes en videos de conjunto de datos de \textit{DMD} con CNN (\cite{DMD})}
+    \label{tab:blinkCNN}
+\end{table}
+
 \subsection{Detección de bostezo}
 \subsection{Cálculo de orientación de cabeza}
 Para determinar si los resultados del algoritmo de cálculo de orientación de cabeza son óptimos, se compararon las métricas obtenidas en el análisis con el conjunto de datos \textit{Head Tracking} de la Universidad de Boston con las presentadas en la investigación de Choi y Kim, que utilizan este mismo conjunto de datos para su análisis. La Figura \ref{fig:HeadPose} muestra esta comparativa, la barra azul mostrando los valores de MAE obtenidos por nuestro algoritmo, y la barra roja representando los valores obtenidos por Choi y Kim.
