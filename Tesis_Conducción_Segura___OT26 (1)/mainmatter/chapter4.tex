@@ -19,7 +19,7 @@ La Figura \ref{fig:CNNs} muestra los resultados de entrenamiento de distintas ar
 
 La Figura \ref{fig:lat} muestra los tiempos de inferencia promedio de cada uno de los modelos, tanto en una laptop con GPU como en la RapberryPi 5B, nuestro dispositivo objetivo a implementar en tiempo real. 
 Podemos ver los comportamientos inicialmente esperados, con tiempos mucho menores en la laptop, debido a la capacidad computacional que esta ofrece. En ambos casos el menor tiempo de inferencia lo muestra LightGazeCNN, la CNN creada para esta investigación. 
-Igualmente, en ambos casos la arquitectura con mayor tiempo de inferencia es la C-LSTM, esto debido a su complejidad al combinar una ResNet18 con dos capas LSTM. El tiempo de inferencia menor en la RaspberryPi 5B es de 11.8ms y el mayor de 82.4ms, mientras que en la laptop son de 3.4ms y 11.1ms, lo cuál muestra la importancia de tomar en cuenta el poder computacional que se tiene en el equipo utilizado.
+Igualmente, en ambos casos la arquitectura con mayor tiempo de inferencia es la C-LSTM, esto debido a su complejidad al combinar una ResNet18 con dos capas LSTM. El tiempo de inferencia menor en la RaspberryPi 5B es de 11.8ms y el mayor de 82.4ms, mientras que en la laptop son de 3.4ms y 11.1ms, lo cuál muestra la importancia de tomar en cuenta el poder computacional que se tiene en el equipo utilizado. Igualmente, los FPS a los cuáles funcionan cada tarea son diferentes, teniendo en promedio 13 para la tarea de distracción, 18 para la tarea de somnolencia y 33.61 para la tarea de captura de imagen.  
 
 \begin{figure}[h!]
     \centering
@@ -44,3 +44,42 @@ Para determinar si los resultados del algoritmo de cálculo de orientación de c
 
 \newpage %por ahora
 \section{Resultados de codigo modular en tiempo real}
+Se realizaron pruebas de funcionamiento del código modular en tiempo real, utilizando la RaspberryPi 5B como dispositivo de prueba. 
+Esto se realizó para la versión modular en Python y en  C++, con el objetivo de observar la mejora en eficiencia al cambiar de Python a C++, 
+vez se determino que el lenguaje de Python era muy lento para ser implementado en tiempo real. Ambas pruebas se realizaron utilizando la C-LSTM como arquitectura para la detección de distracción, buscando comparar ambos lenguajes en el caso más demandante del algoritmo. 
+
+La Tabla \ref{tab:Python} muestra los resultados de latencia promedio obtenidos en la versión modular en Python. La detección de somnolencia, que incluye la detección de rostro, los 68 puntos, y el cálculo de PERCLOS, duración de parpadeo, orientación de cabeza y detección de bostezo, tiene una duración de 44.65ms. Donde vemos una latencia grande, como ya se observo en los resultados individuales, es en la detección de distracción, que tarda en promedio 79.87ms en realizarse cuando se utiliza una C-LSTM para realizar la predicción. Aunque este es un resultado ligeramente mejor que los inicialmente obtenidos, este sigue siendo muy tardado, generando que le algoritmo en tiempo real alcance tan solo 7.7 FPS en promedio, muy por debajo del objetivo. 
+
+\begin{table}[h!]
+    \centering
+    \footnotesize
+    \renewcommand{\arraystretch}{1.8} 
+    \begin{tabularx}{\textwidth}{c c}
+        Tarea & Latencia (ms) \\
+        \hline
+        Detección de somnolencia & 44.65 \\
+        Detección de distracción & 79.87 \\ 
+        Tiempo total &  125.35 \\ 
+        \hline
+    \end{tabularx}
+    \caption{Tiempos de latencia en codigo modular de Python}
+    \label{tab:Python}
+\end{table}
+
+En la Tabla \ref{tab:C} se observan las latencias promedio obtenidas en la versión final del código modular en C++. El valor de la tarea de somnolencia es de 54.85ms, tomando en cuenta la implementación de la detección de rostro, cálculo de PERCLOS, duración de parpadeo, orientación de cabeza, y detección de bostezo a través de una CNN. La detección de distracción, que cumple con las mismas tareas que en Python, tiene una latencia promedio de 77ms. Se destaca que debido a que esta versión utiliza \textit{threading}, los timepos de inferencia de cada tarea no se suman, si no que suceden a diferente velocidad en paralelo. 
+\begin{table}[h!]
+    \centering
+    \footnotesize
+    \renewcommand{\arraystretch}{1.8} 
+    \begin{tabularx}{\textwidth}{c c}
+        Tarea & Latencia (ms) \\
+        \hline
+        Detección de somnolencia & 54.85 \\
+        Detección de distracción & 77.00 \\ 
+        Tiempo total &  ?? \\ 
+        \hline
+    \end{tabularx}
+    \caption{Tiempos de latencia en codigo modular de C++}
+    \label{tab:C}
+\end{table}
+
