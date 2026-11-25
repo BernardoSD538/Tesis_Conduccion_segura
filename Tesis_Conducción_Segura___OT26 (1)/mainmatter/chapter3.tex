@@ -41,7 +41,8 @@ La detección de bostezo tiene un procedimiento similar al del cálculo del PERC
 \mathrm{MAR} = \frac{|\mathrm{P}_2 - \mathrm{P}_9| + |\mathrm{P}_3 - \mathrm{P}_7| + |\mathrm{P}_4 - \mathrm{P}_6|}{3|\mathrm{P}_1 - \mathrm{P}_5|}
 \]
 
-Basándonos en el estado del arte, se establece en el algoritmo que el valor de MAR para encontrar un bostezo es de 0.5 (\cite{Bostezo}). Para la implementación en tiempo real, se establece una detección de bostezo cuando este valor de MAR se encuentra de manera consecutiva durante 4 segundos, de acuerdo a lo encontrado en el estado del arte (\cite{Bostezo}).  
+% Esto pudiera mejorarse, porque parecer ser que en realidad los bostezos *promedio* son los que duran entre 4-6 segundos, pero como el equipo lo discutió en su momento, hay bostezos que duran como 2 segundos. Y es que creo que hay artículos que encuentran que, si bien la duración de bostezos varía mucho entre sujetos (unos bostezando, en general, por más tiempo que otros), la duración entre bostezos es consistente para un mismo sujeto. Además, puede ser que esos 4-6 segundos estén considerando todo el ciclo del bostezo: cuando alguien empieza a abrir la boca, cuando está en su peak, y cuando la está cerrando, pero el MAR de 0.5 tiene la limitante de que es más representativo de la boca estándo más cerca de su peak que de la boca abriendose o cerrándose apenas. Mi punto es: teníamos razones para esperarnos 4 segundos de predicciones pseudo-consecutivas para declarar un episodio de bostezo, pero también teníamos razones para probar diferentes tiempos y ver qué resultados teníamos. Solo habría que ver como condensar esta redacción, y respaldarla con referencia(s).  
+Basándonos en el estado del arte, se establece en el algoritmo que el valor de MAR para encontrar un bostezo es de 0.5 (\cite{Bostezo}). Para la implementación en tiempo real, primero establecimos que se haría una detección de bostezo cuando este valor de MAR se encontrara de manera consecutiva durante 4 segundos, de acuerdo a lo encontrado en el estado del arte (\cite{Bostezo}). Sin embargo, pruebas iniciales detectando bostezos con el MAR nos mostraron que había momentos donde Dlib no detectaba un rostro, y cuando eso pasaba, ya no se cumplía el criterio de detección consecutiva, y por tanto se reiniciba el conteo de los 4 segundos. Por lo tanto acordamos que, tras capturar una imagen de la cámara, tanto si no se detectaba un rostro, como si tras detectarlo el MAR bajaba del threshold, no volveríamos a empezar otros 4 segundos, sino que el conteo de tiempo acumulado de bostezo disminuiría con cada ciclo.
 
 Para el análisis de la detección de bostezo en nuestro algoritmo, se recurre al conjunto de datos de \textbf{YawDD} (\cite{YawDD}). Incluye 349\footnote{En el sitio web original se menciona que son 351 videos en total, pero al descargar el conjunto de datos contamos únicamente con 349 de ellos.} videos, grabados dentro de un carro real con una resolución de 640$\times$480 a 30 FPS, y con diferentes conductores: hombres y mujeres, con o sin lentes, y de diferentes grupos étnicos. Los videos contienen episodios donde los conductores están: 1) en conducción normal (sin hablar), 2) hablando y/o cantando, y 3) bostezando; lo hacen en diferentes condiciones de iluminación. Hay dos conjuntos principales de videos: grabados desde el espejo retrovisor (320 videos), y grabados desde el tablero del carro (29 videos). Por estas razones las imágenes tienen nombres como \verb|"1-FemaleNoGlasses-Yawning.avi"|, dentro de carpetas que indican la ubicación de la cámara, y que indican si son hombres o mujeres. Ejemplos de imágenes de los 3 grupos de actividades que realizan los conductores se encuentran en las Figuras \ref{fig:YawDD_p34}, \ref{fig:YawDD_p38}, y \ref{fig:YawDD_p41}.
 
@@ -66,13 +67,74 @@ Para el análisis de la detección de bostezo en nuestro algoritmo, se recurre a
     \label{fig:YawDD_p41}
 \end{figure}
 
-Este conjunto de datos tiene una peculiaridad: a pesar de que tiene videos cuyos  nombres mencionan una actividad general que realiza el conductor en cuestión, no contiene anotaciones a nivel imagen que nos permita validar que las predicciones de nuestro algoritmo sean correctas. Tras investigar, nos encontramos con \textbf{YawDD+} (\cite{YawDDPlus}), un conjunto de anotaciones para cada imagen de cada video de YawDD. Ellos desarrollaron una \textit{pipeline} semi-automatizada con verificación humana para hacer las anotaciones, alcanzando una exactitud de 99.34\%. Las anotaciones son archivos .txt de una sola línea cuyo contenido es de la forma \verb|"[anotación] [coordenadas_normalizadas]|". Las anotaciones son \verb|0| o \verb|1| y las coordenadas normalizadas marcan los extremos de recuadros utilizados para aplicaciones de detección de objetos. Cada video tiene una carpeta correspondiente que cuenta con $n$ archivos .txt, uno cada imagen del video. YawDD+ contiene 349 carpetas de anotaciones, la cual corresponde al numero de videos que tenemos de YawDD. Fue así que pudimos trabajar con YawDD como se esperaba. 
+Este conjunto de datos tiene una peculiaridad: a pesar de que tiene videos cuyos  nombres mencionan una actividad general que realiza el conductor en cuestión, no contiene anotaciones a nivel imagen que nos permita validar que las predicciones de nuestro algoritmo sean correctas. Tras investigar, nos encontramos con \textbf{YawDD+} (\cite{YawDDPlus}), un conjunto de anotaciones para cada imagen de cada video de YawDD. Ellos desarrollaron una \textit{pipeline} semi-automatizada con verificación humana para hacer las anotaciones, alcanzando una exactitud de 99.34\%. Las anotaciones son archivos .txt de una sola línea cuyo contenido es de la forma \verb|"[anotación] [coordenadas_normalizadas]|". Las anotaciones son \verb|0| o \verb|1| y las coordenadas normalizadas marcan los extremos de recuadros utilizados para aplicaciones de detección de objetos. Cada video tiene una carpeta correspondiente que cuenta con $n$ archivos .txt, uno por cada imagen del video. YawDD+ contiene 349 carpetas de anotaciones, cantidad que corresponde a los 349 videos que tenemos de YawDD. Fue así que pudimos trabajar con YawDD como se esperaba. 
 
-Sin embargo, como este conjunto de datos se creó para detección de objetos, hay un total de 287,225 anotaciones en archivos .txt. Tras iniciar una operación de copiado y pegado de la carpeta con las anotaciones a otro directorio, y ver el tiempo que tardaba en realizarla, se consideró que esta estructura haría también que cualquier evaluación del algoritmo de detección de bostezo que hiciéramos se tardaría mucho por la lectura de archivos. Por tanto, se creó con un LLM un script de Python que, para cada video, concatenara todas las anotaciones en un solo .txt dentro de carpetas de Dash y Mirror, como el conjunto de datos original, y a partir de esos archivos poblar un JSON con información de conteo de imágenes, conteo de imágenes de bostezo, y las anotaciones de bostezo / no bostezo para cada video. 
+Sin embargo, como este conjunto de datos se creó para detección de objetos, hay un total de 287,225 anotaciones en archivos .txt. Tras iniciar una operación de copiado y pegado de la carpeta con las anotaciones a otro directorio, y ver el tiempo que tardaba en realizarla, se consideró que esta estructura haría también que cualquier evaluación del algoritmo de detección de bostezo que hiciéramos se tardaría mucho por la lectura de archivos. Por tanto, se creó con un LLM un script de Python que, para cada video, concatenara todas las anotaciones en un solo .txt dentro de carpetas de Dash y Mirror, como el conjunto de datos original, y a partir de esos archivos poblar un JSON con información de conteo de imágenes, conteo de imágenes de bostezo, y las anotaciones de bostezo / no bostezo para cada video. También se generó otro script para tener 2 JSONs en los cuales vivieran dos subconjuntos "virtuales" (en lugar de almacenar dos veces el conjunto de datos en directorios diferentes, tener JSONs cuyos objetos tengan atributos que apunten a los videos deseados) de datos. Uno con el cual evaluar el algoritmo de detección de bostezo, y modificar la duración de segundos requeridos para detectar bostezos dependiendo de los resultados obtenidos en caso de verlo útil, y el otro para validarlo con videos de los cuales no hayamos obtenido retroalimentación previa.
 
-% mencionar que se usan los JSON para generar los folds de train y test
+% aquí estaría cool mostrar una imagen de los clips que se generaban
+Tras empezar a probar el algoritmo con el conjunto de datos de experimentación, notábamos que tenía una precisión alta, pero una exhaustividad muy baja: habían muchos bostezos verdaderos que \textit{no} se estaban detectando. Para averiguar por qué ocurría esto, generamos un script de Python que extrajera clips de videos cuyas anotaciones indicaban episodios de sueño, y que además anotara esos videos con información acerca del MAR, la detección facial, y demás información que nos pudiera ser útil para encontrar posibles errores. No fue necesario revisar muchos clips para darnos cuenta que el problema era que en ciertas orientaciones de la cabeza, Dlib simplemente no era capaz de detectar un rostro. Probamos con diferentes thresholds para el MAR y duraciones mínimas de bostezo detectado para catalogar un episodio de bostezo, pero los resultados fueron similares. Por ello, decidimos experimentar con un enfoque un poco más demandante computacionalmente, pero que la literatura nos muestra que entrega mejores resultados: una CNN. 
 
-% explicar algoritmo de detección
+\subsubsection{Entrenamiento}
+
+Considerando que la velocidad de inferencia de la CNN necesitaba ser alta, se comenzó entrenando modelos con imágenes de entrada de $224\times224$. No obstante, al evaluar el costo computacional con los recursos disponibles, se optó por reducir la resolución a $112\times112$, obteniendo resultados equivalentes con un tiempo de entrenamiento e inferencia significativamente menor. Tras realizar diversas pruebas de ajuste en la cantidad de capas convolucionales, funciones de activación, capas densas y regularización, se consolidó la arquitectura presentada en la Tabla \ref{tab:tabla CNN yawning}.
+
+La red está compuesta por 4 bloques convolucionales secuenciales y un bloque de capas densamente conectadas. Cada bloque convolucional sigue la misma estructura base de cinco etapas:
+\begin{enumerate}[noitemsep,topsep=0pt]
+    \item \textbf{Convolución 2D}: Filtros de $3\times3$ con \textit{padding} tipo \textit{same} y sin sesgo.
+    \item \textbf{Dropout}
+    \item \textbf{Activación con \textit{Leaky ReLU}}
+    \item \textbf{Batch Normalization}
+    \item \textbf{Max Pooling}. Con una ventana de $2\times2$.
+\end{enumerate}
+
+A lo largo de los cuatro bloques convolucionales, el número de filtros se duplica progresivamente, mientras que la tasa de \textit{Dropout} se reduce gradualmente considerando la resolución de los respectivos mapas de características. Al final de la etapa densamente conectada se incluye una activación sigmoide para clasificación binaria.
+
+\begin{table}[h!]
+    \centering
+    \small
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabular}{llcr}
+        \hline
+        \textbf{Bloque / Capa} & \textbf{Configuración} & \textbf{Salida} & \textbf{Parámetros} \\
+        \hline
+        Entrada & Imagen RGB & $112 \times 112 \times 3$ & 0 \\
+        \hline
+        Bloque Conv. 1 & 32 filtros, Dropout 40\% & $56 \times 56 \times 32$ & 992 \\
+        Bloque Conv. 2 & 64 filtros, Dropout 40\% & $28 \times 28 \times 64$ & 18,688 \\
+        Bloque Conv. 3 & 128 filtros, Dropout 20\% & $14 \times 14 \times 128$ & 74,240 \\
+        Bloque Conv. 4 & 256 filtros, Dropout 10\% & $7 \times 7 \times 256$ & 295,936 \\
+        \hline
+        Global Avg Pool & - & 256 & 0 \\
+        Densa 1 & 128 neuronas, Dropout 50\% & 128 & 33,408 \\
+        Densa 2 & 64 neuronas, Dropout 50\% & 64 & 8,256 \\
+        Salida & - & 1 & 65 \\
+        \hline
+        \multicolumn{3}{r}{Parámetros entrenables:} & 430,369 \\
+        \hline
+        \multicolumn{3}{r}{\textbf{Cantidad total de parámetros:}} & \textbf{431,585} \\
+        \hline
+    \end{tabular}
+    \caption{Arquitectura de CNN para detección de bostezo.}
+    \label{tab:tabla CNN yawning}
+\end{table}
+
+% se monitoreó el f1-score macro
+
+% \begin{algorithm}
+% \caption{Buscar máximo en una lista}
+% \label{alg:maximo}
+% \begin{algorithmic}[1] % [1] activa la numeración de líneas
+%   \Procedure{DetectarBostezo}{$A$}
+%     \State $\text{max} \gets A[1]$
+%     \For{$i \gets 2$ \To $|A|$}
+%       \If{$A[i] > \text{max}$}
+%         \State $\text{max} \gets A[i]$
+%       \EndIf
+%     \EndFor
+%     \State \Return $\text{max}$
+%   \EndProcedure
+% \end{algorithmic}
+% \end{algorithm}
 
 % explicar que lo intentamos checar 
 
