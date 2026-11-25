@@ -38,12 +38,50 @@ Finalmente, se entrenó una red neuronal convolucional para detección de parpad
 \subsection{Detección de bostezo}
 La detección de bostezo tiene un procedimiento similar al del cálculo del PERCLOS, con la única diferencia se utiliza el MAR en vez de EAR. En la formula utilizada se cuenta con los 8 puntos que generan el contorno de la boca. E igualmente que con los ojos, usando estos 8 puntos como esquinas se puede determinar que tan abierta o cerrada se encuentra la boca, y una vez establecido si esta abierta o no la boca, determinar si el conductor se encuentra bostezando o no. 
 \[
-\mathrm{MAR} = \frac{|\mathrm(P)_2 - \mathrm{P}_9| + |\mathrm{P}_3 - \mathrm{P}_7| + |\mathrm{P}_4 - \mathrm{P}_6|}{3|\mathrm{P}_1 - \mathrm{P}_5|}
+\mathrm{MAR} = \frac{|\mathrm{P}_2 - \mathrm{P}_9| + |\mathrm{P}_3 - \mathrm{P}_7| + |\mathrm{P}_4 - \mathrm{P}_6|}{3|\mathrm{P}_1 - \mathrm{P}_5|}
 \]
 
 Basándonos en el estado del arte, se establece en el algoritmo que el valor de MAR para encontrar un bostezo es de 0.5 (\cite{Bostezo}). Para la implementación en tiempo real, se establece una detección de bostezo cuando este valor de MAR se encuentra de manera consecutiva durante 4 segundos, de acuerdo a lo encontrado en el estado del arte (\cite{Bostezo}).  
 
-Para el análisis de la detección de bostezo en nuestro algoritmo, se recurre a la base de datos YawnDD, una base de datos que cuenta con.. 
+Para el análisis de la detección de bostezo en nuestro algoritmo, se recurre al conjunto de datos de \textbf{YawDD} (\cite{YawDD}). Incluye 349\footnote{En el sitio web original se menciona que son 351 videos en total, pero al descargar el conjunto de datos contamos únicamente con 349 de ellos.} videos, grabados dentro de un carro real con una resolución de 640$\times$480 a 30 FPS, y con diferentes conductores: hombres y mujeres, con o sin lentes, y de diferentes grupos étnicos. Los videos contienen episodios donde los conductores están: 1) en conducción normal (sin hablar), 2) hablando y/o cantando, y 3) bostezando; lo hacen en diferentes condiciones de iluminación. Hay dos conjuntos principales de videos: grabados desde el espejo retrovisor (320 videos), y grabados desde el tablero del carro (29 videos). Por estas razones las imágenes tienen nombres como \verb|"1-FemaleNoGlasses-Yawning.avi"|, dentro de carpetas que indican la ubicación de la cámara, y que indican si son hombres o mujeres. Ejemplos de imágenes de los 3 grupos de actividades que realizan los conductores se encuentran en las Figuras \ref{fig:YawDD_p34}, \ref{fig:YawDD_p38}, y \ref{fig:YawDD_p41}.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\linewidth]{figures/yawdd_participant_34_female_normal.png}
+    \caption{YawDD: Mujer caucásica en conducción normal. (\cite{YawDD})}
+    \label{fig:YawDD_p34}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\linewidth]{figures/yawdd_participant_38_male_talking.png}
+    \caption{YawDD: Hombre africano hablando. (\cite{YawDD})}
+    \label{fig:YawDD_p38}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\linewidth]{figures/yawdd_participant_41_male_yawning.png}
+    \caption{YawDD: Hombre del medio oriente bostezando. (\cite{YawDD})}
+    \label{fig:YawDD_p41}
+\end{figure}
+
+Este conjunto de datos tiene una peculiaridad: a pesar de que tiene videos cuyos  nombres mencionan una actividad general que realiza el conductor en cuestión, no contiene anotaciones a nivel imagen que nos permita validar que las predicciones de nuestro algoritmo sean correctas. Tras investigar, nos encontramos con \textbf{YawDD+} (\cite{YawDDPlus}), un conjunto de anotaciones para cada imagen de cada video de YawDD. Ellos desarrollaron una \textit{pipeline} semi-automatizada con verificación humana para hacer las anotaciones, alcanzando una exactitud de 99.34\%. Las anotaciones son archivos .txt de una sola línea cuyo contenido es de la forma \verb|"[anotación] [coordenadas_normalizadas]|". Las anotaciones son \verb|0| o \verb|1| y las coordenadas normalizadas marcan los extremos de recuadros utilizados para aplicaciones de detección de objetos. Cada video tiene una carpeta correspondiente que cuenta con $n$ archivos .txt, uno cada imagen del video. YawDD+ contiene 349 carpetas de anotaciones, la cual corresponde al numero de videos que tenemos de YawDD. Fue así que pudimos trabajar con YawDD como se esperaba. 
+
+Sin embargo, como este conjunto de datos se creó para detección de objetos, hay un total de 287,225 anotaciones en archivos .txt. Tras iniciar una operación de copiado y pegado de la carpeta con las anotaciones a otro directorio, y ver el tiempo que tardaba en realizarla, se consideró que esta estructura haría también que cualquier evaluación del algoritmo de detección de bostezo que hiciéramos se tardaría mucho por la lectura de archivos. Por tanto, se creó con un LLM un script de Python que, para cada video, concatenara todas las anotaciones en un solo .txt dentro de carpetas de Dash y Mirror, como el conjunto de datos original, y a partir de esos archivos poblar un JSON con información de conteo de imágenes, conteo de imágenes de bostezo, y las anotaciones de bostezo / no bostezo para cada video. 
+
+% mencionar que se usan los JSON para generar los folds de train y test
+
+% explicar algoritmo de detección
+
+% explicar que lo intentamos checar 
+
+% procesamiento de anotaciones para optimizar entrenamiento para reducir operaciones de disco, mencionando como desde que se copiaron de una ubicación a otra se sabría que sería un problema. 
+
+%% entrenamiento de modelos
+
+% mencionar el rango de variación en las redes neuronales entrenadas, en general, 
+% stride, proceso de caching, aumento de datos 
 
 \subsection{Cálculo de pose de cabeza}
 
