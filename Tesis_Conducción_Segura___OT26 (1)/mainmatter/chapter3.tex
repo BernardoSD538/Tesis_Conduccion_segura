@@ -297,6 +297,30 @@ También ese realizaron pruebas en una Rapberry Pi 5B, con el objetivo de genera
     \item RAM: 16GB
     \item Tarjeta gráfica: VideoCore VII
     \end{itemize}
+
+\subsection{Implementación de arquitecturas en C++}
 \section{Implementación en tiempo real}
 \subsection{Equipo \textit{Plug-and-play}}
+Buscando que el equipo funcionara en modalidad \textit{Plug-and-play}, se creo un \textit{worker} en la RaspberryPi utilziando Autostart. Este es un mecanismo estandarizado dentro de Linux que permite al usuario configurar el funcionamiento de un algoritmo en cuanto la Raspberry Pi se encienda. Este aspecto es escencial para poder lograr un verdadero \textit{Plug-and-play}. Se eligio el uso de Autostart porque este servicio en especifico permite el uso de OpenCV para la observación del funcionamiento en el código de debug, por lo que aunque no es necesario para la versión final, es fundamental para su uso en pruebas.
+
+Para obtener la capacidad de alimentar a la Raspberry Pi 5B, se propone el uso de un adaptador de toma de corriente de 12V capaz de regular su corriente y voltaje a través de un cable PD. Con esto se busca también que usando este tipo de adaptador se ofrezca la disponibilidad de conexión a una gamma mucho mayor de automoviles, considerando que modelos antiguos no suelen contar con conexiones directas a USB, además de que esta entra es la unica que ofrece 12V. La alimentación correcta de la Raspberry Pi es un paso elemental para un correcto funcionamiento del sistema completo, ya que con una baja corriente se presentan fallos no solo en la administración de corriente a perifericos, si no también un funcionamiento más lento de los algoritmos utilizados en la Raspberry. Una imagen ilustrativa del adaptador a utilzar se observa en la Figura \ref{fig:adaptador}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.3\linewidth]{figures/adaptador.jpg}
+    \caption{Diagrama de conexiones de IMU y Raspberry Pi 5B}
+    \label{fig:adaptador}
+\end{figure}
+
+El equipo en tiempo real cuenta también con el añadido de una IMU MPU-6050, esto con el objetivo de tener un sistema integrado que solo arroje alarmas cuando el vehiculo este en movimiento, evitando así la creación de falsos positivos en situaciones donde es natural que el conductor se encuntre distraido, al estar completamente parado. El funcionamiento del circuito es sumamente simple, pues solo se requieren 3 conexiones de la IMU a la Raspberry, siendo dos de estas la alimentación a 5V (pin 2 de Raspberry Pi 5B) y a tierra (multiples opciones de pin en Raspberry). Adicionalmente se deben de conectar las terminales SCL y SDA a los pines 5 y 3 de la Raspberry, respectivamente. Este circuito se ilustra de manera gráfica en la Figura \ref{conexiones}.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\linewidth]{figures/circuito.jpg}
+    \caption{Diagrama de conexiones de IMU y Raspberry Pi 5B}
+    \label{fig:conexiones}
+\end{figure}
+
+La configuración del algoritmo esta diseñada para que se realice una lectura y cálculo de la aceleración, y la activación del sistema general cuando un umbral de aceleración es superado. La calibración de este sensor optimamente se realiza en un carro para establecer la aceleración promedio de un automovil en movimiento, pero se realizo una calibración inical en laboratorio para pruebas inciales y por dificultades de alimentación en el vehiculo. 
+
 \subsection{Modularización de algoritmo y cambio de lenguaje Python a C++}

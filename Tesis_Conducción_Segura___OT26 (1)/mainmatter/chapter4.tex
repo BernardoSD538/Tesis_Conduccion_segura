@@ -28,6 +28,7 @@ Igualmente, en ambos casos la arquitectura con mayor tiempo de inferencia es la 
     \label{fig:lat}
 \end{figure}
 
+\subsection{Implementación de arquitecturas en C++}
 
 \section{Detección de somnolencia}
 \subsection{Detección de parpadeo y PERCLOS}
@@ -151,33 +152,67 @@ La Tabla \ref{tab:Python} muestra los resultados de latencia promedio obtenidos 
 \begin{table}[h!]
     \centering
     \footnotesize
-    \renewcommand{\arraystretch}{1.8} 
-    \begin{tabularx}{\textwidth}{c c}
+    \begin{tabular}{c c}
         Tarea & Latencia (ms) \\
         \hline
         Detección de somnolencia & 44.65 \\
         Detección de distracción & 79.87 \\ 
-        Tiempo total &  125.35 \\ 
         \hline
-    \end{tabularx}
+    \end{tabular}
     \caption{Tiempos de latencia en codigo modular de Python}
     \label{tab:Python}
 \end{table}
 
-En la Tabla \ref{tab:C} se observan las latencias promedio obtenidas en la versión final del código modular en C++. El valor de la tarea de somnolencia es de 54.85ms, tomando en cuenta la implementación de la detección de rostro, cálculo de PERCLOS, duración de parpadeo, orientación de cabeza, y detección de bostezo a través de una CNN. La detección de distracción, que cumple con las mismas tareas que en Python, tiene una latencia promedio de 77ms. Se destaca que debido a que esta versión utiliza \textit{threading}, los timepos de inferencia de cada tarea no se suman, si no que suceden a diferente velocidad en paralelo. 
+En la Tabla \ref{tab:C} se observan las latencias promedio obtenidas en la versión final del código modular en C++. El valor de la tarea de somnolencia es de 54.85ms, tomando en cuenta la implementación de la detección de rostro, cálculo de PERCLOS, duración de parpadeo, orientación de cabeza, y detección de bostezo a través de una CNN. La detección de distracción, que cumple con las mismas tareas que en Python, tiene una latencia promedio de 77ms. Se destaca que debido a que esta versión utiliza \textit{threading}, los timepos de inferencia de cada tarea no se suman, si no que suceden a diferente velocidad en paralelo. Al observar el funcionamiento de este algoritmo en tiempo real, se obtienen FPS de 13 y 18.89 para las tareas de distracción y somnolencia, respectivamente. Esta velocidad es la necesaria para que se presente un funcionamiento en tiempo real correcto y fluido.
 \begin{table}[h!]
     \centering
     \footnotesize
     \renewcommand{\arraystretch}{1.8} 
-    \begin{tabularx}{\textwidth}{c c}
+    \begin{tabular}{c c}
         Tarea & Latencia (ms) \\
         \hline
         Detección de somnolencia & 54.85 \\
         Detección de distracción & 77.00 \\ 
-        Tiempo total &  ?? \\ 
         \hline
-    \end{tabularx}
+    \end{tabular}
     \caption{Tiempos de latencia en codigo modular de C++}
     \label{tab:C}
 \end{table}
 
+La Figura \ref{fig:grouped} ilustra los distintos estados que se pueden encontrar en el código modular de C++. Existe el estado de condición segura, el estado de distracción y el estado de somnolencia. También puede apreciarse la funcionalidad de las métricas secundarias, el bostezo y la orientación de la cabeza, donde puede suceder que se detecten pero no se marque un estado de somnolencia ya que no se cumplen con los requisitos para indicar alarma.  
+
+\begin{figure}[h!]
+    \centering
+    % Row 1: 2 images
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figures/imagen muestra dem.png}
+    \end{minipage}\hfill%
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figures/imgyawn.png}
+    \end{minipage}
+
+    \vspace{0.3cm}
+
+    % Row 2: 2 images
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figures/imgdist.png}
+    \end{minipage}\hfill%
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figures/imghead.png}
+    \end{minipage}
+
+    \vspace{0.3cm}
+
+    % Row 3: 1 image
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figures/imgparp.png}
+    \end{minipage}
+
+    \caption{Imágenes ilustrativas de distintos estados del código mostrados en debug}
+    \label{fig:grouped}
+\end{figure}
