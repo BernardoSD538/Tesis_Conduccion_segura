@@ -421,6 +421,15 @@ El equipo en tiempo real cuenta también con el añadido de una IMU MPU-6050, es
 
 La configuración del algoritmo esta diseñada para que se realice una lectura y cálculo de la aceleración, y la activación del sistema general cuando un umbral de aceleración es superado. La calibración de este sensor optimamente se realiza en un carro para establecer la aceleración promedio de un automovil en movimiento, pero se realizo una calibración inical en laboratorio para pruebas inciales y por dificultades de alimentación en el vehiculo. 
 
+Finalmente, se agrego una bocina para la reproducción de los audios de calibración y aletras. Se busco utilizar un modelo pequeño que fuera de solamente conexión USB para facilitar su uso y acomplamiento a la RaspberryPi 5B. El modelo elegido se muestra en la Figura \ref{fig:bocina}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\linewidth]{figures/bocina.jpg}
+    \caption{Imagen de bocina utilizada para reproducción de audios en tiempo real (\cite{bocina})}
+    \label{fig:bocina}
+\end{figure}
+
 \subsection{Modularización de algoritmo y cambio de lenguaje Python a C++}
 
 
