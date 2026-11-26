@@ -257,6 +257,8 @@ También ese realizaron pruebas en una Rapberry Pi 5B, con el objetivo de genera
     \item RAM: 16GB
     \item Tarjeta gráfica: VideoCore VII
     \end{itemize}
+
+\subsection{Implementación de arquitecturas en C++}
 \section{Implementación en tiempo real}
 \subsection{Equipo \textit{Plug-and-play}}
 Buscando que el equipo funcionara en modalidad \textit{Plug-and-play}, se creo un \textit{worker} en la RaspberryPi utilziando Autostart. Este es un mecanismo estandarizado dentro de Linux que permite al usuario configurar el funcionamiento de un algoritmo en cuanto la Raspberry Pi se encienda. Este aspecto es escencial para poder lograr un verdadero \textit{Plug-and-play}. Se eligio el uso de Autostart porque este servicio en especifico permite el uso de OpenCV para la observación del funcionamiento en el código de debug, por lo que aunque no es necesario para la versión final, es fundamental para su uso en pruebas.

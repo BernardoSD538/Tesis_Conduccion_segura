@@ -16,6 +16,9 @@ Este tiempo aún es posible de implementar dentro de la RaspberryPi, al igual qu
 En cuanto a la ResNet18 y la C-LSTM, estas presentan tiempos de inferencia lo suficientemente tardados para crear un funcionamiento no ideal en tiempo real dentro de la RaspberryPi, en especial considerando que esto es sin tomar en cuenta los demás aspectos del algoritmo de somnolencia. 
 Gracias a las conclusiones obtenidas en este análisis, se puede determinar que la implementación de arquitecturas complejas en tiempo real en una RaspberryPi 5B en lenguaje Python no es muy factible, y es por esto que nuestra métodología evolucionó a una implementación en tiempo real con el lenguaje C++,
 buscando optimizar el tiempo de el algoritmo de detección de distracción y somnolencia.
+
+\subsection{Implementación de arquitecturas en C++}
+
 \section{Detección de somnolencia}
 \subsection{Detección de parpadeao y PERCLO}
 \subsection{Detección de bostezo}
