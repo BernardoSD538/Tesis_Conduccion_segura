@@ -95,7 +95,7 @@ Para el análisis de la detección de bostezo en nuestro algoritmo, se recurre a
     \label{fig:YawDD_p41}
 \end{figure}
 
-Este conjunto de datos tiene una peculiaridad: a pesar de que tiene videos cuyos  nombres mencionan una actividad general que realiza el conductor en cuestión, no contiene anotaciones a nivel imagen que nos permita validar que las predicciones de nuestro algoritmo sean correctas. Tras investigar, nos encontramos con \textbf{YawDD+} (\cite{YawDDPlus}), un conjunto de anotaciones para cada imagen de cada video de YawDD. Ellos desarrollaron una \textit{pipeline} semi-automatizada con verificación humana para hacer las anotaciones, alcanzando una exactitud de 99.34\%. Las anotaciones son archivos .txt de una sola línea cuyo contenido es de la forma \verb|"[anotación] [coordenadas_normalizadas]|". Las anotaciones son \verb|0| o \verb|1| y las coordenadas normalizadas marcan los extremos de recuadros utilizados para aplicaciones de detección de objetos. Cada video tiene una carpeta correspondiente que cuenta con $n$ archivos .txt, uno por cada imagen del video. YawDD+ contiene 349 carpetas de anotaciones, cantidad que corresponde a los 349 videos que tenemos de YawDD. Fue así que pudimos trabajar con YawDD como se esperaba. 
+Este conjunto de datos tiene una peculiaridad: a pesar de que tiene videos cuyos  nombres mencionan una actividad general que realiza el conductor en cuestión, no contiene anotaciones a nivel imagen que nos permita validar que las predicciones de nuestro algoritmo sean correctas. Tras investigar, nos encontramos con \textbf{YawDD+} (\cite{YawDDPlus}), un conjunto de anotaciones para cada imagen de cada video de YawDD. Ellos desarrollaron una \textit{pipeline} semi-automatizada con verificación humana para hacer las anotaciones, alcanzando una exactitud de 99.34\%. Las anotaciones son archivos .txt de una sola línea cuyo contenido es de la forma \verb|"[anotación] [coordenadas_normalizadas]|". Las anotaciones son \verb|0| ("normal") o \verb|1| ("bostezo") y las coordenadas normalizadas marcan los extremos de recuadros utilizados para aplicaciones de detección de objetos. Los videos donde alguien bosteza no se componen enteramente del episodio de bostezo. Es decir, dentro de un video, puede haber imágenes donde se etiqueta como \verb|0|, y en algún punto del video haber uno o más episodios de bostezo, anotados con \verb|1|. Cada video tiene una carpeta correspondiente que cuenta con $n$ archivos .txt, uno por cada imagen del video. YawDD+ contiene 349 carpetas de anotaciones, cantidad que corresponde a los 349 videos que tenemos de YawDD. Fue así que pudimos trabajar con YawDD como se esperaba. 
 
 Sin embargo, como este conjunto de datos se creó para detección de objetos, hay un total de 287,225 anotaciones en archivos .txt. Tras iniciar una operación de copiado y pegado de la carpeta con las anotaciones a otro directorio, y ver el tiempo que tardaba en realizarla, se consideró que esta estructura haría también que cualquier evaluación del algoritmo de detección de bostezo que hiciéramos se tardaría mucho por la lectura de archivos. Por tanto, se creó con un LLM un script de Python que, para cada video, concatenara todas las anotaciones en un solo .txt dentro de carpetas de Dash y Mirror, como el conjunto de datos original, y a partir de esos archivos poblar un JSON con información de conteo de imágenes, conteo de imágenes de bostezo, y las anotaciones de bostezo / no bostezo para cada video. También se generó otro script para tener 2 JSONs en los cuales vivieran dos subconjuntos "virtuales" (en lugar de almacenar dos veces el conjunto de datos en directorios diferentes, tener JSONs cuyos objetos tengan atributos que apunten a los videos deseados) de datos. Uno con el cual evaluar el algoritmo de detección de bostezo, y modificar la duración de segundos requeridos para detectar bostezos dependiendo de los resultados obtenidos en caso de verlo útil, y el otro para validarlo con videos de los cuales no hayamos obtenido retroalimentación previa.
 
@@ -166,14 +166,104 @@ A lo largo de los cuatro bloques convolucionales, el número de filtros se dupli
 
 % explicar que lo intentamos checar 
 
-% procesamiento de anotaciones para optimizar entrenamiento para reducir operaciones de disco, mencionando como desde que se copiaron de una ubicación a otra se sabría que sería un problema. 
+El conjunto de datos cuenta con videos que en total se componen de más de 270,000 imágenes. No obstante, dos o tres imágenes consecutivas, en el contexto de bostezo, no difieren tanto una de la otra: la información que presentan es muy parecida entre sí. Por ello, para cada video 
 
-%% entrenamiento de modelos
-
-% mencionar el rango de variación en las redes neuronales entrenadas, en general, 
-% stride, proceso de caching, aumento de datos 
+% stride, proceso de caching, balanced class weights (el inverse ese)
+% bruh revisando la ipynb NO se hizo el aumento de datos. Nmchs. No recuerdo por qué vi la línea en el código y la comenté y seguí con mi vida. Se me fue. 
 
 \subsection{Cálculo de pose de cabeza}
+
+Si tomamos una fotografía del rostro de una persona viendo hacia el frente, otra girando su cabeza hacia arriba, y otra girando la cabeza hacia abajo, notaremos que cuando la distancia vertical entre los ojos y la punta de la nariz aumenta, la distancia vertical entre la punta de la nariz y el mentón disminuye, y viceversa. 
+
+Proyectar distancias verticales de la cara con respecto a la linea que pasa por los ojos de modo que inclinar la cabeza hacia los hombros distorsione la medición de pitch
+
+\[
+\mathrm{E}_{\mathrm{mid}} = \frac{\mathrm{P}_{36} + \mathrm{P}_{45}}{2}, \qquad
+\vec{u}_x = \frac{\mathrm{P}_{45} - \mathrm{P}_{36}}{\|\mathrm{P}_{45} - \mathrm{P}_{36}\|}, \qquad
+\vec{u}_y = (-u_{x_y},\, u_{x_x})
+\]
+
+Proyecta el segumento de ojo-a-nariz y el segmento nariz-a-boca hacia ese vector unitario de y, normalizando  por la distancia vertical total H cara (haciendo que rho sea invariante a la distancia de la cámara y)
+
+\begin{align*}
+d_{\mathrm{top}} &= (\mathrm{P}_{33} - \mathrm{E}_{\mathrm{mid}}) \cdot \vec{u}_y \\
+d_{\mathrm{bottom}} &= (\mathrm{P}_{8} - \mathrm{P}_{33}) \cdot \vec{u}_y \\
+H_{\mathrm{face}} &= d_{\mathrm{top}} + d_{\mathrm{bottom}} = (\mathrm{P}_{8} - \mathrm{E}_{\mathrm{mid}}) \cdot \vec{u}_y
+\end{align*}
+
+\[
+\rho = \frac{d_{\mathrm{top}}}{H_{\mathrm{face}}} = \frac{d_{\mathrm{top}}}{d_{\mathrm{top}} + d_{\mathrm{bottom}}}
+\]
+
+\[
+\rho_0 = \operatorname{mediana}\!\left(\{\rho_t\}_{t=1}^{N}\right), \qquad
+\Delta\rho = \rho - \rho_0
+\]
+
+\[
+\theta_{\mathrm{pitch}} = \arctan\!\left(\frac{\rho_0 - \rho}{K_{\mathrm{pitch}}}\right) \cdot \frac{180^\circ}{\pi}
+= \arctan\!\left(\frac{-\Delta\rho}{K_{\mathrm{pitch}}}\right) \cdot \frac{180^\circ}{\pi}
+\]
+
+\begin{align*}
+d_{\mathrm{top}}(\phi) &= Y_e \cos\phi - Z_{\mathrm{nose}} \sin\phi, &
+H_{\mathrm{face}}(\phi) &= (Y_e + Y_c) \cos\phi \\[4pt]
+\rho(\phi) &= \frac{d_{\mathrm{top}}(\phi)}{H_{\mathrm{face}}(\phi)}
+= \underbrace{\frac{Y_e}{Y_e + Y_c}}_{\rho_0} - \underbrace{\left(\frac{Z_{\mathrm{nose}}}{Y_e + Y_c}\right)}_{K_{\mathrm{pitch}}} \tan\phi
+\end{align*}
+
+Considerando que así se calcula el pitch ante la estimación de landmarks de Dlib, este es el algoritmo de detección de cabeceo:
+
+% PARA COPIAR Y PEGAR PA OTROS DIAGRAMAS O DE MIENTRAS NDMS
+
+% \begin{figure}[htbp]
+%     \centering
+%     \begin{tikzpicture}[node distance=2cm]
+%         \node (start) [iniciofin] {INICIO};
+%         \node (in1) [io, below of=start] {Input};
+%         \node (pro1) [proceso, below of=in1] {proceso 1};
+%         \node (dec1) [condicion, below of=pro1, yshift=-0.5cm] {condicion 1};
+%         \node (pro2a) [proceso, below of=dec1, yshift=-0.5cm] {proceso 2a text text text text text text text text text text};
+%         \node (pro2b) [proceso, right of=dec1, xshift=2cm] {proceso 2b};
+%         \node (out1) [io, below of=pro2a] {Output};
+%         \node (stop) [iniciofin, below of=out1] {FIN};
+
+%         \draw [arrow] (start) -- (in1);
+%         \draw [arrow] (in1) -- (pro1);
+%         \draw [arrow] (pro1) -- (dec1);
+%         \draw [arrow] (dec1) -- node[anchor=east] {yes} (pro2a);
+%         \draw [arrow] (dec1) -- node[anchor=south] {no} (pro2b);
+%         \draw [arrow] (pro2b) |- (pro1);
+%         \draw [arrow] (pro2a) -- (out1);
+%         \draw [arrow] (out1) -- (stop);
+%     \end{tikzpicture}
+%     \caption{Algorithm for head nodding detection}
+%     \label{fig:head_nodding_flowchart}
+
+% \end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}[node distance=2cm]
+        \node (start) [iniciofin] {INICIO};
+        \node (get_dlib_landmarks) [proceso, below of=start] {Estimar coordenadas de 68 puntos de Dlib};
+        \node (pitch_estimation) [proceso, below of=get_dlib_landmarks, yshift=-0.5cm] {Estimar rho};
+        \node (cond_pitch) [condicional, below of=pitch_estimation] {rho };
+        \node (stop) [iniciofin, below of=cond_pitch] {FIN};
+
+        % \draw [arrow] (start) -- (in1);
+        % \draw [arrow] (in1) -- (pro1);
+        % \draw [arrow] (pro1) -- (dec1);
+        % \draw [arrow] (dec1) -- node[anchor=east] {yes} (pro2a);
+        % \draw [arrow] (dec1) -- node[anchor=south] {no} (pro2b);
+        % \draw [arrow] (pro2b) |- (pro1);
+        % \draw [arrow] (pro2a) -- (out1);
+        % \draw [arrow] (out1) -- (stop);
+    \end{tikzpicture}
+    \caption{Algorithm for head nodding detection}
+    \label{fig:head_nodding_flowchart}
+
+\end{figure}
 
 \section{Detección de distracción}
 \subsection{Características de conjunto de datos}
