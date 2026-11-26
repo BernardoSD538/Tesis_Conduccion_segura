@@ -28,9 +28,108 @@ Igualmente, en ambos casos la arquitectura con mayor tiempo de inferencia es la 
     \label{fig:lat}
 \end{figure}
 
+\subsection{Implementación de arquitecturas en C++}
 
 \section{Detección de somnolencia}
 \subsection{Detección de parpadeo y PERCLOS}
+Para determinar si los resultados obtenidos por el detector de 68 puntos de Dlib son adecuados para nuestra detección de duración de parpadeos y PERCLOS, se decidió que se tomaría como enfoque la duración de parpadeo, pues si la detección de parpadeos es la apropiada, el porcentaje de PERCLOS debe ser calculado de forma correcta en consecuencia.
+
+La primera prueba realizada con el detector de Dlib fue en el conjunto de datos de \textit{EyeBlink8}, esta prueba tuvo de enfoque la detección de parpadeos en general, y otorgó los resultados que se encuentran en la tabla \ref{tab:blinkEB8}.
+
+\begin{table}[h!]
+    \centering
+    \footnotesize
+    \renewcommand{\arraystretch}{1.8}
+    \begin{tabularx}{\textwidth}{X c c c c c c c}
+        \toprule
+        & \textbf{GT} & \textbf{VP} & \textbf{FP} & \textbf{FN} & \textbf{F1} & \textbf{Precisión} & \textbf{Exhaustividad} \\
+        \midrule
+        Detección de Eventos de Parpadeo & 387 & 291 & 57 & 96 & 0.7714 & 0.8174 & 0.7354 \\
+        \bottomrule
+    \end{tabularx}
+    \caption{Detección de parpadeos en videos de conjunto de datos de \textit{EyeBlink8} usando Dlib}
+    \label{tab:blinkEB8}
+\end{table}
+
+Esta prueba también fue realizada con el conjunto de datos del \textit{DMD}, buscando averiguar que tan bueno es el algoritmo al momento de detectar estos parpadeos, los resultados de esta segunda prueba se encuentran en la tabla \ref{tab:blinkDMD}.
+
+\begin{table}[h!]
+    \centering
+    \footnotesize
+    \renewcommand{\arraystretch}{1.8}
+    \begin{tabularx}{\textwidth}{X c c c c c c c}
+        \toprule
+        & \textbf{GT} & \textbf{VP} & \textbf{FP} & \textbf{FN} & \textbf{F1} & \textbf{Precisión} & \textbf{Exhaustividad} \\
+        \midrule
+        Detección de Eventos de Parpadeo & 285 & 257 & 179 & 28 & 0.7129 & 0.5894 & 0.9018 \\
+        \bottomrule
+    \end{tabularx}
+    \caption{Detección de parpadeos en videos de conjunto de datos de \textit{DMD} usando Dlib (\cite{DMD})}
+    \label{tab:blinkDMD}
+\end{table}
+
+
+Tras realizar las pruebas anteriores, se determinó que se debería tener un enfoque en parpadeos relevantes para nosotros, por lo cual se cambió la prueba para que en vez de evaluar todos los parpadeos, se le tuviera un enfoque a parpadeos que consideremos relevantes, los cuales son los parpadeos con duración igual o mayor a 500 milisegundos. Para este propósito realizamos la prueba únicamente en el conjunto de datos del \textit{DMD}, esto debido a que el conjunto de datos de \textit{EyeBlink8} únicamente contiene 8 eventos de parpadeos relevantes a comparación de los 200 contenidos en el del \textit{DMD}. La tabla \ref{tab:blinkDMD_relevant} muestra un resumen de los resultados de esta experimentación.
+
+\begin{table}[h!]
+    \centering
+    \footnotesize
+    \renewcommand{\arraystretch}{1.8}
+    \begin{tabularx}{\textwidth}{X c c c c c c c}
+        \toprule
+        & \textbf{GT} & \textbf{VP} & \textbf{FP} & \textbf{FN} & \textbf{F1} & \textbf{Precisión} & \textbf{Exhaustividad} \\
+        \midrule
+        Detección de Riesgo & 200 & 180 & 119 & 20 & 0.7214 & 0.6020 & 0.9000 \\
+        \bottomrule
+    \end{tabularx}
+    \caption{Detección de parpadeos relevantes en videos de conjunto de datos de \textit{DMD} usando Dlib (\cite{DMD})}
+    \label{tab:blinkDMD_relevant}
+\end{table}
+
+Como también se deseaba evaluar el rendimiento de una red neuronal ligera, tras haber entrenado tal red neuronal, se decidió aplicarle una evaluación de la misma forma en la que se le aplicó al detector de 68 puntos de Dlib. Para esto se tomaron los datos del conjunto de datos completo del \textit{DMD}, y se evaluaron igualmente para la detección de parpadeos relevantes, representativos de situaciones de riesgo. Esta prueba fue realizada con tres distintos umbrales de decisión para la CNN, para poder así observar cuál opción nos daba los resultados más cercanos a los que esperamos. Se pueden observar los resultados de la evaluación en la tabla \ref{tab:blinkCNN}.
+
+\begin{table}[h!]
+    \centering
+    \footnotesize
+    \renewcommand{\arraystretch}{1.8}
+    \begin{tabularx}{\textwidth}{X c c c c c c c}
+        \toprule
+        \textbf{Umbral de decisión ($\tau$)} & \textbf{GT} & \textbf{VP} & \textbf{FP} & \textbf{FN} & \textbf{F1} & \textbf{Precisión} & \textbf{Exhaustividad} \\
+        \midrule
+        Opción A ($\tau = 0.20$) & 200 & 166 & 494 & 34 & 0.3860 & 0.2515 & 0.8300 \\
+        Opción B ($\tau = 0.50$) & 200 & 159 & 361 & 41 & 0.4417 & 0.3058 & 0.7950 \\
+        Opción C ($\tau = 0.70$) & 200 & 149 & 228 & 51 & 0.5165 & 0.3952 & 0.7450 \\
+        \bottomrule
+    \end{tabularx}
+    \caption{Detección de parpadeos relevantes en videos de conjunto de datos de \textit{DMD} usando CNN (\cite{DMD})}
+    \label{tab:blinkCNN}
+\end{table}
+
+De igual forma, para poder visualizar la diferencia en el rendimiento entre el detector de Dlib y la red neuronal en la predicción de parpadeos relevantes, se ilustró la figura \ref{fig:comp_dlib_cnn}, que se encuentra a continuación:
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\linewidth]{figures/comparacion_dlib_cnn.png}
+    \caption{Comparación de métricas entre predictor Dlib y modelo CNN al detectar parpadeos relevantes}
+    \label{fig:comp_dlib_cnn}
+\end{figure}
+
+Tras esto se decidieron obtener más métricas utilizando el predictor de Dlib en el conjunto de datos de \textit{DMD}, pues tras cierta observación, se notó que la forma en la que está anotado el conjunto de datos no se alinea con nuestro método de detección, que da una respuesta binaria diciendo si el ojo está cerrado o no cerrado, mientras que el \textit{DMD} incluye las etiquetas de \textit{opening} y \textit{closing}, las cuales contienen fotogramas en los que el ojo del sujeto se encuentra cerrado. Se notó que estas anotaciones siempre agregaban una ligera cantidad de fotogramas de ojo cerrado a nuestra predicción, con el propósito de observar si disminuye el efecto de estos fotogramas, se realizó una prueba utilizando distintos umbrales con los que se considera que un parpadeo es relevante, llegando a sobrepasar los cinco fotogramas, que parecía ser un número común que agregaban las etiquetas de \textit{opening} y \textit{closing}. Los resultados de esta prueba se pueden observar en las figuras \ref{fig:evo_f1_dlib} y \ref{fig:evo_prec_dlib}.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\linewidth]{figures/f1_t_dlib.png}
+    \caption{Cambios en la puntuación F1 conforme cambia el umbral de parpadeos relevantes}
+    \label{fig:evo_f1_dlib}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\linewidth]{figures/prec_t_dlib.png}
+    \caption{Cambios en la precisión y exhaustividad conforme cambia el umbral de parpadeos relevantes}
+    \label{fig:evo_prec_dlib}
+\end{figure}
+
 \subsection{Detección de bostezo}
 \subsection{Cálculo de orientación de cabeza}
 Para determinar si los resultados del algoritmo de cálculo de orientación de cabeza son óptimos, se compararon las métricas obtenidas en el análisis con el conjunto de datos \textit{Head Tracking} de la Universidad de Boston con las presentadas en la investigación de Choi y Kim, que utilizan este mismo conjunto de datos para su análisis. La Figura \ref{fig:HeadPose} muestra esta comparativa, la barra azul mostrando los valores de MAE obtenidos por nuestro algoritmo, y la barra roja representando los valores obtenidos por Choi y Kim.
@@ -53,33 +152,67 @@ La Tabla \ref{tab:Python} muestra los resultados de latencia promedio obtenidos 
 \begin{table}[h!]
     \centering
     \footnotesize
-    \renewcommand{\arraystretch}{1.8} 
-    \begin{tabularx}{\textwidth}{c c}
+    \begin{tabular}{c c}
         Tarea & Latencia (ms) \\
         \hline
         Detección de somnolencia & 44.65 \\
         Detección de distracción & 79.87 \\ 
-        Tiempo total &  125.35 \\ 
         \hline
-    \end{tabularx}
+    \end{tabular}
     \caption{Tiempos de latencia en codigo modular de Python}
     \label{tab:Python}
 \end{table}
 
-En la Tabla \ref{tab:C} se observan las latencias promedio obtenidas en la versión final del código modular en C++. El valor de la tarea de somnolencia es de 54.85ms, tomando en cuenta la implementación de la detección de rostro, cálculo de PERCLOS, duración de parpadeo, orientación de cabeza, y detección de bostezo a través de una CNN. La detección de distracción, que cumple con las mismas tareas que en Python, tiene una latencia promedio de 77ms. Se destaca que debido a que esta versión utiliza \textit{threading}, los timepos de inferencia de cada tarea no se suman, si no que suceden a diferente velocidad en paralelo. 
+En la Tabla \ref{tab:C} se observan las latencias promedio obtenidas en la versión final del código modular en C++. El valor de la tarea de somnolencia es de 54.85ms, tomando en cuenta la implementación de la detección de rostro, cálculo de PERCLOS, duración de parpadeo, orientación de cabeza, y detección de bostezo a través de una CNN. La detección de distracción, que cumple con las mismas tareas que en Python, tiene una latencia promedio de 77ms. Se destaca que debido a que esta versión utiliza \textit{threading}, los timepos de inferencia de cada tarea no se suman, si no que suceden a diferente velocidad en paralelo. Al observar el funcionamiento de este algoritmo en tiempo real, se obtienen FPS de 13 y 18.89 para las tareas de distracción y somnolencia, respectivamente. Esta velocidad es la necesaria para que se presente un funcionamiento en tiempo real correcto y fluido.
 \begin{table}[h!]
     \centering
     \footnotesize
     \renewcommand{\arraystretch}{1.8} 
-    \begin{tabularx}{\textwidth}{c c}
+    \begin{tabular}{c c}
         Tarea & Latencia (ms) \\
         \hline
         Detección de somnolencia & 54.85 \\
         Detección de distracción & 77.00 \\ 
-        Tiempo total &  ?? \\ 
         \hline
-    \end{tabularx}
+    \end{tabular}
     \caption{Tiempos de latencia en codigo modular de C++}
     \label{tab:C}
 \end{table}
 
+La Figura \ref{fig:grouped} ilustra los distintos estados que se pueden encontrar en el código modular de C++. Existe el estado de condición segura, el estado de distracción y el estado de somnolencia. También puede apreciarse la funcionalidad de las métricas secundarias, el bostezo y la orientación de la cabeza, donde puede suceder que se detecten pero no se marque un estado de somnolencia ya que no se cumplen con los requisitos para indicar alarma.  
+
+\begin{figure}[h!]
+    \centering
+    % Row 1: 2 images
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figures/imagen muestra dem.png}
+    \end{minipage}\hfill%
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figures/imgyawn.png}
+    \end{minipage}
+
+    \vspace{0.3cm}
+
+    % Row 2: 2 images
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figures/imgdist.png}
+    \end{minipage}\hfill%
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figures/imghead.png}
+    \end{minipage}
+
+    \vspace{0.3cm}
+
+    % Row 3: 1 image
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figures/imgparp.png}
+    \end{minipage}
+
+    \caption{Imágenes ilustrativas de distintos estados del código mostrados en debug}
+    \label{fig:grouped}
+\end{figure}
