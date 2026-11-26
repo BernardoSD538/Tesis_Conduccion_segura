@@ -57,7 +57,7 @@ La Tabla \ref{tab:Objetivas} muestra los resultados de precisión obtenidos por 
     \label{tab:Objetivas}
 \end{table}
 
-\newpage %por ahora
+
 \subsection{PERCLOS}
 El PERCLOS mide el tiempo en el cuál el ojo permanece al menos 80\% cerrado dentro de una ventana de tiempo específica, como un minuto o treinta segundos. La medición del PERCLOS puede realizarse con distintas herramientas, entre ellas los algoritmos integrados como el Smart-Eye que busca detectar ojos en una imagen, o el procesamiento de imagenes del rostro obtenidas a través de videocámara. Aunque los algoritmos integrados presentan facilidad en aplicación, investigaciones muestran que puede tener resultados limitados y no son tan confiables. Por esto, el procesamiento de imágenes es la solución más utilizada, considerando que distintas adaptaciones pueden realizarse al algoritmo para atender los problemas que las mediciones puedan presentar. La adquisición y procesamiento de datos se pueden utilizar librerias especializadas en visión compuacional, siendo Dlib y OpenCV las más utilizadas, con las cuáles se puede detectar el rostro y obtener métricas como el EAR y MAR a través de una máscara de 68 puntos en el rostro realizada por la librería Dlib. Para la medición de PECLOS se usa especificamente el EAR para la detección de apertura y cerrado de ojos, información con la cuál se puede caluclar el PERCLOS posteriormente(\cite{MinhasPERCLOS}).
 
@@ -140,7 +140,6 @@ Al-sudani et al. llevaron acabo experimentación de procesamiento de polinomios 
     \caption{Resultados de uso de \textit{threading} en procesamiento de polinomios de Chevyshev (\cite{Threading})}
     \label{fig:threading}
 \end{figure}
-\subsection{Redes Neuronales en formato ONNX}
 
 \subsection{Comparativa entre lenguajes Python y C++}
 El uso de distintos lenguajes en la creación de algoritmos puede traer diferentes ventajas y desventajas dependiendo del lenguaje. Algunos son más interpretables y sencillos de entender, mientras que otros ofrecen mayor velocidad o capacidades de compilación, a costo de interpetabilidad. Estas son precisamente las diferencias que presentan los dos lenguajes utilizados en este trabajo, Python y C++. C++ es un lenguaje que se compila, es decir, lo escrito en el algoritmo se traduce al lenguaje nativo del procesador antes de ser ejecutado. Python no es un lenguaje que se compila, si no que se interpreta, y la diferencia entre este proceso causa que las velocidades de procesamiento entre un lenguaje y otro cambien, siendo C++ el más rápido gracias a la compilación nativa. 
