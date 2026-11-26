@@ -33,7 +33,7 @@ Igualmente, en ambos casos la arquitectura con mayor tiempo de inferencia es la 
 \subsection{Detección de parpadeo y PERCLOS}
 Para determinar si los resultados obtenidos por el detector de 68 puntos de Dlib son adecuados para nuestra detección de duración de parpadeos y PERCLOS, se decidió que se tomaría como enfoque la duración de parpadeo, pues si la detección de parpadeos es la apropiada, el porcentaje de PERCLOS debe ser calculado de forma correcta en consecuencia.
 
-La primera prueba realizada con el detector de Dlib fue en el conjunto de datos de \textit{EyeBlink8}, esta prueba tuvo de enfoque la detección de parpadeos en general, y otorgó los resultados que se encuentran en la tabla \ref{tab:blinkEB8}
+La primera prueba realizada con el detector de Dlib fue en el conjunto de datos de \textit{EyeBlink8}, esta prueba tuvo de enfoque la detección de parpadeos en general, y otorgó los resultados que se encuentran en la tabla \ref{tab:blinkEB8}.
 
 \begin{table}[h!]
     \centering
@@ -50,7 +50,7 @@ La primera prueba realizada con el detector de Dlib fue en el conjunto de datos 
     \label{tab:blinkEB8}
 \end{table}
 
-Esta prueba también fue realizada con el conjunto de datos del \textit{DMD}, buscando averiguar que tan bueno es el algoritmo al momento de detectar estos parpadeos, los resultados de esta segunda prueba se encuentran en la tabla \ref{tab:blinkDMD}
+Esta prueba también fue realizada con el conjunto de datos del \textit{DMD}, buscando averiguar que tan bueno es el algoritmo al momento de detectar estos parpadeos, los resultados de esta segunda prueba se encuentran en la tabla \ref{tab:blinkDMD}.
 
 \begin{table}[h!]
     \centering
@@ -93,16 +93,41 @@ Como también se deseaba evaluar el rendimiento de una red neuronal ligera, tras
     \renewcommand{\arraystretch}{1.8}
     \begin{tabularx}{\textwidth}{X c c c c c c c}
         \toprule
-        \textbf{Configuración ($\tau$)} & \textbf{GT} & \textbf{VP} & \textbf{FP} & \textbf{FN} & \textbf{F1} & \textbf{Precisión} & \textbf{Exhaustividad} \\
+        \textbf{Umbral de decisión ($\tau$)} & \textbf{GT} & \textbf{VP} & \textbf{FP} & \textbf{FN} & \textbf{F1} & \textbf{Precisión} & \textbf{Exhaustividad} \\
         \midrule
         Opción A ($\tau = 0.20$) & 200 & 166 & 494 & 34 & 0.3860 & 0.2515 & 0.8300 \\
         Opción B ($\tau = 0.50$) & 200 & 159 & 361 & 41 & 0.4417 & 0.3058 & 0.7950 \\
         Opción C ($\tau = 0.70$) & 200 & 149 & 228 & 51 & 0.5165 & 0.3952 & 0.7450 \\
         \bottomrule
     \end{tabularx}
-    \caption{Detección de parpadeos relevantes en videos de conjunto de datos de \textit{DMD} con CNN (\cite{DMD})}
+    \caption{Detección de parpadeos relevantes en videos de conjunto de datos de \textit{DMD} usando CNN (\cite{DMD})}
     \label{tab:blinkCNN}
 \end{table}
+
+De igual forma, para poder visualizar la diferencia en el rendimiento entre el detector de Dlib y la red neuronal en la predicción de parpadeos relevantes, se ilustró la figura \ref{fig:comp_dlib_cnn}, que se encuentra a continuación:
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\linewidth]{figures/comparacion_dlib_cnn.png}
+    \caption{Comparación de métricas entre predictor Dlib y modelo CNN al detectar parpadeos relevantes}
+    \label{fig:comp_dlib_cnn}
+\end{figure}
+
+Tras esto se decidieron obtener más métricas utilizando el predictor de Dlib en el conjunto de datos de \textit{DMD}, pues tras cierta observación, se notó que la forma en la que está anotado el conjunto de datos no se alinea con nuestro método de detección, que da una respuesta binaria diciendo si el ojo está cerrado o no cerrado, mientras que el \textit{DMD} incluye las etiquetas de \textit{opening} y \textit{closing}, las cuales contienen fotogramas en los que el ojo del sujeto se encuentra cerrado. Se notó que estas anotaciones siempre agregaban una ligera cantidad de fotogramas de ojo cerrado a nuestra predicción, con el propósito de observar si disminuye el efecto de estos fotogramas, se realizó una prueba utilizando distintos umbrales con los que se considera que un parpadeo es relevante, llegando a sobrepasar los cinco fotogramas, que parecía ser un número común que agregaban las etiquetas de \textit{opening} y \textit{closing}. Los resultados de esta prueba se pueden observar en las figuras \ref{fig:evo_f1_dlib} y \ref{fig:evo_prec_dlib}.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\linewidth]{figures/f1_t_dlib.png}
+    \caption{Cambios en la puntuación F1 conforme cambia el umbral de parpadeos relevantes}
+    \label{fig:evo_f1_dlib}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\linewidth]{figures/prec_t_dlib.png}
+    \caption{Cambios en la precisión y exhaustividad conforme cambia el umbral de parpadeos relevantes}
+    \label{fig:evo_prec_dlib}
+\end{figure}
 
 \subsection{Detección de bostezo}
 \subsection{Cálculo de orientación de cabeza}
