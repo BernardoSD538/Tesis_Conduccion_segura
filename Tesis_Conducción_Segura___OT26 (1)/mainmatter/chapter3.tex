@@ -212,7 +212,7 @@ A lo largo de los cuatro bloques convolucionales, el número de filtros se dupli
     \label{tab:tabla CNN yawning}
 \end{table}
 
-En lugar de monitorear la exactitud durante el entrenamiento, se monitoreó el promedio macro del F1-score, a un umbral de decisión de 50\%, para mitigar que el desbalance de clases afecte el entrenamiento. El objetivo era maximizar la exhaustividad, pero monitorear únicamente la exhaustividad puede hacer que, cuando ésta suba, la precisión baje significativamente, mientras que monitorear el F1-score ayuda a que no haya tanta disparidad entre estas dos métricas.
+En lugar de monitorear la exactitud durante el entrenamiento, se monitoreó el promedio macro del F1-score, a un umbral de decisión de 50\%, para mitigar que el desbalance de clases afecte el entrenamiento. El objetivo era maximizar la exhaustividad, pero monitorear únicamente la exhaustividad puede hacer que, cuando esta suba, la precisión baje significativamente, mientras que monitorear el F1-score ayuda a que no haya tanta disparidad entre estas dos métricas.
 
 % \begin{algorithm}
 % \caption{Buscar máximo en una lista}
@@ -232,7 +232,7 @@ En lugar de monitorear la exactitud durante el entrenamiento, se monitoreó el p
 
 % explicar que lo intentamos checar 
 
-El conjunto de datos cuenta con videos que en total se componen de más de 270,000 imágenes. No obstante, dos o tres imágenes consecutivas, en el contexto de bostezo, no difieren tanto una de la otra: la información que presentan es muy parecida entre sí. Por ello, para cada video, cada 3 imágenes se agarraba una que perteneciera a la clase bostezo (en caso de pertenecer), y cada 15 imágenes se agarraba una que perteneciera a la clase normal (en caso de pertenecer). Tras tener el dataset virtual, se computaron pesos de clases con el método de pesos inversos de clase para ayudar a mitigar el impacto del desbalance de clases. El algoritmo para detectar bostezos se puede apreciar en la Figura .
+El conjunto de datos cuenta con videos que en total se componen de más de 270,000 imágenes. No obstante, dos o tres imágenes consecutivas, en el contexto de bostezo, no difieren tanto una de la otra: la información que presentan es muy parecida entre sí. Por ello, para cada video, cada 3 imágenes se agarraba una que perteneciera a la clase bostezo (en caso de pertenecer), y cada 15 imágenes se agarraba una que perteneciera a la clase normal (en caso de pertenecer). Tras tener el dataset virtual, se computaron pesos de clases con el método de pesos inversos de clase para ayudar a mitigar el impacto del desbalance de clases. El algoritmo para detectar bostezos se puede apreciar en la Figura \ref{fig:yawning_flowchart}.
 
 \begin{figure}[h!]
     \centering
@@ -442,6 +442,7 @@ En resumen, las ecuaciones \ref{eq:h_face_phi}--\ref{eq:rho_0_phi_0} muestran el
     \label{fig:head_nodding_flowchart}
 \end{figure}
 
+\newpage
 \section{Detección de distracción}
 \subsection{Características de conjunto de datos}
 Para la metodología de este sistema solo se utiliza el conjunto de datos DMD para el entrenamiento de arquitecturas, que también es implementado en el análisis del algoritmo de detección de parpadeo. Para la detección de distracción, se utilizan las 2 anotaciones con relación a la mirada del conductor con los nombres \textit{looking\_road} y \textit{not\_looking\_road}, estableciendo de manera binaria que el conductor se encuentra distraído si no tiene la mirada fija en la carretera. Ejemplos de las categorías se muestran en las Figuras \ref{fig:lr} y \ref{fig:nlr}  en las cuales se puede observar que precisamente el enfoque de categorización es en la mirada.
@@ -466,7 +467,7 @@ El conjunto de datos cuenta con un total de 345,861 imágenes que pueden ser uti
 \subsection{Modelos de aprendizaje profundo entrenados}
 Se entrenaron múltiples arquitecturas de modelos de aprendizaje profundo con el objetivo de obtener un rango de resultados que ofreciera altos niveles de precisión con la mayor eficiencia computacional posible. Con este mismo propósito se empezaron con arquitecturas de redes neuronales convolucionales sencillas, siguiendo por arquitecturas de aprendizaje por transferencia, y finalmente un LSTM. LightGazeCNN es nuestra propia red neuronal convolucional de 4 capas ocultas. Cada capa cuenta con Batch Normalization, MaxPooling, y activación ReLU. Las capas ocultas tienen tamaño de 32, 64, 128 y 256. Para el aprendizaje por transferencia se entrenaron dos arquitecturas, MobileNetV3 y ResNet18. En la MobileNetV3 se descongelaron las últimas 2 capas. Para la ResNet18 se descongelaron las últimas 5 capas. Tras los primeros 3 entrenamientos, se reentrenaron con optimización de hiperparámetros la LightGazeCNN y ResNet18 que fueron las que mejores resultados entregaron inicialmente. Este procedimiento fue realizado con Optuna, y se optimizó el \textit{learning rate, batch size, weight decay, dropout}, optimizador, y en el caso de la ResNet18, cantidad de capas descongeladas. Finalizando con las CNN, se entrenó una última vez la ResNet18 agregando preprocesamiento de imagen, aplicando escala de grises y CLAHE. Respecto al entrenamiento de la C-LSTM, se utilizó la ResNet18 como CNN y se agregó 1 capa de LSTM. Tras el primer entrenamiento, se realizó una optimización de hiperparámetros para la C-LSTM para los parámetros \textit{learning rate, batch size, weight decay, dropout}, optimizador y cantidad de capas y neuronas LSTM.
 
-La Tabla \ref{tab:tabla arq} muestra los 8 experimentos realizados, incluyendo la cantidad de parámetros calculados en cada arquitectura, que funcionan como indicadores que consumo computacional
+La Tabla \ref{tab:tabla arq} muestra los 8 experimentos realizados, incluyendo la cantidad de parámetros calculados en cada arquitectura, que funcionan como indicadores que consumo computacional.
 
 \begin{table}[h!]
     \centering
@@ -495,7 +496,7 @@ La Tabla \ref{tab:tabla arq} muestra los 8 experimentos realizados, incluyendo l
 \end{table}
 
 \subsection{Sistema de detección de distracción en tiempo real}
-Con las redes neuronales convolucionales entrenadas, se aplicaron a un algoritmo en tiempo real que detecta distracción a través de las imágenes capturadas por la cámara del equipo. Buscando detección más robusta y menos persistente, en el algoritmo de tiempo real se agregaron condiciones de detección, no solo tomando en cuenta la predicción del modelo de aprendizaje profundo frame por frame. Se aplicó una ventana de 10 frames con la cual se usa la moda de la predicción para indicar al conductor si está distraído o no. Como último filtro de detección se utiliza la norma establecida por la NHTSA que indica que un conductor no debe de estar distraído por más de dos segundos (\cite{NHTSA}). De esta manera, la alarma de distracción se activa solamente si la moda de la predicción de los últimos 10 frames es \textit{not\_looking\_road} durante 2 segundos. Este algoritmo se puede encontrar, simplificado, en la Figura .
+Con las redes neuronales convolucionales entrenadas, se aplicaron a un algoritmo en tiempo real que detecta distracción a través de las imágenes capturadas por la cámara del equipo. Buscando detección más robusta y menos persistente, en el algoritmo de tiempo real se agregaron condiciones de detección, no solo tomando en cuenta la predicción del modelo de aprendizaje profundo frame por frame. Se aplicó una ventana de 10 frames con la cual se usa la moda de la predicción para indicar al conductor si está distraído o no. Como último filtro de detección se utiliza la norma establecida por la NHTSA que indica que un conductor no debe de estar distraído por más de dos segundos (\cite{NHTSA}). De esta manera, la alarma de distracción se activa solamente si la moda de la predicción de los últimos 10 frames es \textit{not\_looking\_road} durante 2 segundos. Este algoritmo se puede encontrar, simplificado, en la Figura \ref{fig:distraction_flowchart} .
 
 \begin{figure}[h!]
     \centering
@@ -541,7 +542,7 @@ Para obtener la capacidad de alimentar a la Raspberry Pi 5B, se propone el uso d
     \label{fig:adaptador}
 \end{figure}
 
-El equipo en tiempo real cuenta también con el añadido de una IMU MPU-6050, esto con el objetivo de tener un sistema integrado que solo arroje alarmas cuando el vehículo este en movimiento, evitando así la creación de falsos positivos en situaciones donde es natural que el conductor se encuentre distraído, al estar completamente parado. El funcionamiento del circuito es sumamente simple, pues solo se requieren 3 conexiones de la IMU a la Raspberry, siendo dos de estas la alimentación a 5V (pin 2 de Raspberry Pi 5B) y a tierra (múltiples opciones de pin en Raspberry). Adicionalmente se deben de conectar las terminales SCL y SDA a los pines 5 y 3 de la Raspberry, respectivamente. Este circuito se ilustra de manera gráfica en la Figura \ref{conexiones}.
+El equipo en tiempo real cuenta también con el añadido de una IMU MPU-6050, esto con el objetivo de tener un sistema integrado que solo arroje alarmas cuando el vehículo este en movimiento, evitando así la creación de falsos positivos en situaciones donde es natural que el conductor se encuentre distraído, al estar completamente parado. El funcionamiento del circuito es sumamente simple, pues solo se requieren 3 conexiones de la IMU a la Raspberry, siendo dos de estas la alimentación a 5V (pin 2 de Raspberry Pi 5B) y a tierra (múltiples opciones de pin en Raspberry). Adicionalmente se deben de conectar las terminales SCL y SDA a los pines 5 y 3 de la Raspberry, respectivamente. Este circuito se ilustra de manera gráfica en la Figura \ref{fig:conexiones}.
 
 \begin{figure}[h!]
     \centering
@@ -557,7 +558,7 @@ La cámara utilizada es la mostrada en la Figura \ref{fig:camara}, esta es de ca
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.35\linewidth]{figures/camara.jpg}
-    \caption{Imagen de bocina utilizada para reproducción de audios en tiempo real (\cite{camara})}
+    \caption{Imagen de camara utilizada para la captura de video (\cite{camara})}
     \label{fig:camara}
 \end{figure}
 
@@ -576,7 +577,7 @@ Fue útil iterar y prototipar con scripts de Python, e incluso con programación
 
 Buscando un algoritmo que fuera más eficiente y haciendo referencia al estado del arte, se realizó un traslado de lenguajes, cambiando de Python a C++, con el objetivo de aprovechar la velocidad que presenta C++ en comparación con Python gracias a la compilación (\cite{C++}). Como ya se mencionó en una sección de la metodología anterior, se inició por trasladar el funcionamiento de la tarea de distracción a C++, y tras observar los resultados iniciales de esta tarea, se decidió trasladar de la manera más fiel posible la versión modular en Python a C++. 
 
-Adicionalmente, y buscando aumentar aún más la velocidad del algoritmo, se implementó el \textit{threading} en el código modular de C++. Con esta implementación el objetivo es evitar cuellos de botella en el procesamiento del algoritmo y disminuir el tiempo total del un ciclo gracias a la función de trabajo en paralelo del \textit{threading}. El algoritmo se organizó en tres \textit{threads} que  corresponden a las 3 tareas principales del código, la tarea de detección de somnolencia, la tarea de detección de distracción y la tarea de captura de imagen. Al tener todo funcionado en paralelo, se espera que la suma total de tiempo sea considerablemente menor que en una estructura secuencial, lo cual permite el lujo de tener tareas que tardan mucho tiempo, como lo es la de distracción.
+Adicionalmente, y buscando aumentar aún más la velocidad del algoritmo, se implementó el \textit{threading} en el código modular de C++. Con esta implementación el objetivo es evitar cuellos de botella en el procesamiento del algoritmo y disminuir el tiempo total del un ciclo gracias a la función de trabajo en paralelo del \textit{threading}. El algoritmo se organizó en tres \textit{threads} que  corresponden a las 3 tareas principales del código, la tarea de detección de somnolencia, la tarea de detección de distracción y la tarea de captura de imagen. Al tener todo funcionado en paralelo, se espera que la suma total de tiempo sea considerablemente menor que en una estructura secuencial, lo cual permite el lujo de tener tareas que tardan mucho tiempo, como lo es la de distracción. Sin embargo, al englobar todas las subtareas de somnolencia en un solo \textit{thread}, la detección de bostezo, detección de rostro, cálculo de orientación de cabeza, y cálculo de PERCLOS y duración de parpadeo presentan un comportamiento secuencial, al encontrarse todas bajo un mismo grupo. Esto puede apreciarse a mayor detalle en la Figura \ref{fig:full_simplified_flowchart}.
 
 La estructura del código modular de C++ está hecha de tal forma que múltiples funciones están concentradas en diversos archivos cpp, tal como lo es la detección de parpadeos, el detector de características del rostro, etc. Cada uno de estos archivos cpp tiene un archivo hpp relacionado con este, conteniendo funciones y parámetros relacionados con este, y verificando que no se produzcan errores por ingresar parámetros equivocados al código. Todos los modelos utilizados en redes neuronales se encuentran en archivos ONNX, esto para poder garantizar compatibilidad en el sistema. Finalmente, todos los códigos de cpp individuales culminan en un solo archivo del mismo formato, coordinados por un coordinador de pipeline que permite la ejecución del código en el orden deseado, separando los \textit{threads} distintos y habilitando el sistema de notificaciones a terceros.
 
