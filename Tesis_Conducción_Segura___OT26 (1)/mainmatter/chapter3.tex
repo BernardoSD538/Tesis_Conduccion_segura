@@ -30,7 +30,14 @@ Finalmente, la ventana de tiempo que se eligió para el cálculo del PERCLOS es 
 
 Para el cálculo de la duración de un parpadeo, se utiliza también el EAR obtenido con la ayuda de Dlib, pero se sigue un procedimiento diferente para establecer el valor. Dentro de la literatura existen múltiples formas de determinar un parpadeo, algunas lo consideran desde el momento en que empieza a cerrarse el ojo hasta el momento en el que se vuelve a abrir, y otras lo consideran únicamente el tiempo que permanece cerrado. Para el contexto de nuestro proyecto, definimos el parpadeo únicamente como el tiempo que el ojo permanece totalmente cerrado. Ahora, para poder determinar cuando sucede un parpadeo, se utilizó el mismo umbral del 20\% de apertura utilizado en el cálculo del PERCLOS, pues es lo suficientemente permisivo al detectar parpadeos para que los detecte de forma consistente sin equivocarse de forma excesiva. Finalmente, para poder determinar cuanto tiempo permanece cerrado el ojo, al momento que se cruce el umbral del 20\% de apertura del ojo, se activa un contador, el cual deja de contar al momento que se determine que el ojo supere este umbral. A su vez, mientras el EAR se mantenga por debajo de un segundo umbral dictado por el 70\% de apertura, se le permite reanudar el contador, permitiendo que picos pequeños que pueden suceder al tener el ojo cerrado puedan ser ignorados para continuar el conteo del parpadeo sin interrupciones de poca relevancia. Para este proyecto, nos basamos en artículos científicos publicados en el pasado para que el detector de somnolencia determinara que cualquier parpadeo superior a 500 milisegundos sea indicativo de episodios de fatiga, lo cual permite que se dispare una alarma (\cite{BlinkDuration}).
 
-Parte importante de nuestro detector de PERCLOS y duración de parpadeo es un filtro adaptativo implementado para poder adaptarse a como va evolucionando el EAR del usuario con el tiempo. Este filtro adaptativo obtiene los valores del EAR del usuario y los aplica en filtro de mediana con una ventana móvil, siendo esta de longitud de 5, lo cual significa que obtiene los valores de los últimos 5 fotogramas incluyendo el actual y obtiene la mediana de estos para determinar un valor. Tras esto se le aplica un segundo filtro de media móvil, pero este con una ventana móvil de longitud de 30, obteniendo los últimos 30 fotogramas que fueron pasados por el filtro de mediana y obteniendo un único valor para el fotograma actual al obtener su promedio. Aplicar estos dos filtros nos permite tener un umbral adaptativo que pueda cambiar a partir del comportamiento del EAR del usuario de forma consistente, pues su combinación elimina los picos que se puedan encontrar al momento de cerrar el ojo al igual que suavizar la curva de la gráfica para no tener cambios de valores bruscos. En nuestro programa, al momento en el que el PERCLOS supere un porcentaje del 15 porciento se encenderá una alarma para el conductor, este porcentaje lo elegimos basándonos en artículos científicos anteriores (\cite{MinhasPERCLOS}).
+Parte importante de nuestro detector de PERCLOS y duración de parpadeo es un filtro adaptativo implementado para poder adaptarse a como va evolucionando el EAR del usuario con el tiempo. Este filtro adaptativo obtiene los valores del EAR del usuario y los aplica en filtro de mediana con una ventana móvil, siendo esta de longitud de 5, lo cual significa que obtiene los valores de los últimos 5 fotogramas incluyendo el actual y obtiene la mediana de estos para determinar un valor. Tras esto se le aplica un segundo filtro de media móvil, pero este con una ventana móvil de longitud de 30, obteniendo los últimos 30 fotogramas que fueron pasados por el filtro de mediana y obteniendo un único valor para el fotograma actual al obtener su promedio. Aplicar estos dos filtros nos permite tener un umbral adaptativo que pueda cambiar a partir del comportamiento del EAR del usuario de forma consistente, pues su combinación elimina los picos que se puedan encontrar al momento de cerrar el ojo al igual que suavizar la curva de la gráfica para no tener cambios de valores bruscos. En nuestro programa, al momento en el que el PERCLOS supere un porcentaje del 15 porciento se encenderá una alarma para el conductor, este porcentaje lo elegimos basándonos en artículos científicos anteriores (\cite{MinhasPERCLOS}). El algoritmo de detección de duración de ojo cerrado y PERCLOS se puede visualizar en la Figura \ref{fig:bd_flowchart}.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.4\linewidth]{figures/FlowchartBD.jpg.png}
+    \caption{Diagrama de flujo de detección de duración de parpadeo y PERCLOS}
+    \label{fig:bd_flowchart}
+\end{figure}
 
 Buscando determinar si nuestro algoritmo detecta parpadeos de la forma deseada, se evaluó en el conjunto de datos EyeBlink8, que cuenta con imágenes de 8 sujetos grabados en interiores. Cuenta con anotaciones por fotograma de cuando el sujeto parpadea. El conjunto de datos cuenta con 408 eventos de parpadeo distintos, repartidos de forma aleatoria entre los 8 sujetos. Los parpadeos del conjunto de datos están registrados en distintos archivos TAG, que tienen los datos del rostro anotados de fotograma a fotograma, detallando los momentos en los que el ojo del sujeto se mantiene cerrado y cuál número de evento de parpadeo es el actual junto con el número del fotograma en el que sucede cada cosa. En la figura \ref{fig:eb8} se encuentra una muestra tomada de uno de los videos disponibles en el conjunto de datos de EyeBlink8.
 
@@ -223,9 +230,14 @@ A lo largo de los cuatro bloques convolucionales, el número de filtros se dupli
 
 % explicar que lo intentamos checar 
 
-El conjunto de datos cuenta con videos que en total se componen de más de 270,000 imágenes. No obstante, dos o tres imágenes consecutivas, en el contexto de bostezo, no difieren tanto una de la otra: la información que presentan es muy parecida entre sí. Por ello, para cada video, cada 3 imágenes se agarraba una que perteneciera a la clase bostezo (en caso de pertenecer), y cada 15 imágenes se agarraba una que perteneciera a la clase normal (en caso de pertenecer). Tras tener el dataset virtual, se computaron pesos de clases con el método de pesos inversos de clase para ayudar a mitigar el impacto del desbalance de clases. 
+El conjunto de datos cuenta con videos que en total se componen de más de 270,000 imágenes. No obstante, dos o tres imágenes consecutivas, en el contexto de bostezo, no difieren tanto una de la otra: la información que presentan es muy parecida entre sí. Por ello, para cada video, cada 3 imágenes se agarraba una que perteneciera a la clase bostezo (en caso de pertenecer), y cada 15 imágenes se agarraba una que perteneciera a la clase normal (en caso de pertenecer). Tras tener el dataset virtual, se computaron pesos de clases con el método de pesos inversos de clase para ayudar a mitigar el impacto del desbalance de clases. El algoritmo para detectar bostezos se puede apreciar en la Figura .
 
-% bruh revisando la ipynb NO se hizo el aumento de datos. Nmchs. No recuerdo por qué vi la línea en el código y la comenté y seguí con mi vida. Se me fue. 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.4\linewidth]{figures/FlowchartYawn.jpg.png}
+    \caption{Diagrama de flujo de detección de bostezo}
+    \label{fig:yawning_flowchart}
+\end{figure}
 
 \subsection{Cálculo ángulo de cabeceo}
 
@@ -423,8 +435,8 @@ En resumen, las ecuaciones \ref{eq:h_face_phi}--\ref{eq:rho_0_phi_0} muestran el
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.5\linewidth]{figures/FlowchartBD.jpg.png}
-    \caption{Diagrama de flujo de detección de cabeceo \textit{looking\_road} (\cite{DMD})}
+    \includegraphics[width=0.5\linewidth]{figures/FlowchartHP.jpg.png}
+    \caption{Diagrama de flujo de detección de cabeceo}
     \label{fig:head_nodding_flowchart}
 \end{figure}
 
@@ -481,7 +493,14 @@ La Tabla \ref{tab:tabla arq} muestra los 8 experimentos realizados, incluyendo l
 \end{table}
 
 \subsection{Sistema de detección de distracción en tiempo real}
-Con las redes neuronales convolucionales entrenadas, se aplicaron a un algoritmo en tiempo real que detecta distracción a través de las imágenes capturadas por la cámara del equipo. Buscando detección más robusta y menos persistente, en el algoritmo de tiempo real se agregaron condiciones de detección, no solo tomando en cuenta la predicción del modelo de aprendizaje profundo frame por frame. Se aplicó una ventana de 10 frames con la cual se usa la moda de la predicción para indicar al conductor si está distraído o no. Como último filtro de detección se utiliza la norma establecida por la NHTSA que indica que un conductor no debe de estar distraído por más de dos segundos (\cite{NHTSA}). De esta manera, la alarma de distracción se activa solamente si la moda de la predicción de los últimos 10 frames es \textit{not\_looking\_road} durante 2 segundos. 
+Con las redes neuronales convolucionales entrenadas, se aplicaron a un algoritmo en tiempo real que detecta distracción a través de las imágenes capturadas por la cámara del equipo. Buscando detección más robusta y menos persistente, en el algoritmo de tiempo real se agregaron condiciones de detección, no solo tomando en cuenta la predicción del modelo de aprendizaje profundo frame por frame. Se aplicó una ventana de 10 frames con la cual se usa la moda de la predicción para indicar al conductor si está distraído o no. Como último filtro de detección se utiliza la norma establecida por la NHTSA que indica que un conductor no debe de estar distraído por más de dos segundos (\cite{NHTSA}). De esta manera, la alarma de distracción se activa solamente si la moda de la predicción de los últimos 10 frames es \textit{not\_looking\_road} durante 2 segundos. Este algoritmo se puede encontrar, simplificado, en la Figura .
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.35\linewidth]{figures/FlowchartDistraction.jpg.png}
+    \caption{Diagrama de flujo de detección de distracción}
+    \label{fig:distraction_flowchart}
+\end{figure}
 
 En la experimentación se realizaron pruebas de este codigo en una laptop para simular condiciones de poder computacional óptimas. La especificaciones de la computadora son: 
 
@@ -551,4 +570,14 @@ Finalmente, se agregó una bocina para la reproducción de los audios de calibra
 
 \subsection{Modularización de algoritmo y cambio de lenguaje Python a C++}
 
+Fue útil iterar y prototipar con scripts de python, e incluso con programación que era solo prácticamente declarativa. Sin embargo, se sabía que a la hora de combinar los módulos de detección en un solo programa iba a ser complicado depurarlo y extenderlo. Es por eso que se empezaron poco a poco a hacer pruebas separando scripts de python en diferentes módulos con diferentes responsabilidades, y validando cualitativamente que siguiera funcionando de la misma forma que antes. 
 
+% aqui de momento real no se qué más poner. 
+% qué hicimos pa cambiar de py a c++? pedirle a gemini que hiciera los cambios. en particular, usaba la skill de grill-me, entonces estaba UN POCO más consciente de qué decisiones se estaban tomando, como se simplificaban y eficientaban ciertas operaciones, etc. Tmb le sugerí volver a probar threading, y cuando me dijo de los mutexes y así yo estaba encantado. Pero bueno. Primero se hizo en c++ lo de distraccion porque queríamos ver lo de la LSTM y benchmarkear y corroborar que efectivamente si funcionra mejor como se esperaba, y ya despues en una o dos sesiones integrar el resto de códigos de jalón. Después fue ir haciendo pruebas y pruebas, notar detalles sutiles pero que no concordaban con lo que uno esperaba (e.g., contadores reiniciándose de inmediato cuando una cara no se detectaba por giro de la cabeza, sonidos que no suenan como uno quiere, etc.). 
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\linewidth]{figures/FlowchartCompleto.png}
+    \caption{Diagrama de flujo, simplificado, de programa completo}
+    \label{fig:full_simplified_flowchart}
+\end{figure}
