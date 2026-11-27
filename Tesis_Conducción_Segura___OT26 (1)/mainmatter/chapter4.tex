@@ -113,7 +113,7 @@ De igual forma, para poder visualizar la diferencia en el rendimiento entre el d
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.5\linewidth]{figures/comparacion_dlib_cnn.png}
+    \includegraphics[width=0.9\linewidth]{figures/comparacion_dlib_cnn.png}
     \caption{Comparación de métricas entre predictor Dlib y modelo CNN al detectar parpadeos relevantes}
     \label{fig:comp_dlib_cnn}
 \end{figure}
@@ -136,6 +136,44 @@ Tras esto se decidieron obtener más métricas utilizando el predictor de Dlib e
 
 
 \subsection{Detección de bostezo}
+
+% lo del MAR
+
+Como se describió en la metodología, el plan era utilizar las características faciales estimadas con Dlib para estimar el MAR y si duraba 4 segundos (o un poco más, considerando frames perdidos, ligeras fluctuaciones en la apertura de la boca con un MAR cerca del threshold, etc.) por encima de 0.5, se catalogaría como un episodio de bostezo. Sin embargo, cuando se evaluó ese algoritmo en el conjunto de prueba, se encontró que tenía precisiones altas (mayores a 80\%), pero exhaustividades muy bajas (alrededor de 20\%). Después de encontrar la causa del error, se procedió entrenar CNNs
+
+% lo de las CNNs
+
+Tras tener 3 CNNs que tuvieran un f1 score, y además una exhaustividad, igual o superior a 90\% en el conjunto de validación, se decidió evaluarlas con el conjunto de prueba. Tras graficar el f1-score contra el umbral de decisión, y examinar la exhaustividad en los diferentes modelos, pudimos decidir cuál funcionaba mejor de esas 3. Entre umbrales de decisión de 10\% y 80\% nos dio exactitudes mayores a 90\%, y exhaustividades entre 70\% y 85\%. Sin embargo, nuestro sistema no detecta si alguien está bostezando cuando hay una sola predicción positiva, sino que hay lógica que usa esas predicciones para eventualmente emitir una alerta. Por eso se procedió a hacer una evaluación a nivel \textit{episodio} de bostezo. 
+
+La prueba consistió en usar el algoritmo de la Figura \ref{fig:yawning_flowchart} en todos los videos del conjunto de prueba. Tras filtrar episodios muy cortos (i.e., menores a 0.5 segundos) de bostezo, se evaluaron las notificaciones que arrojó el algoritmo. Se aprecian los resultados en el conjunto de datos de prueba en la Figura \ref{fig:cm_yawning_test} y los resultados con el conjunto de datos completo en la Figura \ref{fig:cm_yawning_full}.
+
+\begin{figure}[h!]
+    \begin{subfigure}[b]{0.45\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{figures/cm_yawning_test.png}
+        \caption{En conjunto de prueba}
+        \label{fig:cm_yawning_test}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{figures/cm_yawning_full.png}
+        \caption{En conjunto completo}
+        \label{fig:cm_yawning_full}
+    \end{subfigure}
+    \caption{Matriz de confusión de CNN para detección de bostezo en diferentes conjuntos de datos. Umbral de decisión: 80\%. Duración mínima de bostezo para notificación: 1 segundo.}
+    \label{fig:cms_yawning}
+\end{figure}
+
+Las métricas se aprecian con mayor claridad en la Figura \ref{fig:yawn_metrics_bar_chart}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\linewidth]{figures/yawning_metrics_bar_chart.png}
+    \caption{Comparativa de métricas de CNN para ambos conjuntos de datos}
+    \label{fig:yawn_metrics_bar_chart}
+\end{figure}
+
 \subsection{Cálculo de orientación de cabeza}
 Para determinar si los resultados del algoritmo de cálculo de orientación de cabeza son óptimos, se compararon las métricas obtenidas en el análisis con el conjunto de datos \textit{Head Tracking} de la Universidad de Boston con las presentadas en la investigación de Choi y Kim, que utilizan este mismo conjunto de datos para su análisis. La Figura \ref{fig:HeadPose} muestra esta comparativa, la barra azul mostrando los valores de MAE obtenidos por nuestro algoritmo, y la barra roja representando los valores obtenidos por Choi y Kim.
 
