@@ -58,6 +58,15 @@
 \end{description}
 
 \newpage
-\textbf{Respecto al uso de Inteligencia Artifical}
-En este trabajo se utilizo Gemini 3.8 Flash para la realización de tareas en múltiples secciones de la metodología
-Se genero código con este modelo para disminuir tiempos en los algoritmos de detección de rostro y PERCLOS, detección de bostezo, en la detección de distracción y la modularización del algoritmo final y traslado de lenguaje a C++. También se utilizo como colaborador en generación de ideas en la sección de cálculo de orientación de cabeza. Finalmente fue utilizado para apoyar en la generación de imágenes representativas en esta tesis. 
+\textbf{Respecto al uso de Inteligencia Artificial}
+
+En este trabajo se utilizaron distintos modelos grandes de lenguaje (LLM) de Google para la realización de tareas en múltiples secciones de la metodología, entre ellos Gemini: 3.8 Flash, 4 Hydrogen, 4 Argon, 4 Carbon, 4 Neon. También se llegó a trabajar con LLMs de Anthropic como Claude Opus 5.5 y Claude Sonnet 5.5. 
+
+La generación de código tuvo distintos objetivos a lo largo del proyecto: 
+
+\begin{itemize}
+    \item Acelerar la implementación y validación de lógica de detección de rostro, duración de parpadeo, detección de PERCLOS, detección de bostezo, y detección de distracción.
+    \item Integrar, modularizar, y migrar los algoritmos de detección a un solo programa en C++, así como implementar técnicas y soluciones necesarias para que el sistema funcionara con el rendimiento y minucias esperadas de un sistema corriendo en tiempo real, como: el uso de threading, \textit{mutexes} para acceso de recursos compartidos, priorización de alertas, reducir latencia en reproducción de audio a través de un módulo dedicado, y reducción de complejidad computacional de distintas operaciones. 
+    \item Con base en conceptos adquiridos tras una revisión de literatura, y para aprovechar el tiempo disponible para el proyecto, delegar el desarrollo del algoritmo de detección de cabeceo (de la mano con corrección y validación humana). 
+    \item Generar imágenes representativas en esta tesis
+\end{itemize}
