@@ -146,7 +146,7 @@ Para determinar si los resultados del algoritmo de cálculo de orientación de c
 \end{figure}
 
 
-\section{Resultados de codigo modular en tiempo real}
+\section{Resultados de código modular en tiempo real}
 Se realizaron pruebas de funcionamiento del código modular en tiempo real, utilizando la RaspberryPi 5B como dispositivo de prueba. 
 Esto se realizó para la versión modular en Python y en  C++, con el objetivo de observar la mejora en eficiencia al cambiar de Python a C++, 
 vez se determino que el lenguaje de Python era muy lento para ser implementado en tiempo real. Ambas pruebas se realizaron utilizando la C-LSTM como arquitectura para la detección de distracción, buscando comparar ambos lenguajes en el caso más demandante del algoritmo. 
@@ -183,7 +183,7 @@ En la Tabla \ref{tab:C} se observan las latencias promedio obtenidas en la versi
     \label{tab:C}
 \end{table}
 
-La Figura \ref{fig:grouped} ilustra los distintos estados que se pueden encontrar en el código modular de C++. Existe el estado de condición segura, el estado de distracción y el estado de somnolencia. También puede apreciarse la funcionalidad de las métricas secundarias, el bostezo y la orientación de la cabeza, donde puede suceder que se detecten pero no se marque un estado de somnolencia ya que no se cumplen con los requisitos para indicar alarma.  
+La Figura \ref{fig:grouped} ilustra los distintos estados que se pueden encontrar en el código modular de C++. Existe el estado de condición segura, el estado de distracción y el estado de somnolencia. También puede apreciarse la funcionalidad de las métricas secundarias, el bostezo y la orientación de la cabeza, donde puede suceder que se detecten, pero no se marque un estado de somnolencia, ya que no se cumplen con los requisitos para indicar alarma.  
 
 \begin{figure}[h!]
     \centering
@@ -219,4 +219,13 @@ La Figura \ref{fig:grouped} ilustra los distintos estados que se pueden encontra
 
     \caption{Imágenes ilustrativas de distintos estados del código mostrados en debug}
     \label{fig:grouped}
+\end{figure}
+
+Se realizaron pruebas de la función de mensajes automatizados por la plataforma \textit{Telegram}, los resultados de estas pruebas se pueden observar en la figura \ref{fig:Telegram}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\linewidth]{figures/mensajeTelegram.png}
+    \caption{Muestra de mensajes automatizados enviados por la plataforma \textit{Telegram}}
+    \label{fig:Telegram}
 \end{figure}
