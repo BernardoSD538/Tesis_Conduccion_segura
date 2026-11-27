@@ -233,7 +233,7 @@ Consideremos la Figura \ref{fig:roll_pitch_yaw_reference} como referencia consid
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.5\linewidth]{figures/roll_pitch_yaw_reference.png}
-    \caption{Referencia de rotaciones: cabeceo (\textit{pitch}), alabeo (\textit{roll}) y guiñada (\textit{yaw}). Extraída del trabajo de PENDIENTE}
+    \caption{Referencia de rotaciones: cabeceo (\textit{pitch}), alabeo (\textit{roll}) y guiñada (\textit{yaw}). Extraída del trabajo de \cite{MounikaEARMAR}.}
     \label{fig:roll_pitch_yaw_reference}
 \end{figure}
 
@@ -241,29 +241,28 @@ Consideremos la Figura \ref{fig:roll_pitch_yaw_reference} como referencia consid
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.5\linewidth]{figures/pitch_distances.png}
-    \caption{Variación de distancias verticales faciales según el ángulo de cabeceo. Modificada; extraída del trabajo de PENDIENTE}
+    \caption{Variación de distancias verticales faciales según el cabeceo. Línea azul, verde, y roja, corresponde a la línea horizontal que pasa por los dos ojos, por nariz, y por el mentón, respectivamente. Modificada; extraída del trabajo de \cite{MounikaEARMAR}.}
     \label{fig:pitch_distances}
 \end{figure}
 
 Consideremos el perfil de la cabeza de una persona viendo hacia una cámara de vídeo (Figura \ref{fig:lateral_face_ref}). Sean $c, e, n$ las ubicaciones de los puntos en 3D asociados a las siguientes características faciales: el mentón, el punto medio entre los ojos, y la punta de la nariz. Cuando el cabeceo $\phi = 0$, sea $Y_e$ y $Y_c$ la distancia vertical entre $e$ y $n$, y la distancia vertical entre $n$ y $c$, respectivamente, en centímetros (Figura \ref{fig:lateral_face_vert_dists}). Representemos ahora la cabeza trazando un eje de referencia justo debajo de $e$, y justo a la izquierda de $n$, cuyo eje horizontal marque la orientación donde el cabeceo $\phi = 0$; sea $Z_n$ la distancia entre el origen y $n$, en centímetros (Figura \ref{fig:nodding_axis1}).
 
-% Link: https://es.vecteezy.com/vectores-gratis/vista-lateral-de-la-cara
 \begin{figure}[h!]
     \centering
-    \begin{subfigure}[b]{0.36\linewidth}
+    \begin{subfigure}[b]{0.30\linewidth}
         \centering
         \includegraphics[width=\linewidth]{figures/lateral_face.jpg}
         \caption{Vista lateral de referencia}
         \label{fig:lateral_face_ref}
     \end{subfigure}
     \hfill
-    \begin{subfigure}[b]{0.40\linewidth}
+    \begin{subfigure}[b]{0.34\linewidth}
         \centering
         \includegraphics[width=\linewidth]{figures/lateral_face_vert_dists.jpg.png}
         \caption{Distancias verticales $Y_e$ y $Y_c$}
         \label{fig:lateral_face_vert_dists}
     \end{subfigure}
-    \caption{Vista lateral del rostro de referencia y distancias verticales faciales. Extraída de PENDIENTE}
+    \caption{Vista lateral del rostro de referencia y distancias verticales faciales. Extraída de \cite{VecteezyLateralFace}}
     \label{fig:lateral_face}
 \end{figure}
 
@@ -276,10 +275,10 @@ Consideremos el perfil de la cabeza de una persona viendo hacia una cámara de v
 
 Si la persona empieza a cabecear, $e$ y $n$ rotarán alrededor del origen (Figura \ref{fig:nodding_axis2}). Por trigonometría, la coordenada vertical de $e$ respecto al origen pasa a ser $Y_e\cos\phi$, mientras que la de $n$ pasa a ser $Z_n\sin\phi$. Es así que la distancia vertical entre $e$ y $n$ se vuelve $Y_e\cos\phi - Z_n\sin\phi$ (cabe destacar que, al cabecear hacia abajo, $\phi < 0$, por lo que $Z_n\sin\phi$ es negativo y la distancia vertical aumenta). Dado que $e$ y $c$ se encuentran aproximadamente sobre el mismo plano vertical, la distancia vertical total entre los ojos y el mentón capturada en la cámara se describe como $(Y_e + Y_c)\cos\phi$. Considerando un factor de escala $s$ en píxeles por centímetro (que varía según la cámara y según la distancia que tenga frente al rostro), las distancias verticales proyectadas en la imagen, $H_{\mathrm{face}}(\phi)$ y $d_{\mathrm{top}}(\phi)$, quedan expresadas como:
 
-\begin{align*}
-H_{\mathrm{face}}(\phi) &= s\,(Y_e + Y_c)\cos\phi \\
-d_{\mathrm{top}}(\phi) &= s\,(Y_e\cos\phi - Z_n\sin\phi)
-\end{align*}
+\begin{align}
+H_{\mathrm{face}}(\phi) &= s\,(Y_e + Y_c)\cos\phi \label{eq:h_face_phi} \\
+d_{\mathrm{top}}(\phi) &= s\,(Y_e\cos\phi - Z_n\sin\phi) \label{eq:d_top_phi}
+\end{align}
 
 \begin{figure}[h!]
     \centering
@@ -288,36 +287,64 @@ d_{\mathrm{top}}(\phi) &= s\,(Y_e\cos\phi - Z_n\sin\phi)
     \label{fig:nodding_axis2}
 \end{figure}
 
-\[
+En estas expresiones, las distancias reales del rostro ($Y_e$, $Y_c$ y $Z_n$) y el factor de escala $s$ no se conocen, y además $d_{\mathrm{top}}(\phi)$ depende al mismo tiempo de $\cos\phi$ y $\sin\phi$. Sin embargo, si dividimos $d_{\mathrm{top}}(\phi)$ entre $H_{\mathrm{face}}(\phi)$ para definir una proporción $\rho(\phi)$, tanto el factor de escala $s$ como $\cos\phi$ se cancelan:
+
+\begin{equation}
 \rho(\phi) = \frac{d_{\mathrm{top}}(\phi)}{H_{\mathrm{face}}(\phi)}
 = \frac{s\,(Y_e\cos\phi - Z_n\sin\phi)}{s\,(Y_e + Y_c)\cos\phi}
-= \underbrace{\frac{Y_e}{Y_e + Y_c}}_{\rho_0} - \underbrace{\left(\frac{Z_n}{Y_e + Y_c}\right)}_{K_{\mathrm{pitch}}}\tan\phi
-\]
+= \frac{Y_e}{Y_e + Y_c} - \frac{Z_n}{Y_e + Y_c}\tan\phi
+\label{eq:rho_phi}
+\end{equation}
 
-\[
+En este punto aparecen constantes cuyo valor solo podríamos conocer si se realizara un proceso de calibración realizada por un humano que tome mediciones pertinentes y ajuste constantes en el programa con respecto a ellas. Sin embargo, sí podemos hacer una estimación que nos ayude a llegar a una solución. Con base en las Figuras \ref{fig:lateral_face_vert_dists} y \ref{fig:nodding_axis1}, podemos notar que cuando $\phi=0$:
+
+\begin{equation}
+\rho_0 = \rho(0) = \frac{d_{\mathrm{top}}(0)}{H_{\mathrm{face}}(0)}
+= \frac{Y_e}{Y_e + Y_c}
+\label{eq:rho_0_phi_0}
+\end{equation}
+
+Esto implica que si podemos conocer la proporción $\rho_0$ de un conductor pudiéramos estimar el primer término del lado derecho de la ecuación \ref{eq:rho_phi}, y así eventualmente estimar el ángulo de cabeceo. Por ello, aprovecharemos la etapa de calibración de nuestro sistema, pidiéndole al conductor que mire directamente hacia enfrente, para que durante varios segundos continuamente se capture una imagen se compute $\rho_0$, y al final se tome la mediana de esos valores como el valor de $\rho_0$ a usar para la detección de cabeceo. Además, dado que con Dlib se estiman las características con las cuales computar $d_{top}$ y $d_{bottom}$ (la distancia vertical entre la nariz y el mentón), aun si no conocemos $\phi$, podemos calcular $\rho$:
+
+\begin{equation}
 \rho = \frac{d_{\mathrm{top}}}{H_{\mathrm{face}}} = \frac{d_{\mathrm{top}}}{d_{\mathrm{top}} + d_{\mathrm{bottom}}}
-\]
+\label{eq:rho}
+\end{equation}
 
-\[
-\theta_{\mathrm{pitch}} = \arctan\!\left(\frac{\rho_0 - \rho}{K_{\mathrm{pitch}}}\right) \cdot \frac{180^\circ}{\pi}
-= \arctan\!\left(\frac{-\Delta\rho}{K_{\mathrm{pitch}}}\right) \cdot \frac{180^\circ}{\pi}
-\]
+El segundo término del lado derecho de la ecuación \ref{eq:rho_phi}, $\frac{Z_n}{Y_e + Y_c}$, depende de la profundidad de la nariz $Z_n$. Esta expresión la consideraremos como una constante $K_{\mathrm{pitch}} = 0.18$ (justificación después de este desarrollo). Una vez haciendo esto, la ecuación toma la siguiente forma: 
 
-\[
-\rho_0 = \operatorname{mediana}\!\left(\{\rho_t\}_{t=1}^{N}\right), \qquad
-\Delta\rho = \rho - \rho_0
-\]
+\begin{equation}
+\rho = \rho_0 - K_{\mathrm{pitch}}\tan\phi
+\label{eq:rho_simple}
+\end{equation}
 
-\[
+Despejando para $\phi$, tenemos la siguiente expresión:
+
+\begin{equation}
+\phi_{\mathrm{pitch}} = \arctan\!\left(\frac{\rho_0 - \rho}{K_{\mathrm{pitch}}}\right) \cdot \frac{180^\circ}{\pi}
+\label{eq:theta_deg}
+\end{equation}
+
+Dado que el factor $s$ se canceló, este enfoque funciona tanto si el usuario está relativamente cerca o lejos de la cámara. También no es afectado por movimientos de guiñada, porque los movimientos horizontales no afectan las mediciones verticales a menos que lleguen a tal grado que una cara no pueda ser detectada por Dlib. 
+
+Ahora, en el caso ideal donde la cabeza permanece completamente derecha, bastaría con restar directamente las coordenadas verticales en la imagen para obtener $d_{\mathrm{top}}$ y $d_{\mathrm{bottom}}$. Sin embargo, al inclinar la cabeza de lado, la línea vertical del rostro deja de coincidir con el eje vertical de la cámara, lo que afecta la medición. Para evitar esto, en lugar de medir sobre el eje vertical de la imagen, medimos a lo largo de la propia línea central vertical del rostro. Para construirla, definamos $\mathrm{E}_{\mathrm{mid}}$ como el punto medio entre las esquinas exteriores de los ojos ($\mathrm{P}_{36}$ y $\mathrm{P}_{45}$ de Dlib), y llamemos $\vect{d}_e$ el vector que apunta de un ojo al otro:
+
+\begin{equation}
 \mathrm{E}_{\mathrm{mid}} = \frac{\mathrm{P}_{36} + \mathrm{P}_{45}}{2}, \qquad
 \vect{d}_e = \mathrm{P}_{45} - \mathrm{P}_{36}
-\]
+\label{eq:e_mid_d_e}
+\end{equation}
 
-\[
-\hat{\mathbf{d}}_e = \frac{\vect{d}_e}{\|\vect{d}_e\|} = (\hat{d}_{e_x},\, \hat{d}_{e_y})
-\]
+A partir de $\vect{d}_e$, calculamos su vector unitario $\hat{\mathbf{d}}_e$ el cual tiene la misma dirección que la línea que une los puntos de los ojos:
 
-\[
+\begin{equation}
+\hat{\mathbf{d}}_e = \frac{\vect{d}_e}{\|\vect{d}_e\|}
+\label{eq:d_e_unit}
+\end{equation}
+
+Y luego se rota $90^\circ$ mediante la matriz de rotación en 2D para obtener el vector unitario perpendicular $\hat{\mathbf{d}}_e^\perp$, cuya dirección es la misma que la de la línea que une el punto medio de los ojos con el mentón (esto funciona porque en coordenadas de imagen el eje vertical crece hacia abajo):
+
+\begin{equation}
 \hat{\mathbf{d}}_e^\perp =
 \begin{pmatrix}
 0 & -1 \\
@@ -328,15 +355,34 @@ d_{\mathrm{top}}(\phi) &= s\,(Y_e\cos\phi - Z_n\sin\phi)
 \hat{d}_{e_y}
 \end{pmatrix}
 = (-\hat{d}_{e_y},\, \hat{d}_{e_x})
-\]
+\label{eq:d_e_perp}
+\end{equation}
 
-\begin{align*}
-d_{\mathrm{top}} &= (\mathrm{P}_{33} - \mathrm{E}_{\mathrm{mid}}) \cdot \hat{\mathbf{d}}_e^\perp \\
-d_{\mathrm{bottom}} &= (\mathrm{P}_{8} - \mathrm{P}_{33}) \cdot \hat{\mathbf{d}}_e^\perp \\
-H_{\mathrm{face}} &= d_{\mathrm{top}} + d_{\mathrm{bottom}} = (\mathrm{P}_{8} - \mathrm{E}_{\mathrm{mid}}) \cdot \hat{\mathbf{d}}_e^\perp
-\end{align*}
+Finalmente, para medir qué tanto avanzan los segmentos ojo-nariz ($\mathrm{P}_{33} - \mathrm{E}_{\mathrm{mid}}$) y nariz-mentón ($\mathrm{P}_{8} - \mathrm{P}_{33}$) a lo largo de la dirección vertical del rostro, se calcula la proyección escalar de dichos vectores con respecto a $\hat{\mathbf{d}}_e^\perp$ y se suma:
 
-Considerando que así se calcula el pitch ante la estimación de landmarks de Dlib, este es el algoritmo de detección de cabeceo:
+\begin{equation}
+d_{\mathrm{top}} = (\mathrm{P}_{33} - \mathrm{E}_{\mathrm{mid}}) \cdot \hat{\mathbf{d}}_e^\perp \label{eq:d_top}
+\end{equation}
+\begin{equation}
+d_{\mathrm{bottom}} = (\mathrm{P}_{8} - \mathrm{P}_{33}) \cdot \hat{\mathbf{d}}_e^\perp \label{eq:d_bottom}    
+\end{equation}
+\begin{equation}
+H_{\mathrm{face}} = d_{\mathrm{top}} + d_{\mathrm{bottom}} = (\mathrm{P}_{8} - \mathrm{E}_{\mathrm{mid}}) \cdot \hat{\mathbf{d}}_e^\perp \label{eq:h_face}    
+\end{equation}
+
+No obstante, ¿por qué establecer que $K_{\mathrm{pitch}} = 0.18$? 
+
+%dado que una cámara monocular 2D no puede medir directamente la profundidad de la nariz $Z_n$, el segundo término del modelo de proyección sagital en la ecuación \ref{eq:rho_phi}, $\frac{Z_n}{Y_e + Y_c}$, se parametriza como una proporción antropométrica fija $K_{\mathrm{pitch}}$, 
+
+% siguiendo formulaciones establecidas de pose de cabeza bajo proyección de perspectiva débil (\cite{GeeCipolla1994}). 
+
+% Anatómicamente, $Z_n$ corresponde a la protrusión de la punta nasal (\texttt{sn-prn}, de \textit{subnasale} a \textit{pronasale}), mientras que $Y_e + Y_c$ corresponde a la altura facial vertical media-inferior medida desde la línea del punto medio de las esquinas exteriores de los ojos ($\mathrm{E}_{\mathrm{mid}}$) hasta el mentón (\texttt{gn}, \textit{gnathion}/mentón).
+
+% Las bases de datos craneofaciales normativas reportan proporciones altamente consistentes entre estas dimensiones en poblaciones adultas. En las normas antropométricas de Farkas (\cite{Farkas1994, Farkas2005}), la protrusión media de la punta nasal (\texttt{sn-prn}) y la altura morfológica del rostro (\texttt{n-gn}) miden $20.6\text{ mm}$ y $121.3\text{ mm}$ en hombres, y $19.3\text{ mm}$ y $111.8\text{ mm}$ en mujeres. De manera similar, el estudio antropométrico a gran escala de NIOSH ($N = 3{,}997$; \cite{ZhuangBradtmiller2005}) reporta valores medios de protrusión nasal y longitud mentón-sellion (\texttt{se-gn}) de $21.1\text{ mm}$ y $122.7\text{ mm}$ para hombres, y de $19.8\text{ mm}$ y $113.4\text{ mm}$ para mujeres.
+
+% Al considerar el desplazamiento vertical de aproximadamente $4\text{--}5\text{ mm}$ desde la raíz nasal (\textit{nasion}/\textit{sellion}) hacia abajo hasta el punto medio transversal de las esquinas exteriores de los ojos $\mathrm{E}_{\mathrm{mid}}$, el tramo vertical efectivo $Y_e + Y_c$ se reduce a aproximadamente $116.0\text{--}118.5\text{ mm}$ en hombres y $107.0\text{--}109.4\text{ mm}$ en mujeres. Al evaluar $\frac{Z_n}{Y_e + Y_c}$ con estas alturas ajustadas se obtiene $0.178$ para hombres ($20.6/116.0$ y $21.1/118.5$) y $0.180\text{--}0.181$ para mujeres ($19.3/107.0$ y $19.8/109.4$). Dado que ambos sexos y cohortes independientes convergen en el intervalo $[0.178,\, 0.181]$, adoptar la constante redondeada $K_{\mathrm{pitch}} = 0.18$ proporciona un valor por defecto con sustento anatómico sin requerir mediciones de profundidad por usuario.
+
+En resumen, las ecuaciones \ref{eq:h_face_phi}--\ref{eq:rho_0_phi_0} muestran el fundamento geométrico del método. Al ejecutar el programa en tiempo real, para cada imagen se siguen en orden las ecuaciones \ref{eq:e_mid_d_e}--\ref{eq:h_face} para obtener las distancias proyectadas, se calcula $\rho$ \eqref{eq:rho}, se compara contra la proporción $\rho_0$ obtenida en la calibración, y finalmente se estima el ángulo de cabeceo mediante la ecuación \ref{eq:theta_deg}. La figura \ref{fig:head_nodding_flowchart} engloba el cómputo del cabeceo en un solo proceso, y muestra los pasos que se siguen para que se realice una detección de cabeceo.
 
 % PARA COPIAR Y PEGAR PA OTROS DIAGRAMAS O DE MIENTRAS NDMS
 
