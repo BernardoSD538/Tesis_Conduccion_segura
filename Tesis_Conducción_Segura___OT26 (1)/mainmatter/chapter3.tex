@@ -223,9 +223,8 @@ A lo largo de los cuatro bloques convolucionales, el número de filtros se dupli
 
 % explicar que lo intentamos checar 
 
-El conjunto de datos cuenta con videos que en total se componen de más de 270,000 imágenes. No obstante, dos o tres imágenes consecutivas, en el contexto de bostezo, no difieren tanto una de la otra: la información que presentan es muy parecida entre sí. Por ello, para cada video 
+El conjunto de datos cuenta con videos que en total se componen de más de 270,000 imágenes. No obstante, dos o tres imágenes consecutivas, en el contexto de bostezo, no difieren tanto una de la otra: la información que presentan es muy parecida entre sí. Por ello, para cada video, cada 3 imágenes se agarraba una que perteneciera a la clase bostezo (en caso de pertenecer), y cada 15 imágenes se agarraba una que perteneciera a la clase normal (en caso de pertenecer). Tras tener el dataset virtual, se computaron pesos de clases con el método de pesos inversos de clase para ayudar a mitigar el impacto del desbalance de clases. 
 
-% stride, proceso de caching, balanced class weights (el inverse ese)
 % bruh revisando la ipynb NO se hizo el aumento de datos. Nmchs. No recuerdo por qué vi la línea en el código y la comenté y seguí con mi vida. Se me fue. 
 
 \subsection{Cálculo ángulo de cabeceo}
