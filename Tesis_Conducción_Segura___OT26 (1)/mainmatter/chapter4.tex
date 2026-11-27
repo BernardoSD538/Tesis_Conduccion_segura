@@ -13,10 +13,7 @@ La Figura \ref{fig:CNNs} muestra los resultados de entrenamiento de distintas ar
     \label{fig:CNNs}
 \end{figure}
 
-\newpage %por ahora
 \subsection{Rendimiento de algoritmos en tiempo real}
-
-
 La Figura \ref{fig:lat} muestra los tiempos de inferencia promedio de cada uno de los modelos, tanto en una laptop con GPU como en la RapberryPi 5B, nuestro dispositivo objetivo a implementar en tiempo real. 
 Podemos ver los comportamientos inicialmente esperados, con tiempos mucho menores en la laptop, debido a la capacidad computacional que esta ofrece. En ambos casos el menor tiempo de inferencia lo muestra LightGazeCNN, la CNN creada para esta investigación. 
 Igualmente, en ambos casos la arquitectura con mayor tiempo de inferencia es la C-LSTM, esto debido a su complejidad al combinar una ResNet18 con dos capas LSTM. El tiempo de inferencia menor en la RaspberryPi 5B es de 11.8ms y el mayor de 82.4ms, mientras que en la laptop son de 3.4ms y 11.1ms, lo cuál muestra la importancia de tomar en cuenta el poder computacional que se tiene en el equipo utilizado. Igualmente, los FPS a los cuáles funcionan cada tarea son diferentes, teniendo en promedio 13 para la tarea de distracción, 18 para la tarea de somnolencia y 33.61 para la tarea de captura de imagen.  
@@ -29,7 +26,14 @@ Igualmente, en ambos casos la arquitectura con mayor tiempo de inferencia es la 
 \end{figure}
 
 \subsection{Implementación de arquitecturas en C++}
+Los resultados de inferencia en la versión de C++ del algoritmo de distracción son comparados en la Figura \ref{fig:latcom} con los obtenidos anteriormente en la versión en Python. Puede observarse que estos primeros resultados ofrecen tiempos mucho menores que los inciales, bajando a cerca de la mitad del valor obtenido en Python. En comparación a los resultados en un equipo ideal, el tiempo de inferencia de 44.54ms sigue siendo mucho mayor, pero es lo suficientemente bajo para permitir la posibilidad de implementar una C-LSTM para la detección de distracción en tiempo real. 
 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.6\linewidth]{figures/comparativa latencias.png}
+    \caption{Comparación entre latencias de C-LSTM en Python y C++}
+    \label{fig:latcom}
+\end{figure}
 \section{Detección de somnolencia}
 \subsection{Detección de parpadeo y PERCLOS}
 Para determinar si los resultados obtenidos por el detector de 68 puntos de Dlib son adecuados para nuestra detección de duración de parpadeos y PERCLOS, se decidió que se tomaría como enfoque la duración de parpadeo, pues si la detección de parpadeos es la apropiada, el porcentaje de PERCLOS debe ser calculado de forma correcta en consecuencia.
@@ -141,7 +145,7 @@ Para determinar si los resultados del algoritmo de cálculo de orientación de c
     \label{fig:HeadPose}
 \end{figure}
 
-\newpage %por ahora
+
 \section{Resultados de codigo modular en tiempo real}
 Se realizaron pruebas de funcionamiento del código modular en tiempo real, utilizando la RaspberryPi 5B como dispositivo de prueba. 
 Esto se realizó para la versión modular en Python y en  C++, con el objetivo de observar la mejora en eficiencia al cambiar de Python a C++, 

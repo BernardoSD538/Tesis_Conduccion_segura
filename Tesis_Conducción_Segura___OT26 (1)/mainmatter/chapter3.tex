@@ -41,7 +41,22 @@ Buscando determinar si nuestro algoritmo detecta parpadeos de la forma deseada, 
     \label{fig:eb8}
 \end{figure}
 
-Aparte de la evaluación realizada con el conjunto de datos de EyeBlink8 se realizó otra con el conjunto de datos DMD, el cual cuenta con 285 eventos de parpadeo, pero con una mayor variación de sujetos en sus grabaciones, utilizando las anotaciones de \textit{open}, \textit{opening}, \textit{close} y \textit{closing}. Este segundo conjunto de datos está separado en imágenes, cada una siendo un fotograma de uno de los videos incluidos en este, estas imágenes están nombradas a partir del video al que pertenecen y la parte del video en la que se encuentran, aparte de esto, las imágenes están separadas por carpetas, las cuales están nombradas a partir del tipo de anotación al que pertenecen las imágenes que contienen, permitiendo la distinción de los eventos de parpadeos para nuestra evaluación. En las figuras \ref{fig:close} \ref{fig:open} se encuentran muestras de dos de los tipos de anotaciones que se pueden encontrar en el conjunto de datos del DMD.
+
+
+Aparte de la evaluación realizada con el conjunto de datos de EyeBlink8 se realizó otra con el conjunto de datos Driver Monitoring Dataset, o DMD. Disponible de manera gratis para todo público, el DMD es un conjunto de datos recolectado por el grupo Vicomtech. El conjunto de datos es multimodal, pues cuenta con información respecto a estados de distracción del conductor, así como información relacionada a estados de somnolencia del conductor. Los participantes presentan una edad promedio de 30 años, todos siendo mayores de edad, siendo el 27\% mujeres y el 73\% hombres. 10 de los participantes utilizan anteojos. Entre las grabaciones se encuentran experimentos dentro de un carro en movimiento, con el automóvil detenido, y en simuladores. Cada sesión de grabación cuenta con 3 ángulos de cámara: cuerpo, rostro y manos. 
+
+La Figura \ref{fig:muestra DMD} muestra ejemplos de como se presentan estos tres ángulos disponibles, de los cuales se utilizará únicamente el del rostro para el entrenamiento del modelo. Las imágenes son en formato RGB. El conjunto de datos cuenta con anotaciones para múltiples escenarios de peligro en un conductor: Distracción con objetos, de fatiga, en relación al volante y  de mirada (\cite{DMD}). 
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\linewidth]{figures/imagen muestra.png}
+    \caption{Imágenes de cámaras disponibles en DMD(\cite{DMD})}
+    \label{fig:muestra DMD}
+\end{figure}
+
+El DMD cuenta con 285 eventos de parpadeo, pero con una mayor variación de sujetos en sus grabaciones, utilizando las anotaciones de \textit{open}, \textit{opening}, \textit{close} y \textit{closing}. Este segundo conjunto de datos está separado en imágenes, cada una siendo un fotograma de uno de los videos incluidos en este, estas imágenes están nombradas a partir del video al que pertenecen y la parte del video en la que se encuentran, aparte de esto, las imágenes están separadas por carpetas, las cuales están nombradas a partir del tipo de anotación al que pertenecen las imágenes que contienen, permitiendo la distinción de los eventos de parpadeos para nuestra evaluación. 
+
+En las figuras \ref{fig:close} \ref{fig:open} se encuentran muestras de dos de los tipos de anotaciones que se pueden encontrar en el conjunto de datos del DMD para las anotaciones utilizadas en este análisis.
 
 \begin{figure}[h!]
     \centering
@@ -376,18 +391,7 @@ Considerando que así se calcula el pitch ante la estimación de landmarks de Dl
 
 \section{Detección de distracción}
 \subsection{Características de conjunto de datos}
-El conjunto de datos utilizado para el entrenamiento de modelos es la Driver Monitoring Dataset. Disponible de manera gratis para todo público, el DMD es un conjunto de datos recolectado por el grupo Vicomtech. El conjunto de datos es multimodal, pues cuenta con información respecto a estados de distracción del conductor, así como información relacionada a estados de somnolencia del conductor. Los participantes presentan una edad promedio de 30 años, todos siendo mayores de edad, siendo el 27\% mujeres y el 73\% hombres. 10 de los participantes utilizan anteojos. Entre las grabaciones se encuentran experimentos dentro de un carro en movimiento, con el automóvil detenido, y en simuladores. Cada sesión de grabación cuenta con 3 ángulos de cámara: cuerpo, rostro y manos. 
-
-La Figura \ref{fig:muestra DMD} muestra ejemplos de como se presentan estos tres ángulos disponibles, de los cuales se utilizará únicamente el del rostro para el entrenamiento del modelo. Las imágenes son en formato RGB. El conjunto de datos cuenta con anotaciones para múltiples escenarios de peligro en un conductor: Distracción con objetos, de fatiga, en relación al volante y  de mirada (\cite{DMD}). 
-
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.5\linewidth]{figures/imagen muestra.png}
-    \caption{Imágenes de cámaras disponibles en DMD(\cite{DMD})}
-    \label{fig:muestra DMD}
-\end{figure}
-
-Para la metodología de este sistema solo se utilizan las 2 anotaciones en relación a la mirada del conductor con los nombres \textit{looking\_road} y \textit{not\_looking\_road}, estableciendo de manera binaria que el conductor se encuentra distraído si no tiene la mirada fija en la carretera. Ejemplos de las categorías se muestran en las Figuras \ref{fig:lr} y \ref{fig:nlr}  en las cuales se puede observar que precisamente el enfoque de categorización es en la mirada.
+Para la metodología de este sistema solo se utiliza el conjunto de datos DMD para el entrenamiento de arquitecturas, que también es implementado en el análisis del algoritmo de detección de parpadeo. Para la detección de distracción, se utilizan las 2 anotaciones en relación a la mirada del conductor con los nombres \textit{looking\_road} y \textit{not\_looking\_road}, estableciendo de manera binaria que el conductor se encuentra distraído si no tiene la mirada fija en la carretera. Ejemplos de las categorías se muestran en las Figuras \ref{fig:lr} y \ref{fig:nlr}  en las cuales se puede observar que precisamente el enfoque de categorización es en la mirada.
 
 \begin{figure}[h!]
     \centering
@@ -403,7 +407,7 @@ Para la metodología de este sistema solo se utilizan las 2 anotaciones en relac
     \label{fig:nlr}
 \end{figure}
 
-\newpage %por ahora
+
 El conjunto de datos cuenta con un total de 345,861 imagenes que pueden ser utilizadas para el entrenamiento de los modelos, de las cuales el 80\% (278,308) son de la categoría \textit{looking\_road} y un 20\% (67,553) de \textit{not\_looking\_road}. De manera inicial las clases presentan un desbalance de 4:1, por lo que es necesario implementar un balance de clases en el entrenamiento. 
 
 \subsection{Modelos de aprendizaje profundo entrenados}
@@ -458,6 +462,10 @@ También ese realizaron pruebas en una Rapberry Pi 5B, con el objetivo de genera
     \end{itemize}
 
 \subsection{Implementación de arquitecturas en C++}
+Tras el análisis de resultados inciales con el uso de arquitecturas en tiempo real utilizando el lenguaje Python, se decidio implementar multiples herramientas para optimizar la eficiencia del algoritmo en general. Una de estas mejoras es el cambio de lenguaje de Python a C++, buscando aprovechar la velcidad que C++ ofrece gracias a su compilación. Para las arquitecturas destinadas a la detección de distracción, se crea un de C++ código que cumpliera con las mismas tareas que en Python, pero solo se realizaron pruebas  con la C-LSTM, buscando la posibilidad de la capacidad de utilizar la arquitectura más exigente en tiempo real gracias al traslado a C++. Adicionalmente, el código de C++ fue creado con una estructura modular al código con el proposito de darle una estructura más clara y eficiente. 
+
+Para el traslado de arquitecturas creadas en PyTorch a C++, se exportaron los archivos .pth a el formato .onnx. El formato ONNX busca ofrecer un formato que represente los modelos de aprendizaje automatico y profundo de manera que sean accesibles en diferentes tipos de \textit{frameworks}, software y compiladores (\cite{ONNX}). Con este formato, es posible pasar el funcionamiento de las arquitecutras entrenadas en Python a C++ y que funcionen de la misma manera, habilitando la posibilidad del cambio de lenguajes, buscando mayor eficiencia, con mucha facilidad.
+
 \section{Implementación en tiempo real}
 \subsection{Equipo \textit{Plug-and-play}}
 Buscando que el equipo funcionara en modalidad \textit{Plug-and-play}, se creo un \textit{worker} en la RaspberryPi utilziando Autostart. Este es un mecanismo estandarizado dentro de Linux que permite al usuario configurar el funcionamiento de un algoritmo en cuanto la Raspberry Pi se encienda. Este aspecto es escencial para poder lograr un verdadero \textit{Plug-and-play}. Se eligio el uso de Autostart porque este servicio en especifico permite el uso de OpenCV para la observación del funcionamiento en el código de debug, por lo que aunque no es necesario para la versión final, es fundamental para su uso en pruebas.
@@ -467,7 +475,7 @@ Para obtener la capacidad de alimentar a la Raspberry Pi 5B, se propone el uso d
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.3\linewidth]{figures/adaptador.jpg}
-    \caption{Diagrama de conexiones de IMU y Raspberry Pi 5B}
+    \caption{Adaptador propuesto para la conexión de Raspberry al automovil (\cite{Adaptador})}
     \label{fig:adaptador}
 \end{figure}
 
@@ -482,4 +490,15 @@ El equipo en tiempo real cuenta también con el añadido de una IMU MPU-6050, es
 
 La configuración del algoritmo esta diseñada para que se realice una lectura y cálculo de la aceleración, y la activación del sistema general cuando un umbral de aceleración es superado. La calibración de este sensor optimamente se realiza en un carro para establecer la aceleración promedio de un automovil en movimiento, pero se realizo una calibración inical en laboratorio para pruebas inciales y por dificultades de alimentación en el vehiculo. 
 
+Finalmente, se agrego una bocina para la reproducción de los audios de calibración y aletras. Se busco utilizar un modelo pequeño que fuera de solamente conexión USB para facilitar su uso y acomplamiento a la RaspberryPi 5B. El modelo elegido se muestra en la Figura \ref{fig:bocina}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\linewidth]{figures/bocina.jpg}
+    \caption{Imagen de bocina utilizada para reproducción de audios en tiempo real (\cite{bocina})}
+    \label{fig:bocina}
+\end{figure}
+
 \subsection{Modularización de algoritmo y cambio de lenguaje Python a C++}
+
+
