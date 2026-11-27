@@ -39,6 +39,8 @@ Parte importante de nuestro detector de PERCLOS y duración de parpadeo es un fi
     \label{fig:bd_flowchart}
 \end{figure}
 
+\newpage
+
 Buscando determinar si nuestro algoritmo detecta parpadeos de la forma deseada, se evaluó en el conjunto de datos EyeBlink8, que cuenta con imágenes de 8 sujetos grabados en interiores. Cuenta con anotaciones por fotograma de cuando el sujeto parpadea. El conjunto de datos cuenta con 408 eventos de parpadeo distintos, repartidos de forma aleatoria entre los 8 sujetos. Los parpadeos del conjunto de datos están registrados en distintos archivos TAG, que tienen los datos del rostro anotados de fotograma a fotograma, detallando los momentos en los que el ojo del sujeto se mantiene cerrado y cuál número de evento de parpadeo es el actual junto con el número del fotograma en el que sucede cada cosa. En la figura \ref{fig:eb8} se encuentra una muestra tomada de uno de los videos disponibles en el conjunto de datos de EyeBlink8.
 
 \begin{figure}[h!]
@@ -571,6 +573,10 @@ Finalmente, se agregó una bocina para la reproducción de los audios de calibra
 \subsection{Modularización de algoritmo y cambio de lenguaje Python a C++}
 
 Fue útil iterar y prototipar con scripts de python, e incluso con programación que era solo prácticamente declarativa. Sin embargo, se sabía que a la hora de combinar los módulos de detección en un solo programa iba a ser complicado depurarlo y extenderlo. Es por eso que se empezaron poco a poco a hacer pruebas separando scripts de python en diferentes módulos con diferentes responsabilidades, y validando cualitativamente que siguiera funcionando de la misma forma que antes. 
+
+Buscando un algoritmo que fuera más eficiente y haciendo referencia al estado del arte, se realizó un traslado de lenguajes, cambiando de Python a C++, con el objetivo de aprvechar la velocidad que presenta C++ en comparación con Pyhton gracias a la compilación (\cite{C++}). Como ya se mencionó en una sección de la metodología anterior, se inició por trasladar el funcionamiento de la tarea de distracción a C++, y tras observar los resultados iniciales de esta tarea, se decidió trasladar de la manera más fiel posible la versión modular en Python a C++. 
+
+Adicionalmente, y buscando aumentar aún más la velocidad la velocidad del algoritmo, se implemento el \textit{threading} en el código modular de C++. Con esta implementación el objetivo es evitar cuellos de botella en el procesamiento del algoritmo y disminuir el tiempo total del un ciclo gracias a la función de trabajo en paralelo del \textit{threading}. El algoritmo se organizo en tres \textit{threads} que  corresponden a las 3 tareas principales del código, la tarea de detección de somnolencia, la tarea de detección de distracción y la tarea de captura de imagen. Al tener todo funcionado en paralelo, se espera que la suma total de tiempo sea considerablemente menor que en una estructura secuencial, lo cuál permite el lujo de tener tareas que tardan mucho tiempo, como lo es la de distracción.
 
 % aqui de momento real no se qué más poner. 
 % qué hicimos pa cambiar de py a c++? pedirle a gemini que hiciera los cambios. en particular, usaba la skill de grill-me, entonces estaba UN POCO más consciente de qué decisiones se estaban tomando, como se simplificaban y eficientaban ciertas operaciones, etc. Tmb le sugerí volver a probar threading, y cuando me dijo de los mutexes y así yo estaba encantado. Pero bueno. Primero se hizo en c++ lo de distraccion porque queríamos ver lo de la LSTM y benchmarkear y corroborar que efectivamente si funcionra mejor como se esperaba, y ya despues en una o dos sesiones integrar el resto de códigos de jalón. Después fue ir haciendo pruebas y pruebas, notar detalles sutiles pero que no concordaban con lo que uno esperaba (e.g., contadores reiniciándose de inmediato cuando una cara no se detectaba por giro de la cabeza, sonidos que no suenan como uno quiere, etc.). 
