@@ -274,7 +274,12 @@ Consideremos el perfil de la cabeza de una persona viendo hacia una cámara de v
     \label{fig:nodding_axis1}
 \end{figure}
 
-Si la persona empieza a cabecear, $e$ y $n$ rotarán alrededor del origen (Figura \ref{fig:nodding_axis2}). Por trigonometría, la coordenada vertical de $e$ respecto al origen pasa a ser $Y_e\cos\phi$, mientras que la de $n$ pasa a ser $Z_n\sin\phi$. Es así que la distancia vertical entre $e$ y $n$ se vuelve $Y_e\cos\phi - Z_n\sin\phi$ (cabe destacar que, al cabecear hacia abajo, $\phi < 0$, por lo que $Z_n\sin\phi$ es negativo y la distancia vertical aumenta). En este momento, la distancia entre $e$ y $n$ se vuelve más grande que $Y_e$ desde el punto de vista de la cámara de vídeo. Ahora esa distancia se compone de 1) la distancia vertical entre $e$ y el origen, y 2) la distancia vertical entre $n$ y el origen. Por trigonometría, se puede encontrar que la primera se puede describir como $Y_e\cos\phi$, mientras que la segunda como $Z_n\sin\phi$. Dado que $e$ y $c$ se encuentran aproximadamente sobre el mismo plano vertical, la distancia vertical total entre los ojos y el mentón capturada en la cámara se describe como $(Y_e + Y_c)\cos\phi$. Considerando un factor de escala $s$ en píxeles por centímetro (que varía según la cámara y según la distancia que tenga frente al rostro), las distancias verticales proyectadas en la imagen, $H_{\mathrm{face}}(\phi)$ y $d_{\mathrm{top}}(\phi)$, quedan expresadas como:
+Si la persona empieza a cabecear, $e$ y $n$ rotarán alrededor del origen (Figura \ref{fig:nodding_axis2}). Por trigonometría, la coordenada vertical de $e$ respecto al origen pasa a ser $Y_e\cos\phi$, mientras que la de $n$ pasa a ser $Z_n\sin\phi$. Es así que la distancia vertical entre $e$ y $n$ se vuelve $Y_e\cos\phi - Z_n\sin\phi$ (cabe destacar que, al cabecear hacia abajo, $\phi < 0$, por lo que $Z_n\sin\phi$ es negativo y la distancia vertical aumenta). Dado que $e$ y $c$ se encuentran aproximadamente sobre el mismo plano vertical, la distancia vertical total entre los ojos y el mentón capturada en la cámara se describe como $(Y_e + Y_c)\cos\phi$. Considerando un factor de escala $s$ en píxeles por centímetro (que varía según la cámara y según la distancia que tenga frente al rostro), las distancias verticales proyectadas en la imagen, $H_{\mathrm{face}}(\phi)$ y $d_{\mathrm{top}}(\phi)$, quedan expresadas como:
+
+\begin{align*}
+H_{\mathrm{face}}(\phi) &= s\,(Y_e + Y_c)\cos\phi \\
+d_{\mathrm{top}}(\phi) &= s\,(Y_e\cos\phi - Z_n\sin\phi)
+\end{align*}
 
 \begin{figure}[h!]
     \centering
@@ -282,11 +287,6 @@ Si la persona empieza a cabecear, $e$ y $n$ rotarán alrededor del origen (Figur
     \caption{Ejes de referencia del rostro rotados un ángulo de cabeceo $\phi$. En este caso es un cabeceo hacia abajo, por lo que el cabeceo $\phi<0$}
     \label{fig:nodding_axis2}
 \end{figure}
-
-\begin{align*}
-H_{\mathrm{face}}(\phi) &= s\,(Y_e + Y_c)\cos\phi \\
-d_{\mathrm{top}}(\phi) &= s\,(Y_e\cos\phi - Z_n\sin\phi)
-\end{align*}
 
 \[
 \rho(\phi) = \frac{d_{\mathrm{top}}(\phi)}{H_{\mathrm{face}}(\phi)}
