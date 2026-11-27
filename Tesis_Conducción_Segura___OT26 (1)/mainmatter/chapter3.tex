@@ -313,7 +313,7 @@ Esto implica que si podemos conocer la proporción $\rho_0$ de un conductor pudi
 \label{eq:rho}
 \end{equation}
 
-El segundo término del lado derecho de la ecuación \ref{eq:rho_phi}, $\frac{Z_n}{Y_e + Y_c}$, depende de la profundidad de la nariz $Z_n$. Esta expresión la consideraremos como una constante $K_{\mathrm{pitch}} = 0.18$ (justificación después de este desarrollo). Una vez haciendo esto, la ecuación toma la siguiente forma: 
+El coeficiente del segundo término del lado derecho de la ecuación \ref{eq:rho_phi}, $\frac{Z_n}{Y_e + Y_c}$, depende de la profundidad de la nariz $Z_n$. Esta expresión se evaluará más adelante. Una vez haciendo esto, la ecuación toma la siguiente forma: 
 
 \begin{equation}
 \rho = \rho_0 - K_{\mathrm{pitch}}\tan\phi
@@ -372,69 +372,61 @@ d_{\mathrm{bottom}} = (\mathrm{P}_{8} - \mathrm{P}_{33}) \cdot \hat{\mathbf{d}}_
 H_{\mathrm{face}} = d_{\mathrm{top}} + d_{\mathrm{bottom}} = (\mathrm{P}_{8} - \mathrm{E}_{\mathrm{mid}}) \cdot \hat{\mathbf{d}}_e^\perp \label{eq:h_face}    
 \end{equation}
 
-No obstante, ¿por qué establecer que $K_{\mathrm{pitch}} = 0.18$? 
+Ahora, ¿cómo establecer un valor para $K_{\mathrm{pitch}}$? Para eso necesitamos hablar de antropometría. La antropometría es el área que se ocupa de mediciones del cuerpo humano, de sus partes, y de las proporciones que se encuentran en él. \cite{Farkas2005} menciona que una de las razones por las cuales tener bases de datos cranofaciales es importante en la medicina es para que los cirujanos puedan determinar si características faciales se desvían de lo normal. Para este y otros fines es que hay estudios que recopilan este tipo de datos. Uno de los trabajos en cuestión es el de \cite{ZhuangBradtmiller2005}, quienes desarrollaron una base de datos antropométrica de la población estadounidense en el 2003. Entre las características que midieron se encuentran la \textit{nose protrusion} y la \textit{menton-sellion length}. 
 
-%dado que una cámara monocular 2D no puede medir directamente la profundidad de la nariz $Z_n$, el segundo término del modelo de proyección sagital en la ecuación \ref{eq:rho_phi}, $\frac{Z_n}{Y_e + Y_c}$, se parametriza como una proporción antropométrica fija $K_{\mathrm{pitch}}$, 
+Estas variables son importantes para este trabajo, pues el algoritmo presentado se basa en medidas muy similares a las que se recopilaron en ese estudio. Ellos midieron la \textit{menton-sellion length} como se ve en la Figura \ref{fig:menton-sellion length}. En el modelo matemático propuesto no estamos considerando esta longitud, sino la distancia vertical entre los ojos y el mentón (asumiendo que comparten el mismo plano vertical), por lo que esas mediciones son ligeramente más grandes que la longitud que nosotros declaramos. Al comparar las alturas medidas desde el tope de la cabeza hasta el nivel exterior del ojo (\textit{ectoorbitale}) y hasta el \textit{sellion} en el estudio antropométrico de \textcite{Gordon1989} ($11.82\text{ cm}$ frente a $11.20\text{ cm}$ en hombres, y $11.15\text{ cm}$ frente a $10.53\text{ cm}$ en mujeres), se obtiene que las mediciones desde el \textit{sellion} son aproximadamente $0.62\text{ cm}$ más grandes que la longitud $Y_e + Y_c$ que nosotros declaramos.
 
-% siguiendo formulaciones establecidas de pose de cabeza bajo proyección de perspectiva débil (\cite{GeeCipolla1994}). 
-
-% Anatómicamente, $Z_n$ corresponde a la protrusión de la punta nasal (\texttt{sn-prn}, de \textit{subnasale} a \textit{pronasale}), mientras que $Y_e + Y_c$ corresponde a la altura facial vertical media-inferior medida desde la línea del punto medio de las esquinas exteriores de los ojos ($\mathrm{E}_{\mathrm{mid}}$) hasta el mentón (\texttt{gn}, \textit{gnathion}/mentón).
-
-% Las bases de datos craneofaciales normativas reportan proporciones altamente consistentes entre estas dimensiones en poblaciones adultas. En las normas antropométricas de Farkas (\cite{Farkas1994, Farkas2005}), la protrusión media de la punta nasal (\texttt{sn-prn}) y la altura morfológica del rostro (\texttt{n-gn}) miden $20.6\text{ mm}$ y $121.3\text{ mm}$ en hombres, y $19.3\text{ mm}$ y $111.8\text{ mm}$ en mujeres. De manera similar, el estudio antropométrico a gran escala de NIOSH ($N = 3{,}997$; \cite{ZhuangBradtmiller2005}) reporta valores medios de protrusión nasal y longitud mentón-sellion (\texttt{se-gn}) de $21.1\text{ mm}$ y $122.7\text{ mm}$ para hombres, y de $19.8\text{ mm}$ y $113.4\text{ mm}$ para mujeres.
-
-% Al considerar el desplazamiento vertical de aproximadamente $4\text{--}5\text{ mm}$ desde la raíz nasal (\textit{nasion}/\textit{sellion}) hacia abajo hasta el punto medio transversal de las esquinas exteriores de los ojos $\mathrm{E}_{\mathrm{mid}}$, el tramo vertical efectivo $Y_e + Y_c$ se reduce a aproximadamente $116.0\text{--}118.5\text{ mm}$ en hombres y $107.0\text{--}109.4\text{ mm}$ en mujeres. Al evaluar $\frac{Z_n}{Y_e + Y_c}$ con estas alturas ajustadas se obtiene $0.178$ para hombres ($20.6/116.0$ y $21.1/118.5$) y $0.180\text{--}0.181$ para mujeres ($19.3/107.0$ y $19.8/109.4$). Dado que ambos sexos y cohortes independientes convergen en el intervalo $[0.178,\, 0.181]$, adoptar la constante redondeada $K_{\mathrm{pitch}} = 0.18$ proporciona un valor por defecto con sustento anatómico sin requerir mediciones de profundidad por usuario.
-
-En resumen, las ecuaciones \ref{eq:h_face_phi}--\ref{eq:rho_0_phi_0} muestran el fundamento geométrico del método. Al ejecutar el programa en tiempo real, para cada imagen se siguen en orden las ecuaciones \ref{eq:e_mid_d_e}--\ref{eq:h_face} para obtener las distancias proyectadas, se calcula $\rho$ \eqref{eq:rho}, se compara contra la proporción $\rho_0$ obtenida en la calibración, y finalmente se estima el ángulo de cabeceo mediante la ecuación \ref{eq:theta_deg}. La figura \ref{fig:head_nodding_flowchart} engloba el cómputo del cabeceo en un solo proceso, y muestra los pasos que se siguen para que se realice una detección de cabeceo.
-
-% PARA COPIAR Y PEGAR PA OTROS DIAGRAMAS O DE MIENTRAS NDMS
-
-% \begin{figure}[htbp]
-%     \centering
-%     \begin{tikzpicture}[node distance=2cm]
-%         \node (start) [iniciofin] {INICIO};
-%         \node (in1) [io, below of=start] {Input};
-%         \node (pro1) [proceso, below of=in1] {proceso 1};
-%         \node (dec1) [condicion, below of=pro1, yshift=-0.5cm] {condicion 1};
-%         \node (pro2a) [proceso, below of=dec1, yshift=-0.5cm] {proceso 2a text text text text text text text text text text};
-%         \node (pro2b) [proceso, right of=dec1, xshift=2cm] {proceso 2b};
-%         \node (out1) [io, below of=pro2a] {Output};
-%         \node (stop) [iniciofin, below of=out1] {FIN};
-
-%         \draw [arrow] (start) -- (in1);
-%         \draw [arrow] (in1) -- (pro1);
-%         \draw [arrow] (pro1) -- (dec1);
-%         \draw [arrow] (dec1) -- node[anchor=east] {yes} (pro2a);
-%         \draw [arrow] (dec1) -- node[anchor=south] {no} (pro2b);
-%         \draw [arrow] (pro2b) |- (pro1);
-%         \draw [arrow] (pro2a) -- (out1);
-%         \draw [arrow] (out1) -- (stop);
-%     \end{tikzpicture}
-%     \caption{Algorithm for head nodding detection}
-%     \label{fig:head_nodding_flowchart}
-
-% \end{figure}
-
-\begin{figure}[htbp]
+\begin{figure}[h!]
     \centering
-    \begin{tikzpicture}[node distance=2cm]
-        \node (start) [iniciofin] {INICIO};
-        \node (get_dlib_landmarks) [proceso, below of=start] {Estimar coordenadas de 68 puntos de Dlib};
-        \node (pitch_estimation) [proceso, below of=get_dlib_landmarks, yshift=-0.5cm] {Estimar rho};
-        \node (cond_pitch) [condicional, below of=pitch_estimation] {rho };
-        \node (stop) [iniciofin, below of=cond_pitch] {FIN};
+    \includegraphics[width=0.4\linewidth]{figures/menton-sellion-length.png}
+    \caption{Medición de \textit{menton-sellion length} en (\cite{ZhuangBradtmiller2005}).}
+    \label{fig:menton-sellion length}
+\end{figure}
 
-        % \draw [arrow] (start) -- (in1);
-        % \draw [arrow] (in1) -- (pro1);
-        % \draw [arrow] (pro1) -- (dec1);
-        % \draw [arrow] (dec1) -- node[anchor=east] {yes} (pro2a);
-        % \draw [arrow] (dec1) -- node[anchor=south] {no} (pro2b);
-        % \draw [arrow] (pro2b) |- (pro1);
-        % \draw [arrow] (pro2a) -- (out1);
-        % \draw [arrow] (out1) -- (stop);
-    \end{tikzpicture}
-    \caption{Algorithm for head nodding detection}
+En el caso de la \textit{nose protrusion}, como se ve en la Figura \ref{fig:nose_protrusion}, se mide la distancia desde el punto pronasal (Figura \ref{fig:pronasale}) hasta el subnasal (Figura \ref{fig:subnasale}). Dado que lo esperado es que el mentón se encuentre alineado verticalmente con el punto subnasal (\cite{Alsina2017}), podemos decir que la medida de \textit{nose protrusion} corresponde a la definición de $Z_n$. Por tanto, podemos utilizar medidas promedio de \textit{nose protrusion} y \textit{menton-sellion length} para estimar un coeficiente $Z_{pitch}$ adecuado que represente a la relación promedio (en este caso, asociado a la población estadounidense de hace más de 20 años) entre \textit{nose protrusion} y la distancia entre ojos y mentón. 
+
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}[b]{0.3\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{figures/pronasale.png}
+        \caption{Punto pronasal}
+        \label{fig:pronasale}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.3\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{figures/subnasal.png}
+        \caption{Punto subnasal}
+        \label{fig:subnasale}
+    \end{subfigure}
+    \caption{Puntos pronasal y subnasal (\cite{ZhuangBradtmiller2005}).}
+    \label{fig:nose_points}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\linewidth]{figures/nose_protrusion.png}
+    \caption{Medición de \textit{nose protrusion} en (\cite{ZhuangBradtmiller2005}).}
+    \label{fig:nose_protrusion}
+\end{figure}
+
+En \cite{ZhuangBradtmiller2005} se encontraron valores medios de \textit{nose protrusion} de $2.11\text{ cm}$ en hombres y $1.98\text{ cm}$ en mujeres. Al restar el desfase de $0.62\text{ cm}$ a la \textit{menton-sellion length} se obtiene una altura efectiva $Y_e + Y_c$ de $11.65\text{ cm}$ en hombres y $10.72\text{ cm}$ en mujeres. Sustituyendo en el coeficiente del segundo término de la ecuación \ref{eq:rho_phi}:
+
+\begin{align*}
+K_{\mathrm{pitch},\,\mathrm{hombres}} &= \frac{2.11\text{ cm}}{12.27\text{ cm} - 0.62\text{ cm}} = \frac{2.11\text{ cm}}{11.65\text{ cm}} \approx 0.181  \\
+K_{\mathrm{pitch},\,\mathrm{mujeres}} &= \frac{1.98\text{ cm}}{11.34\text{ cm} - 0.62\text{ cm}} = \frac{1.98\text{ cm}}{10.72\text{ cm}} \approx 0.185 
+\end{align*}
+
+Se puede ver que los promedios no distan mucho uno del otro. En nuestro caso se utilizó una constante de 0.18, suficiente para la precisión que se requiere en esta aplicación. 
+
+En resumen, las ecuaciones \ref{eq:h_face_phi}--\ref{eq:rho_0_phi_0} muestran el fundamento geométrico del método. Al ejecutar el programa en tiempo real, para cada imagen se siguen en orden las ecuaciones \ref{eq:e_mid_d_e}--\ref{eq:h_face} para obtener las distancias proyectadas, se calcula $\rho$ \eqref{eq:rho}, se compara contra la proporción $\rho_0$ obtenida en la calibración, y finalmente se estima el ángulo de cabeceo mediante la ecuación \ref{eq:theta_deg}. La figura \ref{fig:head_nodding_flowchart} engloba el cómputo del cabeceo en un solo proceso, y muestra los pasos que se siguen para que se detecte un cabeceo y se notifique en el sistema.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\linewidth]{figures/FlowchartBD.jpg.png}
+    \caption{Diagrama de flujo de detección de cabeceo \textit{looking\_road} (\cite{DMD})}
     \label{fig:head_nodding_flowchart}
-
 \end{figure}
 
 \section{Detección de distracción}
