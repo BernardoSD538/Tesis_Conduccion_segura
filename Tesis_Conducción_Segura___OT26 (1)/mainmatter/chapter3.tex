@@ -228,28 +228,81 @@ El conjunto de datos cuenta con videos que en total se componen de más de 270,0
 % stride, proceso de caching, balanced class weights (el inverse ese)
 % bruh revisando la ipynb NO se hizo el aumento de datos. Nmchs. No recuerdo por qué vi la línea en el código y la comenté y seguí con mi vida. Se me fue. 
 
-\subsection{Cálculo de pose de cabeza}
+\subsection{Cálculo ángulo de cabeceo}
 
-Si tomamos una fotografía del rostro de una persona viendo hacia el frente, otra girando su cabeza hacia arriba, y otra girando la cabeza hacia abajo, notaremos que cuando la distancia vertical entre los ojos y la punta de la nariz aumenta, la distancia vertical entre la punta de la nariz y el mentón disminuye, y viceversa. 
+Consideremos la Figura \ref{fig:roll_pitch_yaw_reference} como referencia considerada para describir los 3 ejes de rotación de un objeto 3D: alabeo (roll), cabeceo (pitch), y guiñada (yaw). Si analizamos la proyección 2D del rostro de una persona vemos que si gira su cabeza hacia arriba la distancia vertical entre la punta de la nariz y el mentón aumenta. En cambio, si gira su cabeza hacia abajo, disminuye. Sucede lo mismo con la distancia vertical entre los ojos y la punta de la nariz, de forma inversa. Esto se ve en la Figura \ref{fig:pitch_distances}. Es a través de esto que se puede inferir que es posible usar distancias entre características faciales para determinar el ángulo de cabeceo de la cabeza de un conductor con respecto a su posición neutral: viendo completamente hacia al frente.
 
-Proyectar distancias verticales de la cara con respecto a la linea que pasa por los ojos de modo que inclinar la cabeza hacia los hombros distorsione la medición de pitch
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\linewidth]{figures/roll_pitch_yaw_reference.png}
+    \caption{Referencia de rotaciones: cabeceo (\textit{pitch}), alabeo (\textit{roll}) y guiñada (\textit{yaw}). Extraída del trabajo de PENDIENTE}
+    \label{fig:roll_pitch_yaw_reference}
+\end{figure}
 
-\[
-\mathrm{E}_{\mathrm{mid}} = \frac{\mathrm{P}_{36} + \mathrm{P}_{45}}{2}, \qquad
-\vec{u}_x = \frac{\mathrm{P}_{45} - \mathrm{P}_{36}}{\|\mathrm{P}_{45} - \mathrm{P}_{36}\|}, \qquad
-\vec{u}_y = (-u_{x_y},\, u_{x_x})
-\]
 
-Proyecta el segumento de ojo-a-nariz y el segmento nariz-a-boca hacia ese vector unitario de y, normalizando  por la distancia vertical total H cara (haciendo que rho sea invariante a la distancia de la cámara y)
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\linewidth]{figures/pitch_distances.png}
+    \caption{Variación de distancias verticales faciales según el ángulo de cabeceo. Modificada; extraída del trabajo de PENDIENTE}
+    \label{fig:pitch_distances}
+\end{figure}
+
+Consideremos el perfil de la cabeza de una persona viendo hacia una cámara de vídeo (Figura \ref{fig:lateral_face_ref}). Sean $c, e, n$ las ubicaciones de los puntos en 3D asociados a las siguientes características faciales: el mentón, el punto medio entre los ojos, y la punta de la nariz. Cuando el cabeceo $\phi = 0$, sea $Y_e$ y $Y_c$ la distancia vertical entre $e$ y $n$, y la distancia vertical entre $n$ y $c$, respectivamente, en centímetros (Figura \ref{fig:lateral_face_vert_dists}). Representemos ahora la cabeza trazando un eje de referencia justo debajo de $e$, y justo a la izquierda de $n$, cuyo eje horizontal marque la orientación donde el cabeceo $\phi = 0$; sea $Z_n$ la distancia entre el origen y $n$, en centímetros (Figura \ref{fig:nodding_axis1}).
+
+% Link: https://es.vecteezy.com/vectores-gratis/vista-lateral-de-la-cara
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}[b]{0.36\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{figures/lateral_face.jpg}
+        \caption{Vista lateral de referencia}
+        \label{fig:lateral_face_ref}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.40\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{figures/lateral_face_vert_dists.jpg.png}
+        \caption{Distancias verticales $Y_e$ y $Y_c$}
+        \label{fig:lateral_face_vert_dists}
+    \end{subfigure}
+    \caption{Vista lateral del rostro de referencia y distancias verticales faciales. Extraída de PENDIENTE}
+    \label{fig:lateral_face}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.3\linewidth]{figures/nodding_axis1.png}
+    \caption{Ejes de referencia del rostro en posición neutra ($\phi = 0$)}
+    \label{fig:nodding_axis1}
+\end{figure}
+
+Si la persona empieza a cabecear, $e$ y $n$ rotarán alrededor del origen (Figura \ref{fig:nodding_axis2}). Por trigonometría, la coordenada vertical de $e$ respecto al origen pasa a ser $Y_e\cos\phi$, mientras que la de $n$ pasa a ser $Z_n\sin\phi$. Es así que la distancia vertical entre $e$ y $n$ se vuelve $Y_e\cos\phi - Z_n\sin\phi$ (cabe destacar que, al cabecear hacia abajo, $\phi < 0$, por lo que $Z_n\sin\phi$ es negativo y la distancia vertical aumenta). En este momento, la distancia entre $e$ y $n$ se vuelve más grande que $Y_e$ desde el punto de vista de la cámara de vídeo. Ahora esa distancia se compone de 1) la distancia vertical entre $e$ y el origen, y 2) la distancia vertical entre $n$ y el origen. Por trigonometría, se puede encontrar que la primera se puede describir como $Y_e\cos\phi$, mientras que la segunda como $Z_n\sin\phi$. Dado que $e$ y $c$ se encuentran aproximadamente sobre el mismo plano vertical, la distancia vertical total entre los ojos y el mentón capturada en la cámara se describe como $(Y_e + Y_c)\cos\phi$. Considerando un factor de escala $s$ en píxeles por centímetro (que varía según la cámara y según la distancia que tenga frente al rostro), las distancias verticales proyectadas en la imagen, $H_{\mathrm{face}}(\phi)$ y $d_{\mathrm{top}}(\phi)$, quedan expresadas como:
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.3\linewidth]{figures/nodding_axis2.png}
+    \caption{Ejes de referencia del rostro rotados un ángulo de cabeceo $\phi$. En este caso es un cabeceo hacia abajo, por lo que el cabeceo $\phi<0$}
+    \label{fig:nodding_axis2}
+\end{figure}
 
 \begin{align*}
-d_{\mathrm{top}} &= (\mathrm{P}_{33} - \mathrm{E}_{\mathrm{mid}}) \cdot \vec{u}_y \\
-d_{\mathrm{bottom}} &= (\mathrm{P}_{8} - \mathrm{P}_{33}) \cdot \vec{u}_y \\
-H_{\mathrm{face}} &= d_{\mathrm{top}} + d_{\mathrm{bottom}} = (\mathrm{P}_{8} - \mathrm{E}_{\mathrm{mid}}) \cdot \vec{u}_y
+H_{\mathrm{face}}(\phi) &= s\,(Y_e + Y_c)\cos\phi \\
+d_{\mathrm{top}}(\phi) &= s\,(Y_e\cos\phi - Z_n\sin\phi)
 \end{align*}
 
 \[
+\rho(\phi) = \frac{d_{\mathrm{top}}(\phi)}{H_{\mathrm{face}}(\phi)}
+= \frac{s\,(Y_e\cos\phi - Z_n\sin\phi)}{s\,(Y_e + Y_c)\cos\phi}
+= \underbrace{\frac{Y_e}{Y_e + Y_c}}_{\rho_0} - \underbrace{\left(\frac{Z_n}{Y_e + Y_c}\right)}_{K_{\mathrm{pitch}}}\tan\phi
+\]
+
+\[
 \rho = \frac{d_{\mathrm{top}}}{H_{\mathrm{face}}} = \frac{d_{\mathrm{top}}}{d_{\mathrm{top}} + d_{\mathrm{bottom}}}
+\]
+
+\[
+\theta_{\mathrm{pitch}} = \arctan\!\left(\frac{\rho_0 - \rho}{K_{\mathrm{pitch}}}\right) \cdot \frac{180^\circ}{\pi}
+= \arctan\!\left(\frac{-\Delta\rho}{K_{\mathrm{pitch}}}\right) \cdot \frac{180^\circ}{\pi}
 \]
 
 \[
@@ -258,15 +311,31 @@ H_{\mathrm{face}} &= d_{\mathrm{top}} + d_{\mathrm{bottom}} = (\mathrm{P}_{8} - 
 \]
 
 \[
-\theta_{\mathrm{pitch}} = \arctan\!\left(\frac{\rho_0 - \rho}{K_{\mathrm{pitch}}}\right) \cdot \frac{180^\circ}{\pi}
-= \arctan\!\left(\frac{-\Delta\rho}{K_{\mathrm{pitch}}}\right) \cdot \frac{180^\circ}{\pi}
+\mathrm{E}_{\mathrm{mid}} = \frac{\mathrm{P}_{36} + \mathrm{P}_{45}}{2}, \qquad
+\vect{d}_e = \mathrm{P}_{45} - \mathrm{P}_{36}
+\]
+
+\[
+\hat{\mathbf{d}}_e = \frac{\vect{d}_e}{\|\vect{d}_e\|} = (\hat{d}_{e_x},\, \hat{d}_{e_y})
+\]
+
+\[
+\hat{\mathbf{d}}_e^\perp =
+\begin{pmatrix}
+0 & -1 \\
+1 & 0
+\end{pmatrix}
+\begin{pmatrix}
+\hat{d}_{e_x} \\
+\hat{d}_{e_y}
+\end{pmatrix}
+= (-\hat{d}_{e_y},\, \hat{d}_{e_x})
 \]
 
 \begin{align*}
-d_{\mathrm{top}}(\phi) &= Y_e \cos\phi - Z_{\mathrm{nose}} \sin\phi, &
-H_{\mathrm{face}}(\phi) &= (Y_e + Y_c) \cos\phi \\[4pt]
-\rho(\phi) &= \frac{d_{\mathrm{top}}(\phi)}{H_{\mathrm{face}}(\phi)}
-= \underbrace{\frac{Y_e}{Y_e + Y_c}}_{\rho_0} - \underbrace{\left(\frac{Z_{\mathrm{nose}}}{Y_e + Y_c}\right)}_{K_{\mathrm{pitch}}} \tan\phi
+d_{\mathrm{top}} &= (\mathrm{P}_{33} - \mathrm{E}_{\mathrm{mid}}) \cdot \hat{\mathbf{d}}_e^\perp \\
+d_{\mathrm{bottom}} &= (\mathrm{P}_{8} - \mathrm{P}_{33}) \cdot \hat{\mathbf{d}}_e^\perp \\
+H_{\mathrm{face}} &= d_{\mathrm{top}} + d_{\mathrm{bottom}} = (\mathrm{P}_{8} - \mathrm{E}_{\mathrm{mid}}) \cdot \hat{\mathbf{d}}_e^\perp
 \end{align*}
 
 Considerando que así se calcula el pitch ante la estimación de landmarks de Dlib, este es el algoritmo de detección de cabeceo:
