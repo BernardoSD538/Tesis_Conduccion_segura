@@ -10,7 +10,7 @@ Las mediciones subjetivas se realizan principalmente a través de observaciones 
 
 Gracias a la posibilidad de clasificación numérica, el uso de redes neuronales es muy sencillo con mediciones subjetivas, por lo que se han creado múltiples bases de datos que utilizan esta forma de medición con el objetivo de entrenar redes neuronales y clasificar niveles de somnolencia en base a imagenes del rostro o cuerpo del conductor. Entre las bases de datos más utilizadas se encuentran DROZY, UTA-RLDD, y MCDD, que ofrecen distintos fondos de imagen, ángulos y participantes con los cuales entrenar un modelo de inteligencia artificial (\cite{DrowsyDG}).
 
-La Tabla \ref{tab:subjetivas} muestra la experimentación realizada en el estado del arte que busca predecir somnolencia en un conductor con clasificaciones subjetivas, es decir, escalas como la KSS. Debido a la facilidad de clasificar estas escalas, los métodos utilizados son distintos clasificadores de aprendizaje profundo y aprendizaje automatíco, obteninendo resultados mixtos, con un rango de exactitudes de 62.84\% a 99.1\%. Se utilizan todo tipo de métricas en la medición de estos clasificadores, como métricas relacionadas al vehículo y al rostro, como el PERCLOS, bostezos, y movimeinto de cabeza. 
+La Tabla \ref{tab:subjetivas} muestra la experimentación realizada en el estado del arte que busca predecir somnolencia en un conductor con clasificaciones subjetivas, es decir, escalas como la KSS. Debido a la facilidad de clasificar estas escalas, los métodos utilizados son distintos clasificadores de aprendizaje profundo y aprendizaje automático, obteniendo resultados mixtos, con un rango de exactitudes de 62.84\% a 99.1\%. Se utilizan todo tipo de métricas en la medición de estos clasificadores, como métricas relacionadas al vehículo y al rostro, como el PERCLOS, bostezos, y movimiento de cabeza. 
 
 \begin{table}[h!]
     \centering
@@ -29,7 +29,7 @@ La Tabla \ref{tab:subjetivas} muestra la experimentación realizada en el estado
     \label{tab:subjetivas}
 \end{table}
 
-Por otro lado, las mediciones objetivas se obtienen a través de la observación de indicadores  fisiológicos y de comportamiento, así como mediciones relacionadas al vehículo (\cite{osamaSubyObj}). Esto incluye electroencefalograma (EGG), ritmo cardíaco y métricas relacionadas con el rostro. Debido a que la medición EGG y de ritmo cardíaco puede ser intrusivas o incomodas para el uso cotidiano del conductor, en esta investigación se utilizaron solo medidas relacionadas al rostro. Las metrícas comunmente utilizadas son: PERCLOS, duración de parpadeo, bostezo, pose de cabeza, etc. (\cite{sysrev}). 
+Por otro lado, las mediciones objetivas se obtienen a través de la observación de indicadores  fisiológicos y de comportamiento, así como mediciones relacionadas al vehículo (\cite{osamaSubyObj}). Esto incluye electroencefalograma (EGG), ritmo cardíaco y métricas relacionadas con el rostro. Debido a que la medición EGG y de ritmo cardíaco puede ser intrusivas o incómodas para el uso cotidiano del conductor, en esta investigación se utilizaron solo medidas relacionadas al rostro. Las métricas comúnmente utilizadas son: PERCLOS, duración de parpadeo, bostezo, pose de cabeza, etc. (\cite{sysrev}). 
 
 En el uso de métricas objetivas se utilizan dos metodologías de detección comúnmente, el uso exclusivo de visión computacional, y el uso de aprendizaje profundo para clasificación de estado de somnolencia. El uso de solamente visión computacional ofrece una versión más simplificada y menos demandante computacionalmente, a través de la definición de estado de somnolencia utilizando umbrales de las métricas medidas por el sistema. En el caso del aprendizaje profundo, se le puede entregar información a redes neuronales en forma numérica para la clasificación de somnolencia, así como imágenes del conductor como suele hacerse con las mediciones subjetivas, con la diferencia de que la clasificación se realiza en base a las métricas ya establecidas anteriormente (\cite{sysrev}).
 
@@ -67,7 +67,7 @@ Múltiples investigaciones se han realizado para determinar si realmente existe 
  
 \subsection{Duración de parpadeo}
 La duración de parpadeo es una de las métricas más utilizadas en investigaciones relacionadas a la detección de somnolencia debido a la facilidad de detección de las métricas relacionadas de parpadeo con procesamiento de imágenes, además de la gran documentación que existe respecto a la relación entre la duración y frecuencia de parpadeo con la somnolencia (\cite{BlinkDuration}) . 
-Para medir duración de parpadeo se utiliza también el EAR. Se establece que cuando el ojo permanece cerrado durante 500ms, esto se clasifica como un microsueño, el último estado de somnolencia, es decir, el más peligroso. Esta métrica en combinación con la medición del EAR puede permitir establecer cuando un parpadeo es demasiado largo, sabiendo ya que 500 ms es el extremo en estado de somnolencia, y siendo capaces de determinar cuando un ojo está cerrado utilizando un umbral respaldado en la medida de EAR. (\cite{BlinkDuration}). 
+Para medir duración de parpadeo se utiliza también el EAR. Se establece que cuando el ojo permanece cerrado durante 500 ms, esto se clasifica como un microsueño, el último estado de somnolencia, es decir, el más peligroso. Esta métrica en combinación con la medición del EAR puede permitir establecer cuando un parpadeo es demasiado largo, sabiendo ya que 500 ms es el extremo en estado de somnolencia, y siendo capaces de determinar cuando un ojo está cerrado utilizando un umbral respaldado en la medida de EAR. (\cite{BlinkDuration}). 
 
 \subsection{Bostezo}
 El bostezo es un indicador secundario en la detección de somnolencia debido a que no existen indicadores sólidos de cuantos bostezos indican un estado de somnolencia, pero está bien comprobado que los bostezos son indicadores iniciales de estados de somnolencia. Debido a la poca confiabilidad que ofrece el monitoreo de bostezos se suele utilizar como una métrica adicional que no define de manera total un estado de somnolencia, pero puede tomarse en cuenta para las decisiones finales respecto a la definición de sí el conductor se encuentra en estado de somnolencia o no.
@@ -109,16 +109,16 @@ La Tabla \ref{tab:distracción} muestra la experimentación realizada en el esta
     \footnotesize
     \renewcommand{\arraystretch}{1.8} 
     \begin{tabularx}{\textwidth}{c X X c}
-        Investigación & Método de clasificación & Conjunto de datos utilizado & Resultados \\
+        Investigación & Método de clasificación & Conjunto de datos utilizado & Exactitud \\
         \hline
-        \cite{DCNN} & Drive-Net (CNN y Bosque Aleatorio) & Conjunto de datos de Kaggle & Exactitud = 95\% \\
-        \cite{Swin} & \textit{Swin Transformer} & AUC-DD y State-Farm & Exactitud = 95.63\% y 99.73\% \\
-        \cite{LRCN} &  LCRN & Conjunto de datos propio & Exactitud = 93.9-99.2\% \\
+        \cite{DCNN} & Drive-Net (CNN y Bosque Aleatorio) & Conjunto de datos de Kaggle & 95\% \\
+        \cite{Swin} & \textit{Swin Transformer} & AUC-DD y State-Farm & 95.63\% y 99.73\% \\
+        \cite{LRCN} &  LCRN & Conjunto de datos propio & 93.9-99.2\% \\
         \cite{D3D} & 3D-CNN & DMD & Exactitud = 73.35\% \\ 
-        \cite{CNN-Trans} & CaTNet (ConvNeXt + CaT) & AUC y State-Farm & Exactitud = 94.82\% y 99.91\% \\
-        \cite{DyS-VC} & Umbrales cálculados con visión computacional & Posición del iris de los ojos & Exactitud = 89\% \\ 
-        \cite{DTF} & AlexNet e InceptionV3 & Conjunto de datos propio & Exactitud = 93.65\% y 95.17\% \\
-        \cite{DHM-RNN} & ResNet + HRNN & AUC y State-Farm & Exactitud = 96.23\% y 92.36\% \\
+        \cite{CNN-Trans} & CaTNet (ConvNeXt + CaT) & AUC y State-Farm & 94.82\% y 99.91\% \\
+        \cite{DyS-VC} & Umbrales cálculados con visión computacional & Posición del iris de los ojos & 89\% \\ 
+        \cite{DTF} & AlexNet e InceptionV3 & Conjunto de datos propio & 93.65\% y 95.17\% \\
+        \cite{DHM-RNN} & ResNet + HRNN & AUC y State-Farm & 96.23\% y 92.36\% \\
         \hline
     \end{tabularx}
     \caption{Metodología y resultados del estado del arte en detección de distracción}

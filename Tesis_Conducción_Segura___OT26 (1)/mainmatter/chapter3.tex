@@ -30,12 +30,12 @@ Finalmente, la ventana de tiempo que se eligió para el cálculo del PERCLOS es 
 
 Para el cálculo de la duración de un parpadeo, se utiliza también el EAR obtenido con la ayuda de Dlib, pero se sigue un procedimiento diferente para establecer el valor. Dentro de la literatura existen múltiples formas de determinar un parpadeo, algunas lo consideran desde el momento en que empieza a cerrarse el ojo hasta el momento en el que se vuelve a abrir, y otras lo consideran únicamente el tiempo que permanece cerrado. Para el contexto de nuestro proyecto, definimos el parpadeo únicamente como el tiempo que el ojo permanece totalmente cerrado. Ahora, para poder determinar cuando sucede un parpadeo, se utilizó el mismo umbral del 20\% de apertura utilizado en el cálculo del PERCLOS, pues es lo suficientemente permisivo al detectar parpadeos para que los detecte de forma consistente sin equivocarse de forma excesiva. Finalmente, para poder determinar cuanto tiempo permanece cerrado el ojo, al momento que se cruce el umbral del 20\% de apertura del ojo, se activa un contador, el cual deja de contar al momento que se determine que el ojo supere este umbral. A su vez, mientras el EAR se mantenga por debajo de un segundo umbral dictado por el 70\% de apertura, se le permite reanudar el contador, permitiendo que picos pequeños que pueden suceder al tener el ojo cerrado puedan ser ignorados para continuar el conteo del parpadeo sin interrupciones de poca relevancia. Para este proyecto, nos basamos en artículos científicos publicados en el pasado para que el detector de somnolencia determinara que cualquier parpadeo superior a 500 milisegundos sea indicativo de episodios de fatiga, lo cual permite que se dispare una alarma (\cite{BlinkDuration}).
 
-Parte importante de nuestro detector de PERCLOS y duración de parpadeo es un filtro adaptativo implementado para poder adaptarse a como va evolucionando el EAR del usuario con el tiempo. Este filtro adaptativo obtiene los valores del EAR del usuario y los aplica en filtro de mediana con una ventana móvil, siendo esta de longitud de 5, lo cual significa que obtiene los valores de los últimos 5 fotogramas incluyendo el actual y obtiene la mediana de estos para determinar un valor. Tras esto se le aplica un segundo filtro de media móvil, pero este con una ventana móvil de longitud de 30, obteniendo los últimos 30 fotogramas que fueron pasados por el filtro de mediana y obteniendo un único valor para el fotograma actual al obtener su promedio. Aplicar estos dos filtros nos permite tener un umbral adaptativo que pueda cambiar a partir del comportamiento del EAR del usuario de forma consistente, pues su combinación elimina los picos que se puedan encontrar al momento de cerrar el ojo al igual que suavizar la curva de la gráfica para no tener cambios de valores bruscos. En nuestro programa, al momento en el que el PERCLOS supere un porcentaje del 15 porciento se encenderá una alarma para el conductor, este porcentaje lo elegimos basándonos en artículos científicos anteriores (\cite{MinhasPERCLOS}). El algoritmo de detección de duración de ojo cerrado y PERCLOS se puede visualizar en la Figura \ref{fig:bd_flowchart}.
+Parte importante de nuestro detector de PERCLOS y duración de parpadeo es un filtro adaptativo implementado para poder adaptarse a como va evolucionando el EAR del usuario con el tiempo. Este filtro adaptativo obtiene los valores del EAR del usuario y los aplica en filtro de mediana con una ventana móvil, siendo esta de longitud de 5, lo cual significa que obtiene los valores de los últimos 5 fotogramas incluyendo el actual y obtiene la mediana de estos para determinar un valor. Tras esto se le aplica un segundo filtro de media móvil, pero este con una ventana móvil de longitud de 30, obteniendo los últimos 30 fotogramas que fueron pasados por el filtro de mediana y obteniendo un único valor para el fotograma actual al obtener su promedio. Aplicar estos dos filtros nos permite tener un umbral adaptativo que pueda cambiar a partir del comportamiento del EAR del usuario de forma consistente, pues su combinación elimina los picos que se puedan encontrar al momento de cerrar el ojo al igual que suavizar la curva de la gráfica para no tener cambios de valores bruscos. En nuestro programa, al momento en el que el PERCLOS supere un porcentaje del 15 porciento se encenderá una alarma para el conductor, este porcentaje lo elegimos basándonos en artículos científicos anteriores (\cite{MinhasPERCLOS}). El algoritmo de detección de duración de ojo cerrado y PERCLOS se puede visualizar en la Figura \ref{fig:bd_flowchart}, este diagrama es simplificado debido a que existen otros sistemas de los cuales este y otras funciones dependen, y son descritos en la subsección \ref{subsec:modularizacion-cpp}.
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.4\linewidth]{figures/FlowchartBD.jpg.png}
-    \caption{Diagrama de flujo de detección de duración de parpadeo y PERCLOS}
+    \caption{Diagrama de flujo simplificado de detección de duración de parpadeo y PERCLOS}
     \label{fig:bd_flowchart}
 \end{figure}
 
@@ -237,7 +237,7 @@ El conjunto de datos cuenta con videos que en total se componen de más de 270,0
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.4\linewidth]{figures/FlowchartYawn.jpg.png}
-    \caption{Diagrama de flujo de detección de bostezo}
+    \caption{Diagrama de flujo simplificado de detección de bostezo}
     \label{fig:yawning_flowchart}
 \end{figure}
 
@@ -438,7 +438,7 @@ En resumen, las ecuaciones \ref{eq:h_face_phi}--\ref{eq:rho_0_phi_0} muestran el
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.5\linewidth]{figures/FlowchartHP.jpg.png}
-    \caption{Diagrama de flujo de detección de cabeceo}
+    \caption{Diagrama de flujo simplificado de detección de cabeceo}
     \label{fig:head_nodding_flowchart}
 \end{figure}
 
@@ -501,7 +501,7 @@ Con las redes neuronales convolucionales entrenadas, se aplicaron a un algoritmo
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.35\linewidth]{figures/FlowchartDistraction.jpg.png}
-    \caption{Diagrama de flujo de detección de distracción}
+    \caption{Diagrama de flujo simplificado de detección de distracción}
     \label{fig:distraction_flowchart}
 \end{figure}
 
@@ -572,12 +572,13 @@ Finalmente, se agregó una bocina para la reproducción de los audios de calibra
 \end{figure}
 
 \subsection{Modularización de algoritmo y cambio de lenguaje Python a C++}
+\label{subsec:modularizacion-cpp}
 
 Fue útil iterar y prototipar con scripts de Python, e incluso con programación que era solo prácticamente declarativa. Sin embargo, se sabía que a la hora de combinar los módulos de detección en un solo programa iba a ser complicado depurarlo y extenderlo. Es por eso que se empezaron poco a poco a hacer pruebas separando scripts de python en diferentes módulos con diferentes responsabilidades, y validando cualitativamente que siguiera funcionando de la misma forma que antes. 
 
 Buscando un algoritmo que fuera más eficiente y haciendo referencia al estado del arte, se realizó un traslado de lenguajes, cambiando de Python a C++, con el objetivo de aprovechar la velocidad que presenta C++ en comparación con Python gracias a la compilación (\cite{C++}). Como ya se mencionó en una sección de la metodología anterior, se inició por trasladar el funcionamiento de la tarea de distracción a C++, y tras observar los resultados iniciales de esta tarea, se decidió trasladar de la manera más fiel posible la versión modular en Python a C++. 
 
-Adicionalmente, y buscando aumentar aún más la velocidad del algoritmo, se implementó el \textit{threading} en el código modular de C++. Con esta implementación el objetivo es evitar cuellos de botella en el procesamiento del algoritmo y disminuir el tiempo total del un ciclo gracias a la función de trabajo en paralelo del \textit{threading}. El algoritmo se organizó en tres \textit{threads} que  corresponden a las 3 tareas principales del código, la tarea de detección de somnolencia, la tarea de detección de distracción y la tarea de captura de imagen. Al tener todo funcionado en paralelo, se espera que la suma total de tiempo sea considerablemente menor que en una estructura secuencial, lo cual permite el lujo de tener tareas que tardan mucho tiempo, como lo es la de distracción. Sin embargo, al englobar todas las subtareas de somnolencia en un solo \textit{thread}, la detección de bostezo, detección de rostro, cálculo de orientación de cabeza, y cálculo de PERCLOS y duración de parpadeo presentan un comportamiento secuencial, al encontrarse todas bajo un mismo grupo. Esto puede apreciarse a mayor detalle en la Figura \ref{fig:full_simplified_flowchart}.
+Adicionalmente, y buscando aumentar aún más la velocidad del algoritmo, se implementó el \textit{threading} en el código modular de C++. Con esta implementación el objetivo es evitar cuellos de botella en el procesamiento del algoritmo y disminuir el tiempo total del un ciclo gracias a la función de trabajo en paralelo del \textit{threading}. El algoritmo se organizó en tres \textit{threads} que  corresponden a las 3 tareas principales del código, la tarea de detección de somnolencia, la tarea de detección de distracción y la tarea de captura de imagen. Al tener todo funcionado en paralelo, se espera que la suma total de tiempo sea considerablemente menor que en una estructura secuencial, lo cual permite el lujo de tener tareas que tardan mucho tiempo, como lo es la de distracción. Sin embargo, al englobar todas las subtareas de somnolencia en un solo \textit{thread}, la detección de bostezo, detección de rostro, cálculo de orientación de cabeza, y cálculo de PERCLOS y duración de parpadeo presentan un comportamiento secuencial, al encontrarse todas bajo un mismo grupo. Esto puede apreciarse a mayor detalle en la Figura \ref{fig:full_simplified_flowchart}, algo que cabe destacar de la forma en la que fue elaborado este diagrama es que las flechas recursivas indican los distintos \textit{threads}.
 
 La estructura del código modular de C++ está hecha de tal forma que múltiples funciones están concentradas en diversos archivos cpp, tal como lo es la detección de parpadeos, el detector de características del rostro, etc. Cada uno de estos archivos cpp tiene un archivo hpp relacionado con este, conteniendo funciones y parámetros relacionados con este, y verificando que no se produzcan errores por ingresar parámetros equivocados al código. Todos los modelos utilizados en redes neuronales se encuentran en archivos ONNX, esto para poder garantizar compatibilidad en el sistema. Finalmente, todos los códigos de cpp individuales culminan en un solo archivo del mismo formato, coordinados por un coordinador de pipeline que permite la ejecución del código en el orden deseado, separando los \textit{threads} distintos y habilitando el sistema de notificaciones a terceros.
 
