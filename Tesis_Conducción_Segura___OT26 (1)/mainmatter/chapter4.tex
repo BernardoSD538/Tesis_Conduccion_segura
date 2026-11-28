@@ -4,7 +4,7 @@
 \label{sec::capitulo4}
 \section{Detección de distracción}
 \subsection{Resultados de entrenamiento de modelos de aprendizaje profundo}
-La Figura \ref{fig:CNNs} muestra los resultados de entrenamiento de distintas arquitecturas de aprendizaje profundo para la predicción de las categorías \textit{looking\_road} y \textit{not\_looking\_road}. Se muestran las métricas que se consideran relevantes para los resultados, siendo la precisión, sensibilidad, \textit{F1 score}, y AUC, valores los cuales nos indican de manera descriptiva que tan bueno es el modelo para predecir de manera más detallada. Los valores de \textit{F1 score} tienen un rango de 0.856 a 0.996, mostrando la variabilidad de las arquitecturas utilizadas para la experimentación, obteniendo así resultados deseados para el entrenamiento de modelos con una gama de modelos con distintas capacidades de predicción y diferentes niveles de consumo computacional. 
+La Figura \ref{fig:CNNs} muestra los resultados de entrenamiento de distintas arquitecturas de aprendizaje profundo para la predicción de las categorías \textit{looking\_road} y \textit{not\_looking\_road}. Se muestran las métricas que se consideran relevantes para los resultados, siendo la exactitud, sensibilidad, \textit{F1 score}, y AUC, valores los cuales nos indican de manera descriptiva que tan bueno es el modelo para predecir de manera más detallada. Los valores de \textit{F1 score} tienen un rango de 0.856 a 0.996, mostrando la variabilidad de las arquitecturas utilizadas para la experimentación, obteniendo así resultados deseados para el entrenamiento de modelos con una gama de modelos con distintas capacidades de predicción y diferentes niveles de consumo computacional. 
 
 \begin{figure}[h!]
     \centering
@@ -139,7 +139,7 @@ Tras esto se decidieron obtener más métricas utilizando el predictor de Dlib e
 
 % lo del MAR
 
-Como se describió en la metodología, el plan era utilizar las características faciales estimadas con Dlib para estimar el MAR y si duraba 4 segundos (o un poco más, considerando frames perdidos, ligeras fluctuaciones en la apertura de la boca con un MAR cerca del threshold, etc.) por encima de 0.5, se catalogaría como un episodio de bostezo. Sin embargo, cuando se evaluó ese algoritmo en el conjunto de prueba, se encontró que tenía precisiones altas (mayores a 80\%), pero exhaustividades muy bajas (alrededor de 20\%). Después de encontrar la causa del error, se procedió entrenar CNNs
+Como se describió en la metodología, el plan era utilizar las características faciales estimadas con Dlib para estimar el MAR y si duraba 4 segundos (o un poco más, considerando frames perdidos, ligeras fluctuaciones en la apertura de la boca con un MAR cerca del umbral, etc.) por encima de 0.5, se catalogaría como un episodio de bostezo. Sin embargo, cuando se evaluó ese algoritmo en el conjunto de prueba, se encontró que tenía precisiones altas (mayores a 80\%), pero exhaustividades muy bajas (alrededor de 20\%). Después de encontrar la causa del error, se procedió entrenar CNNs.
 
 % lo de las CNNs
 
