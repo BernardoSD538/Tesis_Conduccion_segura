@@ -67,9 +67,11 @@ En este trabajo se utilizaron distintos modelos grandes de lenguaje (LLM) de Goo
 
 La generación de código tuvo distintos objetivos a lo largo del proyecto: 
 
-\begin{itemize}
+\begin{enumerate}
     \item Acelerar la implementación y validación de lógica de detección de rostro, duración de parpadeo, detección de PERCLOS, detección de bostezo, y detección de distracción.
-    \item Integrar, modularizar, y migrar los algoritmos de detección a un solo programa en C++, así como implementar técnicas y soluciones (mencionadas en la Sección \ref{subsec:modularizacion-cpp}) necesarias para que el sistema funcionara con el rendimiento y minucias esperadas de un sistema corriendo en tiempo real, como: el uso de threading, \textit{mutexes} para acceso de recursos compartidos, priorización de alertas, reducir latencia en reproducción de audio a través de un módulo dedicado, y reducción de complejidad computacional de distintas operaciones. 
+    \item Integrar, modularizar, y migrar los algoritmos de detección a un solo programa en C++, así como implementar técnicas y soluciones (mencionadas en la Sección \ref{subsec:modularizacion-cpp}) necesarias para que el sistema funcionara con el rendimiento y minucias esperadas de un sistema corriendo en tiempo real, como: el uso de threading, \textit{mutexes}, priorización de alertas, reducir latencia en reproducción de audio a través de un módulo dedicado, y reducción de complejidad computacional de distintas operaciones. 
     \item Con base en conceptos adquiridos tras una revisión de literatura, y para aprovechar el tiempo disponible para el proyecto, delegar el desarrollo del algoritmo de detección de cabeceo (de la mano con corrección y validación humana). 
     \item Generar imágenes representativas en esta tesis.
-\end{itemize}
+\end{enumerate}
+
+Asimismo, dado que dichos modelos participaron directamente en la implementación de los puntos 2 y 3 mencionados anteriormente, resultó natural apoyarse también en ellos para redactar las secciones de esta tesis que documentaran su desarrollo.
