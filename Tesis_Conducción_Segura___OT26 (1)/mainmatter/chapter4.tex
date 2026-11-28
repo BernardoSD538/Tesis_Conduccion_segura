@@ -14,7 +14,7 @@ La Figura \ref{fig:CNNs} muestra los resultados de entrenamiento de distintas ar
 \end{figure}
 
 \subsection{Rendimiento de algoritmos en tiempo real}
-La Figura \ref{fig:lat} muestra los tiempos de inferencia promedio de cada uno de los modelos, tanto en una laptop con GPU como en la RapberryPi 5B, nuestro dispositivo objetivo a implementar en tiempo real. 
+La Figura \ref{fig:lat} muestra los tiempos de inferencia promedio de cada uno de los modelos, tanto en una laptop con GPU como en la Raspberry Pi 5B, nuestro dispositivo objetivo a implementar en tiempo real. 
 Podemos ver los comportamientos inicialmente esperados, con tiempos mucho menores en la laptop, debido a la capacidad computacional que esta ofrece. En ambos casos el menor tiempo de inferencia lo muestra LightGazeCNN, la CNN creada para esta investigación. 
 Igualmente, en ambos casos la arquitectura con mayor tiempo de inferencia es la C-LSTM, esto debido a su complejidad al combinar una ResNet18 con dos capas LSTM. El tiempo de inferencia menor en la Raspberry Pi 5B es de 11.8 ms y el mayor de 82.4 ms, mientras que en la laptop son de 3.4 ms y 11.1 ms, lo cual muestra la importancia de tomar en cuenta el poder computacional que se tiene en el equipo utilizado. Igualmente, los FPS a los cuales funcionan cada tarea son diferentes, teniendo en promedio 13 para la tarea de distracción, 18 para la tarea de somnolencia y 33.61 para la tarea de captura de imagen.  
 
