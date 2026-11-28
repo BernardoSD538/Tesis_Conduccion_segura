@@ -241,7 +241,9 @@ El conjunto de datos cuenta con videos que en total se componen de más de 270,0
     \label{fig:yawning_flowchart}
 \end{figure}
 
-\subsection{Cálculo ángulo de cabeceo}
+\subsection{Estimación de ángulo de cabeceo}
+
+Si bien en el estado del arte se encuentran diversos estudios que estiman la pose de la cabeza para tomar decisiones respecto a detecciones de somnolencia, se decidió poner el enfoque en el cabeceo de una persona, sin necesidad de considerar el alabeo ni la guiñada, pues el cabeceo es independiente de estas otras rotaciones.
 
 Consideremos la Figura \ref{fig:roll_pitch_yaw_reference} como referencia considerada para describir los 3 ejes de rotación de un objeto 3D: alabeo (roll), cabeceo (pitch), y guiñada (yaw). Si analizamos la proyección 2D del rostro de una persona vemos que si gira su cabeza hacia arriba la distancia vertical entre la punta de la nariz y el mentón aumenta. En cambio, si gira su cabeza hacia abajo, disminuye. Sucede lo mismo con la distancia vertical entre los ojos y la punta de la nariz, de forma inversa. Esto se ve en la Figura \ref{fig:pitch_distances}. Es a través de esto que se puede inferir que es posible usar distancias entre características faciales para determinar el ángulo de cabeceo de la cabeza de un conductor con respecto a su posición neutral: viendo completamente hacia al frente.
 
