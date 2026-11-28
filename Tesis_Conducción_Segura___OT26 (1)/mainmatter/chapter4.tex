@@ -4,7 +4,7 @@
 \label{sec::capitulo4}
 \section{Detección de distracción}
 \subsection{Resultados de entrenamiento de modelos de aprendizaje profundo}
-La Figura \ref{fig:CNNs} muestra los resultados de entrenamiento de distintas arquitecturas de aprendizaje profundo para la predicción de las categorías \textit{looking\_road} y \textit{not\_looking\_road}. Se muestran las métricas que se consideran relevantes para los resultados, siendo la exactitud, sensibilidad, \textit{F1 score}, y AUC, valores los cuales nos indican de manera descriptiva que tan bueno es el modelo para predecir de manera más detallada. Los valores de \textit{F1 score} tienen un rango de 0.856 a 0.996, mostrando la variabilidad de las arquitecturas utilizadas para la experimentación, obteniendo así resultados deseados para el entrenamiento de modelos con una gama de modelos con distintas capacidades de predicción y diferentes niveles de consumo computacional. 
+La Figura \ref{fig:CNNs} muestra los resultados de entrenamiento de distintas arquitecturas de aprendizaje profundo para la predicción de las categorías \textit{looking\_road} y \textit{not\_looking\_road}. Se muestran las métricas que se consideran relevantes para los resultados, siendo la exactitud, sensibilidad, \textit{F1 score}, y AUC, valores los cuales nos indican de manera descriptiva qué tan bueno es el modelo para predecir de manera más detallada. Los valores de \textit{F1 score} tienen un rango de 0.856 a 0.996, mostrando la variabilidad de las arquitecturas utilizadas para la experimentación, obteniendo así resultados deseados para el entrenamiento de modelos con una gama de modelos con distintas capacidades de predicción y diferentes niveles de consumo computacional. 
 
 \begin{figure}[h!]
     \centering
@@ -55,7 +55,7 @@ La primera prueba realizada con el detector de Dlib fue en el conjunto de datos 
     \label{tab:blinkEB8}
 \end{table}
 
-Esta prueba también fue realizada con el conjunto de datos del \textit{DMD}, buscando averiguar que tan bueno es el algoritmo al momento de detectar estos parpadeos, los resultados de esta segunda prueba se encuentran en la tabla \ref{tab:blinkDMD}.
+Esta prueba también fue realizada con el conjunto de datos del \textit{DMD}, buscando averiguar qué tan bueno es el algoritmo al momento de detectar estos parpadeos, los resultados de esta segunda prueba se encuentran en la tabla \ref{tab:blinkDMD}.
 
 \begin{table}[h!]
     \centering
@@ -165,7 +165,7 @@ La prueba consistió en usar el algoritmo de la Figura \ref{fig:yawning_flowchar
     \label{fig:cms_yawning}
 \end{figure}
 
-Las métricas se aprecian con mayor claridad en la Figura \ref{fig:yawn_metrics_bar_chart}
+Las métricas se aprecian con mayor claridad en la Figura \ref{fig:yawn_metrics_bar_chart}.
 
 \begin{figure}[h!]
     \centering
@@ -189,7 +189,7 @@ Para determinar si los resultados del algoritmo de cálculo de orientación de c
 
 \section{Resultados de código modular en tiempo real}
 Se realizaron pruebas de funcionamiento del código modular en tiempo real, utilizando la Raspberry Pi 5B como dispositivo de prueba. 
-Esto se realizó para la versión modular en Python y en  C++, con el objetivo de observar la mejora en eficiencia al cambiar de Python a C++, 
+Esto se realizó para la versión modular en Python y en C++, con el objetivo de observar la mejora en eficiencia al cambiar de Python a C++, 
 vez se determinó que el lenguaje de Python era muy lento para ser implementado en tiempo real. Ambas pruebas se realizaron utilizando la C-LSTM como arquitectura para la detección de distracción, buscando comparar ambos lenguajes en el caso más demandante del algoritmo. 
 
 La Tabla \ref{tab:Python} muestra los resultados de latencia promedio obtenidos en la versión modular en Python. La detección de somnolencia, que incluye la detección de rostro, los 68 puntos, y el cálculo de PERCLOS, duración de parpadeo, orientación de cabeza y detección de bostezo, tiene una duración de 44.65 ms. Donde vemos una latencia grande, como ya se observó en los resultados individuales, es en la detección de distracción, que tarda en promedio 79.87 ms en realizarse cuando se utiliza una C-LSTM para realizar la predicción. Aunque este es un resultado ligeramente mejor que los inicialmente obtenidos, este sigue siendo muy tardado, generando que el algoritmo en tiempo real alcance tan solo 7.7 FPS en promedio, muy por debajo del objetivo. 
@@ -262,7 +262,7 @@ La Figura \ref{fig:grouped} ilustra los distintos estados que se pueden encontra
     \label{fig:grouped}
 \end{figure}
 
-Se realizaron pruebas de la función de mensajes automatizados por la plataforma \textit{Telegram}, los resultados de estas pruebas se pueden observar en la figura \ref{fig:Telegram}
+Se realizaron pruebas de la función de mensajes automatizados por la plataforma \textit{Telegram}, los resultados de estas pruebas se pueden observar en la figura \ref{fig:Telegram}.
 
 \begin{figure}[h!]
     \centering
